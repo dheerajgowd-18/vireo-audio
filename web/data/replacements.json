@@ -1,0 +1,313 @@
+{
+  "headline": {
+    "replacement_units": 1896,
+    "total_policy_cost_inr": 3415990.0,
+    "total_policy_cost_formatted": "\u20b934.16L"
+  },
+  "finance_comparison": {
+    "finance_estimate_inr": 4740000.0,
+    "finance_estimate_formatted": "\u20b947.40L",
+    "policy_actual_inr": 3415990.0,
+    "policy_actual_formatted": "\u20b934.16L",
+    "variance_inr": 1324010.0,
+    "variance_formatted": "\u20b913.24L",
+    "variance_pct": 38.76,
+    "explanation": "Finance estimated replacement liability at a flat \u20b92,500/unit across all models. Under policy \u00a74, replacement cost follows product unit cost + \u20b9340 logistics. Because high-volume earbuds cost between \u20b91,100 and \u20b91,580, Finance overstated replacement liability by \u20b913.24L (+38.76%)."
+  },
+  "product_breakdown": [
+    {
+      "sku": "VA-EB-PL2",
+      "product_name": "Pulse 2 True Wireless Earbuds",
+      "tickets": 4402,
+      "replacements": 1166,
+      "replacement_rate_pct": 26.49,
+      "policy_spend_inr": 2122120.0,
+      "policy_spend_formatted": "\u20b921.22L",
+      "unit_cost_inr": 1480.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-EB-PL1",
+      "product_name": "Pulse True Wireless Earbuds",
+      "tickets": 1255,
+      "replacements": 146,
+      "replacement_rate_pct": 11.63,
+      "policy_spend_inr": 213160.0,
+      "policy_spend_formatted": "\u20b92.13L",
+      "unit_cost_inr": 1120.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-EB-AIR",
+      "product_name": "AirLite Earbuds",
+      "tickets": 1005,
+      "replacements": 111,
+      "replacement_rate_pct": 11.04,
+      "policy_spend_inr": 122100.0,
+      "policy_spend_formatted": "\u20b91.22L",
+      "unit_cost_inr": 760.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-SW-NX2",
+      "product_name": "Nexa 2 Smartwatch",
+      "tickets": 1047,
+      "replacements": 101,
+      "replacement_rate_pct": 9.65,
+      "policy_spend_inr": 281790.0,
+      "policy_spend_formatted": "\u20b92.82L",
+      "unit_cost_inr": 2450.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-HP-ST3",
+      "product_name": "Strata 3 Over-Ear Headphones",
+      "tickets": 772,
+      "replacements": 70,
+      "replacement_rate_pct": 9.07,
+      "policy_spend_inr": 209300.0,
+      "policy_spend_formatted": "\u20b92.09L",
+      "unit_cost_inr": 2650.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-SP-MINI",
+      "product_name": "Orbit Mini Speaker",
+      "tickets": 671,
+      "replacements": 63,
+      "replacement_rate_pct": 9.39,
+      "policy_spend_inr": 83160.0,
+      "policy_spend_formatted": "\u20b90.83L",
+      "unit_cost_inr": 980.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-SW-FIT",
+      "product_name": "Nexa Fit Band",
+      "tickets": 595,
+      "replacements": 58,
+      "replacement_rate_pct": 9.75,
+      "policy_spend_inr": 69020.0,
+      "policy_spend_formatted": "\u20b90.69L",
+      "unit_cost_inr": 850.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-NB-ARC",
+      "product_name": "Arc Neckband",
+      "tickets": 382,
+      "replacements": 43,
+      "replacement_rate_pct": 11.26,
+      "policy_spend_inr": 37840.0,
+      "policy_spend_formatted": "\u20b90.38L",
+      "unit_cost_inr": 540.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-HP-ST2",
+      "product_name": "Strata 2 Over-Ear Headphones",
+      "tickets": 327,
+      "replacements": 38,
+      "replacement_rate_pct": 11.62,
+      "policy_spend_inr": 92720.0,
+      "policy_spend_formatted": "\u20b90.93L",
+      "unit_cost_inr": 2100.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-SW-NX1",
+      "product_name": "Nexa Smartwatch",
+      "tickets": 386,
+      "replacements": 33,
+      "replacement_rate_pct": 8.55,
+      "policy_spend_inr": 73920.0,
+      "policy_spend_formatted": "\u20b90.74L",
+      "unit_cost_inr": 1900.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-SP-ORB",
+      "product_name": "Orbit Smart Speaker",
+      "tickets": 428,
+      "replacements": 30,
+      "replacement_rate_pct": 7.01,
+      "policy_spend_inr": 79200.0,
+      "policy_spend_formatted": "\u20b90.79L",
+      "unit_cost_inr": 2300.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-AC-CASE",
+      "product_name": "Pulse Charging Case (spare)",
+      "tickets": 228,
+      "replacements": 15,
+      "replacement_rate_pct": 6.58,
+      "policy_spend_inr": 14400.0,
+      "policy_spend_formatted": "\u20b90.14L",
+      "unit_cost_inr": 620.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-AC-CH65",
+      "product_name": "65W GaN Charger",
+      "tickets": 158,
+      "replacements": 15,
+      "replacement_rate_pct": 9.49,
+      "policy_spend_inr": 14250.0,
+      "policy_spend_formatted": "\u20b90.14L",
+      "unit_cost_inr": 610.0,
+      "logistics_cost_inr": 340.0
+    },
+    {
+      "sku": "VA-AC-CBL",
+      "product_name": "USB-C Braided Cable",
+      "tickets": 94,
+      "replacements": 7,
+      "replacement_rate_pct": 7.45,
+      "policy_spend_inr": 3010.0,
+      "policy_spend_formatted": "\u20b90.03L",
+      "unit_cost_inr": 90.0,
+      "logistics_cost_inr": 340.0
+    }
+  ],
+  "lot_investigation": {
+    "candidates": [
+      {
+        "lot_code": "PL2-2510-3",
+        "product_sku": "VA-EB-PL2",
+        "orders": 208,
+        "tickets": 171,
+        "replacements": 70,
+        "replacement_rate_pct": 40.94,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2510-1",
+        "product_sku": "VA-EB-PL2",
+        "orders": 193,
+        "tickets": 163,
+        "replacements": 69,
+        "replacement_rate_pct": 42.33,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2511-3",
+        "product_sku": "VA-EB-PL2",
+        "orders": 177,
+        "tickets": 146,
+        "replacements": 66,
+        "replacement_rate_pct": 45.21,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2510-4",
+        "product_sku": "VA-EB-PL2",
+        "orders": 194,
+        "tickets": 158,
+        "replacements": 64,
+        "replacement_rate_pct": 40.51,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2510-2",
+        "product_sku": "VA-EB-PL2",
+        "orders": 186,
+        "tickets": 168,
+        "replacements": 59,
+        "replacement_rate_pct": 35.12,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2511-4",
+        "product_sku": "VA-EB-PL2",
+        "orders": 183,
+        "tickets": 171,
+        "replacements": 58,
+        "replacement_rate_pct": 33.92,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2511-2",
+        "product_sku": "VA-EB-PL2",
+        "orders": 167,
+        "tickets": 128,
+        "replacements": 50,
+        "replacement_rate_pct": 39.06,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2511-1",
+        "product_sku": "VA-EB-PL2",
+        "orders": 152,
+        "tickets": 154,
+        "replacements": 50,
+        "replacement_rate_pct": 32.47,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2512-4",
+        "product_sku": "VA-EB-PL2",
+        "orders": 136,
+        "tickets": 115,
+        "replacements": 45,
+        "replacement_rate_pct": 39.13,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2512-2",
+        "product_sku": "VA-EB-PL2",
+        "orders": 125,
+        "tickets": 107,
+        "replacements": 36,
+        "replacement_rate_pct": 33.64,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2512-1",
+        "product_sku": "VA-EB-PL2",
+        "orders": 135,
+        "tickets": 127,
+        "replacements": 34,
+        "replacement_rate_pct": 26.77,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2512-3",
+        "product_sku": "VA-EB-PL2",
+        "orders": 123,
+        "tickets": 93,
+        "replacements": 30,
+        "replacement_rate_pct": 32.26,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2509-2",
+        "product_sku": "VA-EB-PL2",
+        "orders": 153,
+        "tickets": 91,
+        "replacements": 10,
+        "replacement_rate_pct": 10.99,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2507-3",
+        "product_sku": "VA-EB-PL2",
+        "orders": 83,
+        "tickets": 41,
+        "replacements": 9,
+        "replacement_rate_pct": 21.95,
+        "candidate_status": "High-replacement lot candidate"
+      },
+      {
+        "lot_code": "PL2-2509-3",
+        "product_sku": "VA-EB-PL2",
+        "orders": 144,
+        "tickets": 71,
+        "replacements": 8,
+        "replacement_rate_pct": 11.27,
+        "candidate_status": "High-replacement lot candidate"
+      }
+    ],
+    "disclaimer": "Ticket and order data show concentration patterns; physical manufacturing causality is not established by this analysis."
+  }
+}

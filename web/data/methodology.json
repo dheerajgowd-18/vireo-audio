@@ -1,0 +1,42 @@
+{
+  "data_integrity": {
+    "tickets": 11750,
+    "agents": 44,
+    "orders": 15500,
+    "customers": 9500,
+    "products": 14,
+    "pk_duplicates": 0,
+    "fk_orphans": 0,
+    "order_linking_direct": 7643,
+    "order_linking_missing": 4107,
+    "cartesian_risk_avoided": 1388,
+    "telephony_junk_messages": 45,
+    "suitable_messages": 11705
+  },
+  "timestamp_handling": {
+    "affected_tickets": 2309,
+    "system": "Legacy Freshdesk",
+    "offset_applied": "+05:30 IST",
+    "reason": "Timestamp was stored in UTC without zone flag, causing false negative handle times.",
+    "field_strategy": "Original raw timestamps strictly preserved in raw fields; resolved_at_reporting used for business calculation."
+  },
+  "csat_protocol": {
+    "responses": 5196,
+    "response_rate_pct": 44.22,
+    "policy": "Blanks strictly excluded from denominator. Never imputed as zero or group average."
+  },
+  "ai_architecture": {
+    "model_type": "TF-IDF (1-2 n-grams) + Balanced Logistic Regression + Rule Overrides",
+    "external_api_calls": 0,
+    "paid_cost_inr": 0.0,
+    "cost_avoidance_savings_inr": 58750.0,
+    "benchmark_provenance": "Rule-assisted pseudo-labels (label_source='rule_assisted_pseudo_label')",
+    "evaluation_method": "5-fold stratified cross-validation with fold vectorizer independence"
+  },
+  "limitations": [
+    "Benchmark annotations were synthesized using rule heuristics; human gold-standard double-blind labels should be gathered for production.",
+    "The hardware defect detector has 47.06% recall; informal failure phrasing requires Tier 2 triage inspection.",
+    "Operational correlations between defect signals and low CSAT do not establish legal or physical manufacturing liability without hardware teardown testing.",
+    "Rare classes ('cancellation' N=3, 'product_enquiry_setup' N=4 in sample) exhibit high variance in statistical weights and rely on rule overrides."
+  ]
+}

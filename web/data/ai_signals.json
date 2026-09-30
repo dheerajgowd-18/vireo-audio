@@ -1,0 +1,246 @@
+{
+  "other_decomposition": {
+    "total_other_tickets": 1732,
+    "actionable_recovered_count": 1524,
+    "actionable_recovered_pct": 87.99,
+    "other_unclear_count": 208,
+    "other_unclear_pct": 12.01,
+    "distribution": [
+      {
+        "category": "delivery_shipping",
+        "count": 378,
+        "pct": 21.82
+      },
+      {
+        "category": "connectivity_pairing",
+        "count": 338,
+        "pct": 19.52
+      },
+      {
+        "category": "returns_refunds",
+        "count": 229,
+        "pct": 13.22
+      },
+      {
+        "category": "other_unclear",
+        "count": 208,
+        "pct": 12.01
+      },
+      {
+        "category": "cancellation",
+        "count": 202,
+        "pct": 11.66
+      },
+      {
+        "category": "billing_payment",
+        "count": 159,
+        "pct": 9.18
+      },
+      {
+        "category": "charging_battery",
+        "count": 102,
+        "pct": 5.89
+      },
+      {
+        "category": "hardware_audio_defect",
+        "count": 83,
+        "pct": 4.79
+      },
+      {
+        "category": "product_enquiry_setup",
+        "count": 33,
+        "pct": 1.91
+      }
+    ]
+  },
+  "category_distribution": [
+    {
+      "category": "connectivity_pairing",
+      "ai_count": 2938,
+      "ai_pct": 25.0
+    },
+    {
+      "category": "delivery_shipping",
+      "ai_count": 2099,
+      "ai_pct": 17.86
+    },
+    {
+      "category": "returns_refunds",
+      "ai_count": 1994,
+      "ai_pct": 16.97
+    },
+    {
+      "category": "charging_battery",
+      "ai_count": 1556,
+      "ai_pct": 13.24
+    },
+    {
+      "category": "billing_payment",
+      "ai_count": 1305,
+      "ai_pct": 11.11
+    },
+    {
+      "category": "hardware_audio_defect",
+      "ai_count": 803,
+      "ai_pct": 6.83
+    },
+    {
+      "category": "other_unclear",
+      "ai_count": 652,
+      "ai_pct": 5.55
+    },
+    {
+      "category": "cancellation",
+      "ai_count": 238,
+      "ai_pct": 2.03
+    },
+    {
+      "category": "product_enquiry_setup",
+      "ai_count": 165,
+      "ai_pct": 1.4
+    }
+  ],
+  "intake_raw_distribution": [
+    {
+      "category": "Delivery & Shipping",
+      "count": 1884
+    },
+    {
+      "category": "Other",
+      "count": 1732
+    },
+    {
+      "category": "Billing & Payments",
+      "count": 1471
+    },
+    {
+      "category": "Charging & Battery",
+      "count": 1355
+    },
+    {
+      "category": "Returns & Refunds",
+      "count": 1116
+    },
+    {
+      "category": "Connectivity",
+      "count": 1013
+    },
+    {
+      "category": "Warranty & Repair",
+      "count": 785
+    },
+    {
+      "category": "Audio Quality",
+      "count": 772
+    },
+    {
+      "category": "App & Firmware",
+      "count": 734
+    },
+    {
+      "category": "Product Enquiry",
+      "count": 555
+    },
+    {
+      "category": "Account & Login",
+      "count": 333
+    }
+  ],
+  "model_quality": {
+    "benchmark_label": "Rule-assisted pseudo-label benchmark (Held-Out 5-Fold CV)",
+    "disclaimer": "These results are not independent human gold-label validation.",
+    "baselines": [
+      {
+        "name": "Majority Class ('connectivity_pairing')",
+        "accuracy_pct": 26.67,
+        "macro_f1": 0.0468,
+        "role": "Statistical Floor"
+      },
+      {
+        "name": "Simple Keyword Rules",
+        "accuracy_pct": 46.11,
+        "macro_f1": 0.5399,
+        "role": "Pure Regex Baseline"
+      },
+      {
+        "name": "Pure ML (TF-IDF + Logistic Regression)",
+        "accuracy_pct": 55.56,
+        "macro_f1": 0.5388,
+        "role": "Held-Out Statistical Generalization"
+      },
+      {
+        "name": "Hybrid Pipeline (Rules + ML Fallback)",
+        "accuracy_pct": 65.56,
+        "macro_f1": 0.6443,
+        "role": "Operational Production Pipeline"
+      }
+    ],
+    "per_class": {
+      "billing_payment": {
+        "precision": 0.7143,
+        "recall": 0.5263,
+        "f1_score": 0.6061,
+        "support": 19
+      },
+      "cancellation": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1_score": 0.8571,
+        "support": 3
+      },
+      "charging_battery": {
+        "precision": 0.6522,
+        "recall": 0.6522,
+        "f1_score": 0.6522,
+        "support": 23
+      },
+      "connectivity_pairing": {
+        "precision": 0.6667,
+        "recall": 0.625,
+        "f1_score": 0.6452,
+        "support": 48
+      },
+      "delivery_shipping": {
+        "precision": 0.7273,
+        "recall": 0.8,
+        "f1_score": 0.7619,
+        "support": 30
+      },
+      "hardware_audio_defect": {
+        "precision": 0.2143,
+        "recall": 0.1765,
+        "f1_score": 0.1935,
+        "support": 17
+      },
+      "other_unclear": {
+        "precision": 0.25,
+        "recall": 0.2667,
+        "f1_score": 0.2581,
+        "support": 15
+      },
+      "product_enquiry_setup": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1_score": 0.5,
+        "support": 4
+      },
+      "returns_refunds": {
+        "precision": 0.3333,
+        "recall": 0.4286,
+        "f1_score": 0.375,
+        "support": 21
+      }
+    }
+  },
+  "hardware_defect_signal": {
+    "label": "Conservative text signal",
+    "precision_pct": 100.0,
+    "recall_pct": 47.06,
+    "f1_pct": 64.0,
+    "tp": 8,
+    "fp": 0,
+    "tn": 163,
+    "fn": 9,
+    "explanation": "High precision, limited recall. It identifies explicit defect language but can miss colloquial descriptions. This is a text signal, not a proven physical defect diagnosis."
+  }
+}

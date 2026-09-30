@@ -1,0 +1,61 @@
+{
+  "channels": [
+    {
+      "channel": "Email",
+      "tickets": 3644,
+      "sla_target_minutes": 480,
+      "breaches": 445,
+      "breach_rate_pct": 12.21,
+      "credit_exposure_inr": 155750,
+      "credit_exposure_formatted": "\u20b9155,750",
+      "contact_cost_inr": 947440,
+      "contact_cost_formatted": "\u20b9947,440",
+      "unit_cost_inr": 260
+    },
+    {
+      "channel": "Social",
+      "tickets": 1171,
+      "sla_target_minutes": 240,
+      "breaches": 101,
+      "breach_rate_pct": 8.63,
+      "credit_exposure_inr": 35350,
+      "credit_exposure_formatted": "\u20b935,350",
+      "contact_cost_inr": 281040,
+      "contact_cost_formatted": "\u20b9281,040",
+      "unit_cost_inr": 240
+    },
+    {
+      "channel": "Chat",
+      "tickets": 5102,
+      "sla_target_minutes": 15,
+      "breaches": 401,
+      "breach_rate_pct": 7.86,
+      "credit_exposure_inr": 140350,
+      "credit_exposure_formatted": "\u20b9140,350",
+      "contact_cost_inr": 1071420,
+      "contact_cost_formatted": "\u20b91,071,420",
+      "unit_cost_inr": 210
+    },
+    {
+      "channel": "Voice",
+      "tickets": 1833,
+      "sla_target_minutes": 120,
+      "breaches": 117,
+      "breach_rate_pct": 6.38,
+      "credit_exposure_inr": 40950,
+      "credit_exposure_formatted": "\u20b940,950",
+      "contact_cost_inr": 953160,
+      "contact_cost_formatted": "\u20b9953,160",
+      "unit_cost_inr": 520
+    }
+  ],
+  "operating_exposure": {
+    "contact_costs_inr": 3253060,
+    "transfer_costs_inr": 370575,
+    "sla_credits_inr": 372400,
+    "replacement_costs_inr": 3415990.0,
+    "refund_value_inr": 5350871.0,
+    "total_exposure_inr": 12762896.0,
+    "terminology_note": "Tracked support operating exposure represents direct customer support financial allocations under policy rules; it is not a corporate profit and loss statement."
+  }
+}

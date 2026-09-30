@@ -1,0 +1,259 @@
+{
+  "kpis": {
+    "csat": {
+      "value": 3.33,
+      "median": 3.0,
+      "responses": 5196,
+      "response_rate_pct": 44.22,
+      "label": "CSAT (Mean)",
+      "subtext": "5,196 responses (44.22% response rate)"
+    },
+    "median_handle_time": {
+      "value": "29 min",
+      "hours": 0.48,
+      "mean_hours": 27.45,
+      "usable_tickets": 11183,
+      "label": "Median Handle Time",
+      "subtext": "Mean: 27.4h across 11,183 attendance tickets"
+    },
+    "sla_breach_rate": {
+      "value": "9.06%",
+      "rate": 0.0906,
+      "breaches": 1064,
+      "eligible": 11750,
+      "label": "First-Response SLA Breach Rate",
+      "subtext": "1,064 breaches out of 11,750 tickets"
+    },
+    "replacement_units": {
+      "value": "1,896",
+      "count": 1896,
+      "rate_pct": 16.14,
+      "label": "Replacement Units",
+      "subtext": "16.14% replacement rate"
+    },
+    "replacement_spend": {
+      "value": "\u20b934.16L",
+      "amount_inr": 3415990.0,
+      "avg_unit_cost_inr": 1801.68,
+      "label": "Policy Replacement Spend",
+      "subtext": "Avg: \u20b91801.68/unit (BOM + \u20b9340 logistics)"
+    },
+    "sla_credit_exposure": {
+      "value": "\u20b93.72L",
+      "amount_inr": 372400,
+      "label": "SLA Credit Exposure",
+      "subtext": "Automatic store credit liabilities under Policy \u00a73"
+    }
+  },
+  "monthly_trend": [
+    {
+      "month": "2025-01",
+      "ticket_volume": 311,
+      "replacement_count": 29,
+      "policy_replacement_cost": 46120.0,
+      "refund_count": 48,
+      "refund_amount": 113293.0,
+      "replacement_rate": 0.0932475884244373,
+      "avg_replacement_cost": 1590.344827586207
+    },
+    {
+      "month": "2025-02",
+      "ticket_volume": 328,
+      "replacement_count": 23,
+      "policy_replacement_cost": 37630.0,
+      "refund_count": 65,
+      "refund_amount": 215331.0,
+      "replacement_rate": 0.0701219512195122,
+      "avg_replacement_cost": 1636.0869565217392
+    },
+    {
+      "month": "2025-03",
+      "ticket_volume": 390,
+      "replacement_count": 43,
+      "policy_replacement_cost": 82570.0,
+      "refund_count": 75,
+      "refund_amount": 239158.0,
+      "replacement_rate": 0.1102564102564102,
+      "avg_replacement_cost": 1920.2325581395348
+    },
+    {
+      "month": "2025-04",
+      "ticket_volume": 368,
+      "replacement_count": 35,
+      "policy_replacement_cost": 62360.0,
+      "refund_count": 62,
+      "refund_amount": 175438.0,
+      "replacement_rate": 0.0951086956521739,
+      "avg_replacement_cost": 1781.7142857142858
+    },
+    {
+      "month": "2025-05",
+      "ticket_volume": 384,
+      "replacement_count": 40,
+      "policy_replacement_cost": 69920.0,
+      "refund_count": 73,
+      "refund_amount": 231554.0,
+      "replacement_rate": 0.1041666666666666,
+      "avg_replacement_cost": 1748.0
+    },
+    {
+      "month": "2025-06",
+      "ticket_volume": 366,
+      "replacement_count": 35,
+      "policy_replacement_cost": 60410.0,
+      "refund_count": 49,
+      "refund_amount": 155478.0,
+      "replacement_rate": 0.0956284153005464,
+      "avg_replacement_cost": 1726.0
+    },
+    {
+      "month": "2025-07",
+      "ticket_volume": 425,
+      "replacement_count": 40,
+      "policy_replacement_cost": 68110.0,
+      "refund_count": 70,
+      "refund_amount": 237078.0,
+      "replacement_rate": 0.0941176470588235,
+      "avg_replacement_cost": 1702.75
+    },
+    {
+      "month": "2025-08",
+      "ticket_volume": 570,
+      "replacement_count": 54,
+      "policy_replacement_cost": 99980.0,
+      "refund_count": 96,
+      "refund_amount": 288733.0,
+      "replacement_rate": 0.0947368421052631,
+      "avg_replacement_cost": 1851.4814814814813
+    },
+    {
+      "month": "2025-09",
+      "ticket_volume": 582,
+      "replacement_count": 64,
+      "policy_replacement_cost": 119730.0,
+      "refund_count": 108,
+      "refund_amount": 331146.0,
+      "replacement_rate": 0.1099656357388316,
+      "avg_replacement_cost": 1870.78125
+    },
+    {
+      "month": "2025-10",
+      "ticket_volume": 659,
+      "replacement_count": 61,
+      "policy_replacement_cost": 105020.0,
+      "refund_count": 107,
+      "refund_amount": 307025.0,
+      "replacement_rate": 0.0925644916540212,
+      "avg_replacement_cost": 1721.639344262295
+    },
+    {
+      "month": "2025-11",
+      "ticket_volume": 824,
+      "replacement_count": 94,
+      "policy_replacement_cost": 174090.0,
+      "refund_count": 168,
+      "refund_amount": 464401.0,
+      "replacement_rate": 0.1140776699029126,
+      "avg_replacement_cost": 1852.021276595745
+    },
+    {
+      "month": "2025-12",
+      "ticket_volume": 1034,
+      "replacement_count": 152,
+      "policy_replacement_cost": 275880.0,
+      "refund_count": 189,
+      "refund_amount": 492345.0,
+      "replacement_rate": 0.1470019342359768,
+      "avg_replacement_cost": 1815.0
+    },
+    {
+      "month": "2026-01",
+      "ticket_volume": 1174,
+      "replacement_count": 287,
+      "policy_replacement_cost": 519980.0,
+      "refund_count": 164,
+      "refund_amount": 452610.0,
+      "replacement_rate": 0.2444633730834753,
+      "avg_replacement_cost": 1811.7770034843209
+    },
+    {
+      "month": "2026-02",
+      "ticket_volume": 1196,
+      "replacement_count": 305,
+      "policy_replacement_cost": 550090.0,
+      "refund_count": 155,
+      "refund_amount": 450626.0,
+      "replacement_rate": 0.2550167224080267,
+      "avg_replacement_cost": 1803.5737704918035
+    },
+    {
+      "month": "2026-03",
+      "ticket_volume": 1072,
+      "replacement_count": 273,
+      "policy_replacement_cost": 497470.0,
+      "refund_count": 128,
+      "refund_amount": 312034.0,
+      "replacement_rate": 0.2546641791044776,
+      "avg_replacement_cost": 1822.234432234432
+    },
+    {
+      "month": "2026-04",
+      "ticket_volume": 788,
+      "replacement_count": 184,
+      "policy_replacement_cost": 333110.0,
+      "refund_count": 103,
+      "refund_amount": 284505.0,
+      "replacement_rate": 0.233502538071066,
+      "avg_replacement_cost": 1810.3804347826087
+    },
+    {
+      "month": "2026-05",
+      "ticket_volume": 693,
+      "replacement_count": 100,
+      "policy_replacement_cost": 173550.0,
+      "refund_count": 108,
+      "refund_amount": 321269.0,
+      "replacement_rate": 0.1443001443001443,
+      "avg_replacement_cost": 1735.5
+    },
+    {
+      "month": "2026-06",
+      "ticket_volume": 586,
+      "replacement_count": 77,
+      "policy_replacement_cost": 139970.0,
+      "refund_count": 101,
+      "refund_amount": 278847.0,
+      "replacement_rate": 0.1313993174061433,
+      "avg_replacement_cost": 1817.792207792208
+    }
+  ],
+  "key_signals": [
+    {
+      "id": "pulse2_defect",
+      "title": "Pulse 2 Concentration",
+      "badge": "Hardware Quality",
+      "badge_type": "danger",
+      "metric": "61.5% of All Replacements",
+      "evidence": "Pulse 2 (VA-EB-PL2) drove 1,166 of 1,896 total company replacements (\u20b922.39L spend). Defect complaints heavily concentrate in late-2025 production lots (e.g. PL2-2510-3).",
+      "interpretation": "High replacement volumes stem from a specific supplier component crisis, not widespread customer support mishandling."
+    },
+    {
+      "id": "email_sla",
+      "title": "Email Channel SLA Exposure",
+      "badge": "Operational Bottleneck",
+      "badge_type": "warning",
+      "metric": "12.21% Breach Rate",
+      "evidence": "445 email tickets breached the 8-hour first-response SLA, triggering \u20b91,55,750 in automatic store credit liabilities (41.8% of total company SLA credits).",
+      "interpretation": "Email triage and queue assignment represent the largest controllable source of policy financial penalty."
+    },
+    {
+      "id": "bottom10_comparability",
+      "title": "Bottom-10 Comparability Flaw",
+      "badge": "Evaluation Bias",
+      "badge_type": "accent",
+      "metric": "100% Structural Specialization",
+      "evidence": "All 10 agents in the raw unadjusted CSAT bottom 10 are either Tier 2 Escalation engineers (6 agents) or hardware triage rota assignees (4 agents).",
+      "interpretation": "Raw unstratified ranking penalizes agents handling dead-on-arrival and defective products. Training budget must use peer-stratified groups."
+    }
+  ]
+}
