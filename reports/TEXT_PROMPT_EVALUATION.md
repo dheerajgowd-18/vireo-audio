@@ -1,83 +1,68 @@
-# Text Classifier Prompt & Pipeline Evaluation Report
+# Text Classifier Prompt & Pipeline Specification Report
 
-**Document Version:** 1.0.0  
+**Document Version:** 2.0.0  
 **Effective Date:** 2026-09-30  
 **Evaluation Scope:** 180 Stratified Support Tickets (`reports/text_eval_sample.csv`)  
-**Ground Truth:** Human-Audited Annotations (`reports/text_ground_truth.csv`)  
-**External API Status:** No external cloud API configured; evaluated via deterministic local ML/rule pipeline (₹0 cost).  
+**Label Provenance:** Rule-Assisted Deterministic Pseudo-Labels (`reports/text_pseudo_labels.csv`)  
+**Execution Context:** Local Simulation & Heuristic Prompt Comparison (Zero External Cloud API Calls, ₹0 Paid Cost)  
+**Definitive Quantitative Benchmark:** See `reports/CV_EVALUATION.md` for empirical held-out 5-fold cross-validation.  
 
 ---
 
-## 1. Executive Summary
+## 1. Context & Scope
 
-This report evaluates the accuracy, precision, and error modes of the text-classification layer across a 180-ticket stratified evaluation set. We contrast **Version 1 (Baseline Classifier)** against **Version 2 (Disambiguated Classifier)**, documenting the specific error modes in v1 and the measurable improvements introduced in v2.
+This document details the system prompt engineering designs for Vireo Audio's AI text intelligence pipeline:
+* **Version 1 (`prompts/text_classifier_v1.md`):** Baseline prompt template with standard operational definitions.
+* **Version 2 (`prompts/text_classifier_v2.md`):** Disambiguated prompt template incorporating negative constraints, disambiguation rules for cancellations vs refunds, conservative hardware failure syntax, and agent note shorthand handling.
+
+### Scientific & Operational Integrity Notice:
+In accordance with client budget constraints (prohibiting per-ticket cloud API spending across 11,750 tickets), **zero paid external LLM calls were executed**. The metrics below reflect an offline heuristic prompt-rule simulation contrasting uncalibrated rule matching (v1) with disambiguated rule logic (v2). 
+
+For the **true empirical generalization benchmark of our machine learning code**, consult `reports/CV_EVALUATION.md` which documents held-out 5-fold cross-validation (**55.56% Pure ML Accuracy / 0.5388 Macro F1; 65.56% Hybrid Accuracy / 0.6443 Macro F1**).
 
 ---
 
 ## 2. Evaluation Sample Design
 
-* **Sample Size**: 180 tickets.
-* **Stratification**: Controlled sampling (`random_state=42`) proportional to intake category, channel mix, CSAT availability, replacement issuance, and product representation (with focused coverage of Pulse 2 and the intake category "Other").
-* **Exclusions**: 45 telephony/IVR junk records (such as `[line dropped]`, `[inaudible]`, or length < 15 chars) were excluded from language evaluation and tracked separately.
+* **Sample Size:** 180 tickets.
+* **Stratification:** Controlled sampling (`random_seed=42`) proportional to intake category, channel mix, CSAT availability, replacement issuance, and product representation (with focused coverage of Pulse 2 and the intake category "Other").
+* **Exclusions:** 45 telephony/IVR junk records (such as `[line dropped]`, `[inaudible]`, or length < 15 chars) were excluded from language evaluation and tracked separately.
+* **Benchmark Labels:** Generated deterministically via policy metadata and keyword logic, stored in `reports/text_pseudo_labels.csv` with explicit provenance `label_source = "rule_assisted_pseudo_label"`.
 
 ---
 
-## 3. Version 1 vs Version 2 Performance Comparison
+## 3. Version 1 vs Version 2 Prompt Design Heuristic Comparison
 
-| Metric | Version 1 (Baseline) | Version 2 (Disambiguated) | Delta / Improvement |
-| :--- | :---: | :---: | :---: |
-| **Exact Accuracy** | 82.22% (148/180) | **92.78% (167/180)** | **+10.56%** |
-| **Macro Precision** | 78.45% | **91.12%** | **+12.67%** |
-| **Macro Recall** | 79.10% | **90.45%** | **+11.35%** |
-| **Macro F1-Score** | 78.77% | **90.78%** | **+12.01%** |
-| **Classification Errors** | 32 / 180 | **13 / 180** | **-19 errors (-59.4%)** |
-| **Hardware Signal Precision** | 81.25% | **94.87%** | **+13.62%** |
+| Dimension | Version 1 (Baseline Prompt Template) | Version 2 (Disambiguated Prompt Template) | Design Impact |
+| :--- | :---: | :---: | :--- |
+| **Cancellation Handling** | Evaluated after refund logic; misclassified cancellation as refunds | High-priority pre-dispatch intent check | Prevents erroneous refund routing |
+| **Hardware Defect Criteria** | Triggered on battery degradation or low volume complaints | Restricted strictly to physical failure vocabulary (dead bud, corroded pin) | Eliminates false RMA authorizations |
+| **Agent Shorthand Notes** | Mapped brief notes (*"cx ok"*, *"sorted"*) to resolved status | Explicitly mapped to `unresolved_ambiguous` unless explicit action stated | Prevents artificial resolution rate inflation |
+| **Output Schema** | Basic category and outcome | Structured JSON with confidence, rule override flag, and signal source | Enables full auditable trace |
 
 ---
 
-## 4. Key Error Modes in Version 1 and Concrete Changes in Version 2
+## 4. Key Failure Modes Addressed in Version 2
 
 ### Weakness 1: Confusion Between Cancellation and Returns/Refunds
-* **v1 Error Mode**: Customer messages like *"cancel order VR896827"* or *"cancle ordr before shipping"* were misclassified as `returns_refunds` because v1 matched on financial refund keywords.
-* **v2 Improvement**: Version 2 introduced a high-priority cancellation rule that explicitly checks for pre-dispatch cancellation intents before evaluating refund workflows.
-* **Impact**: 8 misclassified cancellation tickets correctly recovered.
+* **v1 Mode:** Customer messages like *"cancel order VR896827"* or *"cancle ordr before shipping"* were misclassified as `returns_refunds` because v1 matched on financial refund keywords.
+* **v2 Improvement:** Version 2 introduced a high-priority cancellation rule that explicitly checks for pre-dispatch cancellation intents before evaluating refund workflows.
+* **Resolution:** Overt cancellation requests are routed to immediate fulfillment stoppage.
 
-### Weakness 2: Over-triggering of Hardware Defect Signals on Normal Battery Drain
-* **v1 Error Mode**: Customers stating *"battery life lasts 4 hours instead of 6"* were tagged with `hardware_defect_signal: true`.
-* **v2 Improvement**: Version 2 restricted the hardware defect signal strictly to physical failure vocabulary (e.g. *"left earbud not charging"*, *"dead in the case"*, *"charging pins damaged"*).
-* **Impact**: Eliminated 6 false-positive hardware defect signals, raising precision to 94.87%.
+### Weakness 2: Hardware Defect Signal Conservative Calibration
+* **v1 Mode:** Customers stating *"battery life lasts 4 hours instead of 6"* were tagged with `hardware_defect_signal: true`.
+* **v2 Improvement:** Version 2 restricted the hardware defect signal strictly to physical failure vocabulary (e.g. *"left earbud not charging"*, *"dead in the case"*, *"charging pins damaged"*).
+* **Resolution:** The hardware detector achieved **100% precision** on the benchmark sample ($TP=8, FP=0, TN=163, FN=9$), eliminating false positive RMA replacements.
 
-### Weakness 3: Hallucinating Resolution on Shorthand Agent Notes
-* **v1 Error Mode**: Uninformative agent shorthand such as *"see prev"*, *"cx ok"*, or *"sorted"* was inconsistently assigned to `troubleshooting_resolved`.
-* **v2 Improvement**: Version 2 explicitly mandates that shorthand notes without explicit action verbs be categorized as `unresolved_ambiguous`.
-* **Impact**: 5 misclassified outcomes corrected to `unresolved_ambiguous`, preventing false resolution inflation.
-
----
-
-## 5. Confusion Matrix (Version 2 on 180 Ground-Truth Tickets)
-
-```
-PREDICTED \ ACTUAL (Rows = True Class, Columns = Predicted Class)
-Labels: [bill_pay, cancel, chg_bat, conn_pair, deliv_ship, hw_audio, oth_unc, prod_enq, ret_ref]
-
-                     bill  canc  chg   conn  deliv hw_aud oth  prod  ret   [Total]
-billing_payment       22     0     0     0     1     0     0     1     0    [ 24 ]
-cancellation           0     9     0     0     0     0     0     0     0    [  9 ]
-charging_battery       0     0    26     1     0     1     0     0     0    [ 28 ]
-connectivity_pairing   0     0     1    20     0     1     0     1     0    [ 23 ]
-delivery_shipping      0     0     0     0    27     0     1     0     1    [ 29 ]
-hardware_audio_defect  0     0     1     1     0    14     0     0     0    [ 16 ]
-other_unclear          0     0     0     0     0     0     5     1     0    [  6 ]
-product_enquiry_setup  1     0     0     0     0     0     0    12     0    [ 13 ]
-returns_refunds        0     1     0     0     1     0     0     0    30    [ 32 ]
-
-Total Evaluated: 180 | Correct: 167 (92.78%) | Errors: 13 (7.22%)
-```
+### Weakness 3: Handling of Shorthand Agent Notes
+* **v1 Mode:** Uninformative agent shorthand such as *"see prev"*, *"cx ok"*, or *"sorted"* was inconsistently assigned to `troubleshooting_resolved`.
+* **v2 Improvement:** Version 2 explicitly mandates that shorthand notes without explicit action verbs be categorized as `unresolved_ambiguous`.
+* **Resolution:** Prevents false resolution inflation in agent performance reporting.
 
 ---
 
-## 6. Remaining Edge Cases & Limitations
+## 5. Transition to Machine Learning & Cross-Validation
 
-1. **Multi-Intent Tickets**: Tickets where a customer asks *"Why is my order delayed and how do I cancel if it doesn't arrive today?"* contain overlapping intents (`delivery_shipping` vs `cancellation`). The classifier currently selects `cancellation` if explicit cancellation keywords are present.
-2. **Ambiguous Agent Notes**: Notes such as `"- [closed]"` cannot be resolved without reading prior CRM ticket history. These are preserved under `unresolved_ambiguous`.
-3. **Small-Sample Generalization**: The ground-truth evaluation set contains 180 tickets. While stratified and representative, rare linguistic edge cases in the remaining 11,570 tickets may exhibit slightly higher variance.
+While prompt specifications provide clear production templates for future LLM integration, the actual deployed analytics pipeline utilizes local scikit-learn models and regex rules to deliver instant, zero-cost classification. 
+
+For the complete held-out statistical evaluation and baseline comparisons, refer directly to [CV_EVALUATION.md](file:///d:/vireo-audio/reports/CV_EVALUATION.md) and [TEXT_MODEL_CARD.md](file:///d:/vireo-audio/reports/TEXT_MODEL_CARD.md).
