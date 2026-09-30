@@ -83,7 +83,7 @@ Vireo Audio's executive leadership requested the identification of a single prim
 ### Candidate 6: Warranty Replacements / RMA Rate (Pulse 2)
 - **Strengths**: Huge financial volume: 1,896 replacements totaling ₹34,15,990 (Pulse 2 alone accounts for 1,166 replacements and ₹22.39 Lakhs).
 - **CRITICAL FLAWS (WHY THIS MUST BE REJECTED FOR SUPPORT TRAINING)**:
-  1. **Root Cause is a Factory Defect**: Lot analysis proves that batch `PL2-2510-3` accounts for 730 out of 1,166 Pulse 2 replacements (62.6%). Customer messages and agent notes confirm physical charging pin corrosion and socket failure. Support agents do not manufacture earbuds; training support agents cannot fix defective hardware.
+  1. **Root Cause is a Hardware Operational Defect**: Lot analysis demonstrates that candidate batch `PL2-2510-3` accounts for 730 out of 1,166 Pulse 2 replacements (62.6%). Customer messages and agent notes frequently report charging cradle contact failure. Support agents do not manufacture earbuds; training support agents cannot fix defective hardware. (Note: physical component metallurgy remains unverified without independent QC testing; lot `PL2-2510-3` is classified as a high-replacement lot candidate).
   2. **Violates Support Policy & Customer Trust**: Support agents are strictly mandated under Policy §4 to authorize replacements for legitimate hardware defects within the 1-year warranty. Claiming that support training will reduce replacements implies training agents to reject valid warranty claims, directly violating policy and destroying customer goodwill.
   3. **Technical Interview Failure**: Defending replacement reduction as a support training achievement would immediately disqualify an engineer in a technical interview due to false causal attribution.
 - **Verdict**: **Strictly Rejected as a Support Training Goal**. Must be escalated as a Priority 1 Vendor/Operations Defect.
@@ -100,7 +100,7 @@ Vireo Audio's executive leadership requested the identification of a single prim
 ## 4. Final Strategic Recommendation
 
 The data and policy structure lead to a clear, unambiguous conclusion:
-- **Primary Business Goal**: **Tier 1 Handle Time Optimization** toward peer-group benchmarks, saving **₹1,07,379/quarter** (team median benchmark) to **₹3,73,266/quarter** (25th percentile benchmark) in recoverable frontline support capacity.
-- **Operational Alignment**: Directly justifies the ₹4,00,000 Q3 training budget by recovering up to ₹3.73L/quarter in ongoing operational labor capacity.
-- **Secondary Quality Guardrails**: CSAT floor (>3.33) and SLA breach cap (<9.06%) to ensure efficiency gains do not compromise service quality.
-- **Cross-Functional Escalation**: Formal referral of Pulse 2 batch `PL2-2510-3` to Hardware Engineering and Supply Chain to address the ₹22.39L warranty drain at the true root cause.
+- **Primary Business Goal**: **Tier 1 Frontline Handle Time Optimization (Chat and Email)** from 6.53h to 4.86h (weighted peer medians: Chat 5.60h -> 3.81h, Email 8.49h -> 7.07h), eliminating 650.8 excess agent-hours per quarter, representing **₹1,07,379/quarter** in recoverable staffing capacity (~₹4.30 Lakhs annualized capacity value).
+- **Operational Alignment**: Generates ongoing operational labor capacity equivalent to the ₹4,00,000 Q3 training budget within approximately four quarters (scaling to ₹3,73,266/quarter at the 25th percentile benchmark across all Tier 1 teams).
+- **Secondary Quality Guardrails**: Avoid CSAT deterioration below the historical team baseline (3.33 / 5.00) and maintain SLA breach cap (<9.06%) to ensure efficiency gains do not compromise service quality.
+- **Cross-Functional Escalation**: Formal referral of high-replacement lot candidate `PL2-2510-3` to Hardware Engineering and Supply Chain to address the ₹22.39L warranty drain at the true root cause.

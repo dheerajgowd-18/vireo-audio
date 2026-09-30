@@ -17,13 +17,13 @@
 | **CSAT Missing Responses** | 6,554 tickets (55.78%) | Excluded pursuant to standard statistical governance; not treated as 0 |
 | **Median Handle Time** | 29.0 minutes (0.48 hours) | Across all 11,750 tickets (mean = 1.42 hours) |
 | **First-Response SLA Breaches** | 1,064 tickets | 9.06% overall breach rate across all channels |
-| **Chat SLA Breach Rate** | 7.60% (375 / 4,937 tickets) | Target: 15 minutes (Policy §3) |
-| **Voice SLA Breach Rate** | 9.24% (329 / 3,562 tickets) | Target: 120 minutes (Policy §3) |
-| **Social SLA Breach Rate** | 4.69% (20 / 426 tickets) | Target: 240 minutes (Policy §3) |
-| **Email SLA Breach Rate** | 12.04% (340 / 2,825 tickets) | Target: 480 minutes (Policy §3) — Highest breach channel |
+| **Chat SLA Breach Rate** | 7.86% (401 / 5,102 tickets) | Target: 15 minutes (Policy §3) — ₹1,40,350 total credit exposure |
+| **Voice SLA Breach Rate** | 6.38% (117 / 1,833 tickets) | Target: 120 minutes (Policy §3) — ₹40,950 total credit exposure |
+| **Social SLA Breach Rate** | 8.63% (101 / 1,171 tickets) | Target: 240 minutes (Policy §3) — ₹35,350 total credit exposure |
+| **Email SLA Breach Rate** | 12.21% (445 / 3,644 tickets) | Target: 480 minutes (Policy §3) — Highest breach channel (₹1,55,750 exposure) |
 | **Warranty Replacements** | 1,896 units | 16.14% of all tickets culminated in a replacement |
 | **Commercial Refunds** | 1,869 transactions | 15.91% of all tickets culminated in a refund |
-| **Inter-Tier Transfers** | 1,215 tickets | 10.34% transfer rate beyond frontline |
+| **Inter-Tier Transfers** | 1,215 transfers | 10.34% transfer rate beyond frontline (1,097 tickets with transfers > 0) |
 | **30-Day Repeat Contacts** | 3,277 tickets | 27.89% of tickets represent repeat customer contacts <= 30 days |
 | **Same-SKU 30-Day Repeats** | 2,572 tickets | 21.89% repeat contacts regarding the exact same product SKU |
 
@@ -61,9 +61,10 @@
 
 ### 3.3 The Pulse 2 Hardware Defect Concentration
 - **Fact**: The **Pulse 2** wireless earbud model accounts for **1,166 out of 1,896 replacements (61.50%)** and **₹22,38,720** in policy replacement cost.
-- **Batch Root Cause**: Production lot `PL2-2510-3` alone generated **730 replacements** (62.6% of all Pulse 2 replacements).
-- **Physical Defect**: Customer messages and agent notes confirm pins failing to charge inside the cradle due to contact corrosion.
-- **Operational Reality**: This is a supplier/manufacturing defect. Support agents cannot fix hardware through training. This must be escalated to Hardware Engineering and Supply Chain for vendor recovery.
+- **Observed Lot Concentration**: Production lot **`PL2-2510-3`** alone generated **730 replacements** (62.6% of all Pulse 2 replacements, 38.5% of company-wide replacements).
+- **Inferred Mechanism**: Customer messages and agent notes frequently report charging cradle contact failure, indicating a likely hardware operational defect.
+- **Unverified Status**: Physical component metallurgy or factory root causes have not been independently laboratory-tested. Lot `PL2-2510-3` is classified as a **"high-replacement lot candidate."**
+- **Operational Reality**: Support agents cannot fix hardware defects through training. This is escalated to Hardware Engineering and Supply Chain for supplier warranty recovery.
 
 ### 3.4 Telephony IVR Transcript Corruption
 - **Fact**: Approximately 40 customer messages contain garbled IVR phone navigation text (e.g., *"Press 1 for sales, press 2 for support..."*).
@@ -96,3 +97,9 @@ Evaluated rigorously on the 180-ticket stratified benchmark sample:
 - **Signal Precision**: **100.00%** (8 TP, 0 FP on benchmark sample). Zero false alarms.
 - **Signal Recall**: **47.06%** (8 TP, 9 FN on benchmark sample). Intentionally conservative to avoid false product defect escalations.
 - **F1 Score**: **64.00%**.
+
+---
+
+## 5. Primary Business Goal Summary
+
+> **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.53h to 4.86h (weighted peer benchmarks: Chat 5.60h -> 3.81h, Email 8.49h -> 7.07h), eliminating 650.8 excess agent-hours per quarter, representing approximately ₹1,07,379 per quarter in recoverable staffing capacity."**

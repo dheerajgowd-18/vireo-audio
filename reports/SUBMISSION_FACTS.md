@@ -13,15 +13,20 @@
 *State the primary business goal in the format: "Reduce X from A to B, representing approximately ₹Y per quarter."*
 
 ### Official Submission Answer:
-> **"Reduce frontline Tier 1 above-median handle time across Chat (from 4.38h to 3.81h) and Email (from 6.70h to 7.07h peer median), eliminating 650.8 excess agent-hours per quarter, representing approximately ₹1,07,379 per quarter in recoverable support capacity (scaling to ₹3,73,266 per quarter when targeting the 25th percentile peer benchmark across all Tier 1 agents)."**
+> **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.53h to 4.86h (weighted peer benchmarks: Chat 5.60h -> 3.81h, Email 8.49h -> 7.07h), eliminating 650.8 excess agent-hours per quarter, representing approximately ₹1,07,379 per quarter in recoverable staffing capacity (scaling to ₹3,73,266 per quarter when targeting the 25th percentile peer benchmark across all Tier 1 agents)."**
 
 ### Underlying Data & Policy Evidence:
 - **Audit Scope**: 11,750 tickets, 44 agents over 18 months (6 calendar quarters).
 - **Target Population**: 22 Tier 1 Frontline agents (15 Chat, 7 Email).
-- **Chat Frontline**: 2,752 tickets, mean handle 4.38h vs team median of means 3.81h. Excess hours = 2,836.0h / 18 mo = 472.7h/quarter $\times$ ₹165/hr (Policy §8) = **₹77,990.25/quarter**.
-- **Email Frontline**: 1,327 tickets, mean handle 6.70h vs team median of means 7.07h. Excess hours = 1,068.7h / 18 mo = 178.1h/quarter $\times$ ₹165/hr = **₹29,389.33/quarter**.
-- **Combined Immediate Frontline Savings**: $472.7 + 178.1 = \mathbf{650.8 \text{ hours/quarter}} = \mathbf{₹1,07,379.58 \text{ per quarter}}$ (~**₹1.07L/quarter**).
-- **Full Tier 1 Upper-Quartile (p25) Stretch Benchmark**: Across all 38 Tier 1 agents, bringing above-p25 agents to the 25th percentile efficiency eliminates 2,262.2 excess hours/quarter $\times$ ₹165/hr = **₹3,73,266 per quarter (~₹3.73L/quarter)**, delivering a **93.3% capital efficiency match** against the ₹4,00,000 Q3 training budget.
+- **Chat Frontline**: 15 agents; 7 above-median agents handle 1,584 tickets with a weighted mean of **5.60h** against the team peer median of **3.81h** (-1.79h/ticket). Excess hours = 2,836.0h / 18 mo = 472.7h/quarter $\times$ ₹165/hr (Policy §8) = **₹77,990.27/quarter**.
+- **Email Frontline**: 7 agents; 3 above-median agents handle 752 tickets with a weighted mean of **8.49h** against the team peer median of **7.07h** (-1.42h/ticket). Excess hours = 1,068.7h / 18 mo = 178.1h/quarter $\times$ ₹165/hr = **₹29,389.16/quarter**.
+- **Combined Frontline Capacity Recovery**:
+  - Current weighted handle time: $\frac{(5.601 \times 1584) + (8.492 \times 752)}{2336} = \mathbf{6.53 \text{ hours}}$.
+  - Target weighted handle time: $\frac{(3.81 \times 1584) + (7.07 \times 752)}{2336} = \mathbf{4.86 \text{ hours}}$.
+  - Excess hours eliminated: $472.7 + 178.1 = \mathbf{650.8 \text{ hours/quarter}}$.
+  - Quarterly capacity value @ ₹165/hr: **₹1,07,379.44 per quarter** (~**₹1.07L/quarter**).
+- **Accounting Interpretation**: Converted via Policy §8 at ₹165 per agent-hour. Represents **recoverable staffing capacity value** (freeing up labor to absorb ticket growth without adding headcount), rather than direct cash payroll cuts.
+- **Full Tier 1 Upper-Quartile (p25) Stretch Benchmark**: Across all 38 Tier 1 agents, bringing above-p25 agents to the 25th percentile efficiency eliminates 2,262.2 excess hours/quarter $\times$ ₹165/hr = **₹3,73,266 per quarter (~₹3.73L/quarter)**, providing an upper-bound potential of ₹14.93L/year in capacity.
 
 ---
 
@@ -32,11 +37,11 @@
 
 ### Official Submission Answer:
 1. **Do NOT Train the Raw Bottom 10**: The raw bottom 10 agents by CSAT / handle time comprise **6 Tier 2 escalation specialists** and **4 specialized hardware triage agents**. These agents handle complex, multi-day, pre-escalated customer disputes and defective hardware where CSAT is structurally depressed (2.4 – 2.9). Forcing senior specialists into frontline remedial training would waste budget and degrade morale.
-2. **Target Population**: Deploy the training budget to the **22 frontline Tier 1 agents in Chat and Email**, stratified against their respective peer medians.
+2. **Target Population**: Deploy the training budget to the **22 frontline Tier 1 agents in Chat and Email**, focusing 1-on-1 coaching on the 10 agents currently above their team peer medians.
 3. **Module Budget Allocation**:
    - **Module 1 (₹1,75,000)**: Diagnostic SOPs & Note Standardization. Currently, 31.4% of tickets (36.1% in Chat) have uninformative notes ("done", "fixed"). Standardizing templates prevents repetitive discovery loops.
    - **Module 2 (₹1,25,000)**: First Contact Resolution (FCR) & Escalation Protocols. Frontline agents learn to resolve tier-appropriate tickets, reducing inter-tier transfers (currently 1,215 transfers costing ₹3,70,575) and repeat contacts (3,277 repeats costing ₹9,03,890).
-   - **Module 3 (₹1,00,000)**: Tooling & Navigation Simulator. Standardized macro usage to lower first-response latency and prevent SLA breach credits (currently 1,064 breaches costing ₹3,72,400).
+   - **Module 3 (₹1,00,000)**: Tooling, Macros & Aging Ticket Sweep Routines. 93-95% of tickets are resolved in <1 hour; coaching agents on daily sweeps of multi-day pending tickets directly addresses the right-tail skew elevating average handle times.
 
 ---
 
@@ -66,7 +71,8 @@
 ### Official Submission Answer:
 - **Product Concentration**: Wireless earbud model **Pulse 2** accounts for **1,166 out of 1,896 total replacements (61.50%)** and **₹22,38,720** of policy replacement spend.
 - **Batch Concentration**: Manufacturing lot **`PL2-2510-3`** alone generated **730 replacements** (62.6% of Pulse 2 replacements, 38.5% of company-wide replacements).
-- **Physical Root Cause**: Qualitative analysis of customer messages and agent notes identifies physical charging pin corrosion and case connector detachment.
+- **Physical Root Cause (Qualitative Evidence)**: Analysis of customer messages and agent notes identifies physical charging pin contact failure and charging cradle detachment.
+- **Unverified Status**: Physical metallurgy or component failure mechanisms have not been independently laboratory-tested. Lot `PL2-2510-3` is classified as a **"high-replacement lot candidate."**
 - **Strategic Action**: Support training cannot fix defective manufacturing hardware. Recommending support training to reduce replacements would violate Policy §4 warranty obligations. This finding is formally escalated to **Hardware Engineering & Vendor Quality** for component redesign and supplier warranty clawback.
 
 ---
