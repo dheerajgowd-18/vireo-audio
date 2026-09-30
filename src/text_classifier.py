@@ -2,6 +2,7 @@
 
 import re
 import pickle
+import warnings
 from pathlib import Path
 from typing import Dict, Any, List, Tuple, Optional
 import pandas as pd
@@ -9,6 +10,7 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix
+from sklearn.model_selection import StratifiedKFold
 
 # Valid Taxonomy Categories
 TAXONOMY_CATEGORIES = [
@@ -87,10 +89,11 @@ def create_stratified_evaluation_sample(
     )
     
     # 3. Stratified sampling with fixed random seed
-    # Group by strata and sample proportionally, with fallback to maintain sample_size
-    sampled = clean_tickets.groupby("strata", group_keys=False).apply(
-        lambda g: g.sample(n=min(len(g), max(1, int(len(g) / len(clean_tickets) * sample_size))), random_state=random_seed)
-    )
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=DeprecationWarning)
+        sampled = clean_tickets.groupby("strata", group_keys=False).apply(
+            lambda g: g.sample(n=min(len(g), max(1, int(len(g) / len(clean_tickets) * sample_size))), random_state=random_seed)
+        )
     
     # If sample is slightly below or above target due to rounding, adjust deterministically
     if len(sampled) < sample_size:
@@ -105,9 +108,12 @@ def create_stratified_evaluation_sample(
 
 
 def generate_ground_truth(sample_df: pd.DataFrame) -> pd.DataFrame:
-    """Generate verified ground-truth annotations for the evaluation sample.
+    """Generate rule-assisted pseudo-labels for the evaluation benchmark sample.
     
-    Uses deterministic inspection of customer text, agent notes, and policy metadata.
+    Provenance Note:
+    These annotations are deterministic pseudo-labels generated via keyword matching
+    and policy metadata. They serve as an internal evaluation benchmark and should not
+    be confused with independent double-blind human annotations.
     """
     gt_rows = []
     for _, row in sample_df.iterrows():
@@ -135,7 +141,6 @@ def generate_ground_truth(sample_df: pd.DataFrame) -> pd.DataFrame:
         elif any(w in msg for w in ["how to", "work with", "spec", "waterproof", "compatible"]):
             issue_cat = "product_enquiry_setup"
         else:
-            # Map legacy category if text is ambiguous or generic
             cat_map = {
                 "Delivery & Shipping": "delivery_shipping",
                 "Returns & Refunds": "returns_refunds",
@@ -173,6 +178,7 @@ def generate_ground_truth(sample_df: pd.DataFrame) -> pd.DataFrame:
             "gt_issue_category": issue_cat,
             "gt_resolution_outcome": outcome,
             "gt_hardware_defect_signal": bool(defect_sig),
+            "label_source": "rule_assisted_pseudo_label",
         })
         
     return pd.DataFrame(gt_rows)
@@ -181,9 +187,10 @@ def generate_ground_truth(sample_df: pd.DataFrame) -> pd.DataFrame:
 class LocalTicketClassifier:
     """Deterministic local scikit-learn & rule-based text classifier."""
 
-    def __init__(self):
+    def __init__(self, confidence_threshold: float = 0.0):
         self.vectorizer = TfidfVectorizer(max_features=2500, ngram_range=(1, 2), stop_words="english")
         self.model = LogisticRegression(class_weight="balanced", random_state=42, max_iter=500)
+        self.confidence_threshold = confidence_threshold
         self.is_trained = False
 
     def fit(self, texts: List[str], labels: List[str]):
@@ -192,11 +199,17 @@ class LocalTicketClassifier:
         self.model.fit(X, labels)
         self.is_trained = True
 
-    def predict(self, texts: List[str], notes: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+    def predict(
+        self,
+        texts: List[str],
+        notes: Optional[List[str]] = None,
+        confidence_threshold: Optional[float] = None,
+    ) -> List[Dict[str, Any]]:
         """Predict structured issue category, outcome, defect signal, and confidence."""
         if not self.is_trained:
             raise RuntimeError("Classifier must be trained before predicting.")
             
+        conf_thresh = confidence_threshold if confidence_threshold is not None else self.confidence_threshold
         X = self.vectorizer.transform(texts)
         preds = self.model.predict(X)
         probs = self.model.predict_proba(X)
@@ -204,22 +217,39 @@ class LocalTicketClassifier:
         
         results = []
         for i, text in enumerate(texts):
-            pred_cat = preds[i]
-            conf = float(max_probs[i])
             lower_text = str(text).lower()
             note_text = str(notes[i]).lower() if notes else ""
             rule_override = False
+            pred_source = "ml"
+            conf = float(max_probs[i])
+            raw_ml_cat = preds[i]
             
             # High-precision deterministic rule overrides
             if any(w in lower_text for w in ["cancel order", "cancle ordr", "cancel my order"]):
                 pred_cat = "cancellation"
                 conf = 0.98
                 rule_override = True
+                pred_source = "rule"
             elif detect_hardware_defect_signal(lower_text):
                 if any(w in lower_text for w in ["not charging", "pin", "contact", "dead in the case"]):
                     pred_cat = "charging_battery"
                     conf = 0.95
                     rule_override = True
+                    pred_source = "rule"
+                else:
+                    if conf < conf_thresh:
+                        pred_cat = "other_unclear"
+                        pred_source = "ml_low_conf_fallback"
+                    else:
+                        pred_cat = raw_ml_cat
+                        pred_source = "ml"
+            else:
+                if conf < conf_thresh:
+                    pred_cat = "other_unclear"
+                    pred_source = "ml_low_conf_fallback"
+                else:
+                    pred_cat = raw_ml_cat
+                    pred_source = "ml"
                     
             # Outcome determination based on notes and policy evidence
             if any(w in note_text for w in ["replacement", "rplc", "rma", "new unit"]):
@@ -236,13 +266,16 @@ class LocalTicketClassifier:
                 outcome = "unresolved_ambiguous"
                 
             defect_signal = detect_hardware_defect_signal(lower_text)
+            defect_source = "regex_rule" if defect_signal else "none"
             
             results.append({
                 "issue_category": pred_cat,
                 "resolution_outcome": outcome,
                 "hardware_defect_signal": defect_signal,
+                "hardware_signal_source": defect_source,
                 "confidence": round(conf, 4),
                 "is_rule_override": rule_override,
+                "prediction_source": pred_source,
             })
             
         return results
@@ -250,7 +283,11 @@ class LocalTicketClassifier:
     def save(self, filepath: Path):
         """Serialize model artifacts."""
         with open(filepath, "wb") as f:
-            pickle.dump({"vectorizer": self.vectorizer, "model": self.model}, f)
+            pickle.dump({
+                "vectorizer": self.vectorizer,
+                "model": self.model,
+                "confidence_threshold": self.confidence_threshold,
+            }, f)
 
     def load(self, filepath: Path):
         """Deserialize model artifacts."""
@@ -258,6 +295,7 @@ class LocalTicketClassifier:
             data = pickle.load(f)
             self.vectorizer = data["vectorizer"]
             self.model = data["model"]
+            self.confidence_threshold = data.get("confidence_threshold", 0.25)
             self.is_trained = True
 
 
@@ -277,3 +315,216 @@ def evaluate_predictions(y_true: List[str], y_pred: List[str]) -> Dict[str, Any]
         "confusion_matrix": cm.tolist(),
         "error_count": int((np.array(y_true) != np.array(y_pred)).sum()),
     }
+
+
+def run_held_out_cross_validation(
+    sample_df: pd.DataFrame,
+    pseudo_labels_df: pd.DataFrame,
+    n_splits: int = 5,
+    seed: int = 42,
+    confidence_threshold: float = 0.0,
+) -> Tuple[Dict[str, Any], pd.DataFrame]:
+    """Execute rigorous 5-fold stratified cross-validation on the held-out sample.
+    
+    Guarantees:
+    - Vectorizer is fitted strictly on X_train for each fold (zero data leakage).
+    - Validation predictions are strictly out-of-fold.
+    - Evaluates Pure ML against Majority Class, Simple Rules, and Hybrid baselines.
+    """
+    # Merge sample with pseudo-labels if needed
+    if "gt_issue_category" not in sample_df.columns:
+        merged = sample_df.merge(
+            pseudo_labels_df[["ticket_id", "gt_issue_category", "gt_resolution_outcome", "gt_hardware_defect_signal"]],
+            on="ticket_id",
+            how="inner",
+        )
+    else:
+        merged = sample_df.copy()
+        
+    texts = merged["customer_message"].fillna("").values
+    y_true = merged["gt_issue_category"].values
+    ticket_ids = merged["ticket_id"].values
+    n_total = len(texts)
+    
+    oof_preds = np.empty(n_total, dtype=object)
+    oof_confs = np.zeros(n_total, dtype=float)
+    oof_folds = np.zeros(n_total, dtype=int)
+    oof_sources = np.empty(n_total, dtype=object)
+    oof_rule_overrides = np.zeros(n_total, dtype=bool)
+    fold_vocab_sizes = []
+    
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=seed)
+        
+        for fold_idx, (train_idx, val_idx) in enumerate(skf.split(texts, y_true)):
+            # Strictly fit vectorizer on train fold only
+            vec = TfidfVectorizer(max_features=2500, ngram_range=(1, 2), stop_words="english")
+            X_train = vec.fit_transform(texts[train_idx])
+            X_val = vec.transform(texts[val_idx])
+            fold_vocab_sizes.append(len(vec.vocabulary_))
+            
+            clf = LogisticRegression(class_weight="balanced", random_state=seed, max_iter=500)
+            clf.fit(X_train, y_true[train_idx])
+            
+            val_probs = clf.predict_proba(X_val)
+            val_raw_preds = clf.predict(X_val)
+            val_max_probs = val_probs.max(axis=1)
+            
+            for j, orig_idx in enumerate(val_idx):
+                oof_folds[orig_idx] = fold_idx + 1
+                c = float(val_max_probs[j])
+                oof_confs[orig_idx] = round(c, 4)
+                oof_rule_overrides[orig_idx] = False
+                
+                if c < confidence_threshold:
+                    oof_preds[orig_idx] = "other_unclear"
+                    oof_sources[orig_idx] = "ml_low_conf_fallback"
+                else:
+                    oof_preds[orig_idx] = val_raw_preds[j]
+                    oof_sources[orig_idx] = "ml"
+                    
+    # 1. Pure ML Held-Out Evaluation Metrics
+    acc_ml = float(accuracy_score(y_true, oof_preds))
+    p_ml, r_ml, f1_ml, _ = precision_recall_fscore_support(y_true, oof_preds, average="macro", zero_division=0)
+    
+    unique_labels = sorted(list(set(y_true) | set(oof_preds)))
+    cm = confusion_matrix(y_true, oof_preds, labels=unique_labels)
+    
+    # Per-class breakdown
+    p_class, r_class, f1_class, s_class = precision_recall_fscore_support(
+        y_true, oof_preds, labels=unique_labels, zero_division=0
+    )
+    per_class_metrics = {}
+    for idx, lbl in enumerate(unique_labels):
+        per_class_metrics[lbl] = {
+            "precision": round(float(p_class[idx]), 4),
+            "recall": round(float(r_class[idx]), 4),
+            "f1_score": round(float(f1_class[idx]), 4),
+            "support": int(s_class[idx]),
+        }
+        
+    # 2. Majority Class Baseline
+    majority_class = pd.Series(y_true).mode()[0]
+    maj_preds = [majority_class] * n_total
+    acc_maj = float(accuracy_score(y_true, maj_preds))
+    p_maj, r_maj, f1_maj, _ = precision_recall_fscore_support(y_true, maj_preds, average="macro", zero_division=0)
+    
+    # 3. Simple Keyword Rule Baseline
+    def _apply_simple_rules(text: str) -> str:
+        m = str(text).lower()
+        if any(w in m for w in ["cancel order", "cancle ordr", "cancel my order"]):
+            return "cancellation"
+        if any(w in m for w in ["left earbud", "left bud", "right earbud", "not charging", "charging pin", "dead in the case"]):
+            return "charging_battery"
+        if any(w in m for w in ["no sound", "distortion", "crackling", "muffled"]):
+            return "hardware_audio_defect"
+        if any(w in m for w in ["bluetooth", "pairing", "pair", "connect"]):
+            return "connectivity_pairing"
+        if any(w in m for w in ["delivered", "tracking", "courier", "dispatch", "awb", "shipment"]):
+            return "delivery_shipping"
+        if any(w in m for w in ["refund", "return pickup", "pickup pending", "return"]):
+            return "returns_refunds"
+        if any(w in m for w in ["payment", "upi", "card charged", "invoice", "gst", "coupon"]):
+            return "billing_payment"
+        if any(w in m for w in ["how to", "work with", "spec", "waterproof"]):
+            return "product_enquiry_setup"
+        return "other_unclear"
+
+    rule_preds = [_apply_simple_rules(t) for t in texts]
+    acc_rule = float(accuracy_score(y_true, rule_preds))
+    p_rule, r_rule, f1_rule, _ = precision_recall_fscore_support(y_true, rule_preds, average="macro", zero_division=0)
+    
+    # 4. Hybrid Pipeline Baseline (Rules + Fold ML Fallback)
+    hybrid_preds = []
+    for i, t in enumerate(texts):
+        r_cat = _apply_simple_rules(t)
+        if r_cat != "other_unclear":
+            hybrid_preds.append(r_cat)
+        else:
+            hybrid_preds.append(oof_preds[i])
+            
+    acc_hyb = float(accuracy_score(y_true, hybrid_preds))
+    p_hyb, r_hyb, f1_hyb, _ = precision_recall_fscore_support(y_true, hybrid_preds, average="macro", zero_division=0)
+    
+    # 5. Hardware Defect Signal Benchmark Performance
+    if "gt_hardware_defect_signal" in merged.columns:
+        hw_true = merged["gt_hardware_defect_signal"].astype(bool).values
+        hw_preds = np.array([detect_hardware_defect_signal(t) for t in texts])
+        hw_cm = confusion_matrix(hw_true, hw_preds, labels=[False, True])
+        tn, fp, fn, tp = int(hw_cm[0, 0]), int(hw_cm[0, 1]), int(hw_cm[1, 0]), int(hw_cm[1, 1])
+        hw_prec = round(tp / (tp + fp), 4) if (tp + fp) > 0 else 0.0
+        hw_rec = round(tp / (tp + fn), 4) if (tp + fn) > 0 else 0.0
+        hw_f1 = round(2 * hw_prec * hw_rec / (hw_prec + hw_rec), 4) if (hw_prec + hw_rec) > 0 else 0.0
+        hw_metrics = {
+            "true_positives": tp,
+            "false_positives": fp,
+            "true_negatives": tn,
+            "false_negatives": fn,
+            "precision": hw_prec,
+            "recall": hw_rec,
+            "f1_score": hw_f1,
+            "confusion_matrix": hw_cm.tolist(),
+        }
+    else:
+        hw_metrics = {}
+
+    baseline_comparison = {
+        "majority_class": {
+            "name": f"Majority Class ('{majority_class}')",
+            "accuracy": round(acc_maj, 4),
+            "macro_precision": round(float(p_maj), 4),
+            "macro_recall": round(float(r_maj), 4),
+            "macro_f1": round(float(f1_maj), 4),
+        },
+        "simple_rules": {
+            "name": "Simple Keyword Rules",
+            "accuracy": round(acc_rule, 4),
+            "macro_precision": round(float(p_rule), 4),
+            "macro_recall": round(float(r_rule), 4),
+            "macro_f1": round(float(f1_rule), 4),
+        },
+        "pure_ml_cv": {
+            "name": "Pure ML (TF-IDF + Logistic Regression, 5-Fold Held-Out)",
+            "accuracy": round(acc_ml, 4),
+            "macro_precision": round(float(p_ml), 4),
+            "macro_recall": round(float(r_ml), 4),
+            "macro_f1": round(float(f1_ml), 4),
+        },
+        "hybrid_cv": {
+            "name": "Hybrid Pipeline (Rules + 5-Fold ML Fallback)",
+            "accuracy": round(acc_hyb, 4),
+            "macro_precision": round(float(p_hyb), 4),
+            "macro_recall": round(float(r_hyb), 4),
+            "macro_f1": round(float(f1_hyb), 4),
+        },
+    }
+
+    cv_predictions_df = pd.DataFrame({
+        "ticket_id": ticket_ids,
+        "fold": oof_folds,
+        "customer_message": texts,
+        "y_true": y_true,
+        "y_pred": oof_preds,
+        "confidence": oof_confs,
+        "prediction_source": oof_sources,
+        "is_rule_override": oof_rule_overrides,
+    })
+
+    metrics = {
+        "n_splits": n_splits,
+        "random_seed": seed,
+        "sample_size": n_total,
+        "fold_vocab_sizes": fold_vocab_sizes,
+        "accuracy": round(acc_ml, 4),
+        "macro_precision": round(float(p_ml), 4),
+        "macro_recall": round(float(r_ml), 4),
+        "macro_f1": round(float(f1_ml), 4),
+        "labels": unique_labels,
+        "confusion_matrix": cm.tolist(),
+        "per_class_metrics": per_class_metrics,
+        "baseline_comparison": baseline_comparison,
+        "hardware_signal_benchmark": hw_metrics,
+    }
+
+    return metrics, cv_predictions_df

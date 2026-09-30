@@ -13,6 +13,7 @@ from src.text_classifier import (
     generate_ground_truth,
     LocalTicketClassifier,
     evaluate_predictions,
+    run_held_out_cross_validation,
 )
 
 
@@ -34,7 +35,6 @@ def test_taxonomy_labels_are_valid():
 def test_classifier_output_schema_and_bounds():
     """Verify classifier output dictionary contains required keys and confidence in [0, 1]."""
     classifier = LocalTicketClassifier()
-    # Fit with minimal toy data
     train_texts = [
         "cancel order please",
         "where is my package tracking",
@@ -48,12 +48,17 @@ def test_classifier_output_schema_and_bounds():
     test_notes = ["cancelled before dispatch", "rplc raised"]
     preds = classifier.predict(test_texts, test_notes)
     
-    required_keys = {"issue_category", "resolution_outcome", "hardware_defect_signal", "confidence", "is_rule_override"}
+    required_keys = {
+        "issue_category", "resolution_outcome", "hardware_defect_signal",
+        "hardware_signal_source", "confidence", "is_rule_override", "prediction_source"
+    }
     for p in preds:
         assert set(p.keys()) == required_keys
         assert p["issue_category"] in TAXONOMY_CATEGORIES
         assert p["resolution_outcome"] in TAXONOMY_OUTCOMES
         assert isinstance(p["hardware_defect_signal"], bool)
+        assert p["hardware_signal_source"] in {"regex_rule", "none"}
+        assert p["prediction_source"] in {"rule", "ml", "ml_low_conf_fallback"}
         assert 0.0 <= p["confidence"] <= 1.0
 
 
@@ -98,7 +103,6 @@ def test_junk_text_handled_separately():
 
 def test_deterministic_seed_reproducibility():
     """Verify that evaluation sampling with the same seed produces identical results."""
-    # Create 20 synthetic tickets
     data = []
     for i in range(20):
         data.append({
@@ -176,3 +180,93 @@ def test_evaluation_metric_calculations():
     assert res["error_count"] == 1
     assert "cancellation" in res["labels"]
     assert "delivery_shipping" in res["labels"]
+
+
+def test_cross_validation_fold_vectorizer_independence():
+    """Verify that vectorizer in held-out CV is fitted strictly per fold with no data leakage."""
+    sample = pd.read_csv("reports/text_eval_sample.csv")
+    gt = pd.read_csv("reports/text_pseudo_labels.csv")
+    
+    metrics, cv_df = run_held_out_cross_validation(sample, gt, n_splits=5, seed=42)
+    vocab_sizes = metrics["fold_vocab_sizes"]
+    
+    # 5 folds must have distinct vocabulary sizes because X_train differs per fold
+    assert len(vocab_sizes) == 5
+    assert len(set(vocab_sizes)) > 1
+    for v in vocab_sizes:
+        assert v > 1500  # Reasonable vocabulary size per fold
+
+
+def test_cross_validation_output_shape_and_row_mapping():
+    """Verify held-out CV generates exactly 1:1 out-of-fold predictions with valid fold IDs."""
+    sample = pd.read_csv("reports/text_eval_sample.csv")
+    gt = pd.read_csv("reports/text_pseudo_labels.csv")
+    
+    metrics, cv_df = run_held_out_cross_validation(sample, gt, n_splits=5, seed=42)
+    
+    assert len(cv_df) == len(sample)
+    assert set(cv_df["fold"].unique()) == {1, 2, 3, 4, 5}
+    assert set(cv_df["ticket_id"].values) == set(sample["ticket_id"].values)
+    assert metrics["accuracy"] == pytest.approx(0.5556, abs=0.01)
+
+
+def test_prediction_source_and_rule_override_consistency():
+    """Verify that rule overrides and ML predictions set consistent metadata."""
+    classifier = LocalTicketClassifier()
+    classifier.fit(
+        ["cancel order", "package delayed", "left earbud not charging"],
+        ["cancellation", "delivery_shipping", "charging_battery"],
+    )
+    
+    # Rule match
+    rule_preds = classifier.predict(["cancel order right now"])
+    assert rule_preds[0]["is_rule_override"] is True
+    assert rule_preds[0]["prediction_source"] == "rule"
+    assert rule_preds[0]["issue_category"] == "cancellation"
+    
+    # ML match
+    ml_preds = classifier.predict(["where is the courier dispatch"])
+    assert ml_preds[0]["is_rule_override"] is False
+    assert ml_preds[0]["prediction_source"] == "ml"
+
+
+def test_hardware_signal_source_metadata():
+    """Verify that hardware defect signal source metadata accurately reflects detection."""
+    classifier = LocalTicketClassifier()
+    classifier.fit(["cancel order", "earbud broken"], ["cancellation", "hardware_audio_defect"])
+    
+    res = classifier.predict(["charging pins damaged", "package delayed"])
+    assert res[0]["hardware_defect_signal"] is True
+    assert res[0]["hardware_signal_source"] == "regex_rule"
+    
+    assert res[1]["hardware_defect_signal"] is False
+    assert res[1]["hardware_signal_source"] == "none"
+
+
+def test_confidence_threshold_fallback():
+    """Verify that setting an aggressive confidence threshold triggers low-confidence fallback."""
+    classifier = LocalTicketClassifier()
+    classifier.fit(
+        ["cancel order", "delivered late", "pair bluetooth"],
+        ["cancellation", "delivery_shipping", "connectivity_pairing"],
+    )
+    
+    # With confidence_threshold = 0.99, an ambiguous query must fall back to other_unclear
+    preds = classifier.predict(["hello good morning"], confidence_threshold=0.99)
+    assert preds[0]["issue_category"] == "other_unclear"
+    assert preds[0]["prediction_source"] == "ml_low_conf_fallback"
+
+
+def test_pseudo_label_provenance_column_present():
+    """Verify that pseudo-label generator explicitly records label provenance."""
+    sample = pd.DataFrame([{
+        "ticket_id": "T001",
+        "customer_message": "cancel order please",
+        "agent_notes": "cancelled",
+        "category": "Other",
+        "replacement_issued": "N",
+        "refund_amount_inr": None,
+    }])
+    gt = generate_ground_truth(sample)
+    assert "label_source" in gt.columns
+    assert gt.iloc[0]["label_source"] == "rule_assisted_pseudo_label"
