@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vireo Audio — Support Intelligence Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Global Shell: Left Sidebar
+       ========================================================================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Main Navigation">
+    <div class="sidebar-header">
+      <div class="brand-wordmark">
+        <span>VIREO AUDIO</span>
+        <span class="brand-badge">SaaS</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Intelligence</div>
+      <a class="nav-link active" data-view="overview" href="#overview">
+        <span class="nav-icon">◈</span>
+        <span>Overview</span>
+      </a>
+      <a class="nav-link" data-view="agents" href="#agents">
+        <span class="nav-icon">◫</span>
+        <span>Agent Performance</span>
+      </a>
+      <a class="nav-link" data-view="bottom10" href="#bottom10">
+        <span class="nav-icon">▤</span>
+        <span>Requested Bottom 10</span>
+      </a>
+      <a class="nav-link" data-view="ai" href="#ai">
+        <span class="nav-icon">✦</span>
+        <span>AI Signals</span>
+      </a>
+
+      <div class="nav-section-label" style="margin-top: 16px;">Operations & Policy</div>
+      <a class="nav-link" data-view="replacements" href="#replacements">
+        <span class="nav-icon">↺</span>
+        <span>Replacements</span>
+      </a>
+      <a class="nav-link" data-view="sla" href="#sla">
+        <span class="nav-icon">⏱</span>
+        <span>SLA & Cost</span>
+      </a>
+      <a class="nav-link" data-view="methodology" href="#methodology">
+        <span class="nav-icon">✓</span>
+        <span>Methodology</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="coverage-box">
+        <div class="coverage-title">Data Coverage</div>
+        <div class="coverage-dates">Jan 2025 → Jun 2026</div>
+        <div class="coverage-dates num">11,750 Tickets · 44 Agents</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       Global Shell: Main Content Wrapper
+       ========================================================================= -->
+  <div class="main-wrapper">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-title" id="page-title">Overview</span>
+      </div>
+      <div class="topbar-right">
+        <span class="date-pill">Jan 2025 – Jun 2026</span>
+        <div class="search-box">
+          <span class="search-icon-placeholder">🔍</span>
+          <input type="text" id="global-search" class="search-input" placeholder="Search agents or SKUs..." aria-label="Search">
+        </div>
+        <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
+          <span id="theme-icon">◐</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content-container">
+
+      <!-- =====================================================================
+           PAGE 1: OVERVIEW
+           ===================================================================== -->
+      <section id="view-overview" class="page-view active">
+        <div class="page-header">
+          <h1 class="page-headline">Support Intelligence</h1>
+          <p class="page-subtitle">18 months of support performance, operational cost, and ticket intelligence.</p>
+        </div>
+
+        <!-- 6 KPI Grid -->
+        <div class="kpi-grid" id="overview-kpis">
+          <div class="kpi-card">
+            <div class="kpi-label">CSAT (Mean)</div>
+            <div class="kpi-value" id="kpi-csat">-</div>
+            <div class="kpi-subtext" id="kpi-csat-sub">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Median Handle Time</div>
+            <div class="kpi-value" id="kpi-handle">-</div>
+            <div class="kpi-subtext" id="kpi-handle-sub">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">SLA Breach Rate</div>
+            <div class="kpi-value" id="kpi-sla">-</div>
+            <div class="kpi-subtext" id="kpi-sla-sub">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Replacement Units</div>
+            <div class="kpi-value" id="kpi-repl-units">-</div>
+            <div class="kpi-subtext" id="kpi-repl-units-sub">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Replacement Spend</div>
+            <div class="kpi-value" id="kpi-repl-spend">-</div>
+            <div class="kpi-subtext" id="kpi-repl-spend-sub">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">SLA Credit Exposure</div>
+            <div class="kpi-value" id="kpi-sla-credits">-</div>
+            <div class="kpi-subtext" id="kpi-sla-credits-sub">-</div>
+          </div>
+        </div>
+
+        <!-- Trend Section: What Changed -->
+        <div class="card">
+          <div class="card-title">
+            <span>What Changed: Monthly Volume & Replacement Trajectory</span>
+            <span class="badge badge-default">18 Months Longitudinal</span>
+          </div>
+          <div class="card-subtitle">Monthly ticket volume vs replacement authorizations across product lines.</div>
+          <div class="chart-container" id="overview-trend-chart">
+            <!-- Native SVG Chart rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Key Signals Section -->
+        <div class="page-header" style="margin-top: 32px; margin-bottom: 16px;">
+          <h2 class="page-headline" style="font-size: 16px;">Key Signals</h2>
+          <p class="page-subtitle">Validated patterns driving operational variance across the organization.</p>
+        </div>
+
+        <div class="signals-grid" id="overview-signals">
+          <!-- Dynamically populated from overview.json -->
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PAGE 2: AGENT PERFORMANCE
+           ===================================================================== -->
+      <section id="view-agents" class="page-view">
+        <div class="page-header">
+          <h1 class="page-headline">Agent Performance</h1>
+          <p class="page-subtitle">Comparable operational groups are analyzed separately.</p>
+        </div>
+
+        <!-- Table Toolbar & Filters -->
+        <div class="table-toolbar">
+          <div class="filter-group">
+            <select id="agent-filter-tier" class="filter-select">
+              <option value="all">All Tiers</option>
+              <option value="1">Tier 1 Frontline</option>
+              <option value="2">Tier 2 Escalations</option>
+            </select>
+            <select id="agent-filter-team" class="filter-select">
+              <option value="all">All Teams</option>
+            </select>
+            <select id="agent-filter-site" class="filter-select">
+              <option value="all">All Sites</option>
+            </select>
+            <select id="agent-filter-shift" class="filter-select">
+              <option value="all">All Shifts</option>
+            </select>
+            <select id="agent-filter-min-csat" class="filter-select">
+              <option value="0">All Responses</option>
+              <option value="50">Min 50 Responses</option>
+              <option value="100">Min 100 Responses</option>
+            </select>
+          </div>
+          <div class="badge badge-default" id="agent-table-count">Showing 44 Agents</div>
+        </div>
+
+        <!-- Agents Data Table -->
+        <div class="table-wrapper">
+          <table class="data-table" id="agents-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="name">Agent <span class="sort-indicator">↕</span></th>
+                <th class="sortable" data-sort="team">Team <span class="sort-indicator">↕</span></th>
+                <th class="sortable" data-sort="tier">Tier <span class="sort-indicator">↕</span></th>
+                <th class="sortable table-cell-num" data-sort="tickets">Tickets <span class="sort-indicator">↕</span></th>
+                <th class="sortable table-cell-num" data-sort="mean_csat">CSAT <span class="sort-indicator">↕</span></th>
+                <th class="sortable table-cell-num" data-sort="csat_n">CSAT N <span class="sort-indicator">↕</span></th>
+                <th class="sortable table-cell-num" data-sort="median_handle_minutes">Median Handle <span class="sort-indicator">↕</span></th>
+                <th class="sortable table-cell-num" data-sort="sla_breach_rate_pct">SLA Breach % <span class="sort-indicator">↕</span></th>
+                <th class="sortable table-cell-num" data-sort="transfers">Transfers <span class="sort-indicator">↕</span></th>
+                <th class="sortable table-cell-num" data-sort="replacements">Replacements <span class="sort-indicator">↕</span></th>
+              </tr>
+            </thead>
+            <tbody id="agents-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PAGE 3: REQUESTED BOTTOM 10
+           ===================================================================== -->
+      <section id="view-bottom10" class="page-view">
+        <div class="page-header">
+          <h1 class="page-headline">Requested Bottom 10</h1>
+          <p class="page-subtitle">Raw ranking requested by the client.</p>
+        </div>
+
+        <!-- Warning Banner -->
+        <div class="banner banner-warning">
+          <span class="banner-icon">⚠</span>
+          <div>
+            <strong>Context required:</strong> this ranking is descriptive and should not be treated as a stand-alone training recommendation.
+          </div>
+        </div>
+
+        <!-- Bottom 10 Table -->
+        <div class="table-wrapper" style="margin-bottom: 24px;">
+          <table class="data-table" id="bottom10-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Agent ID</th>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Tier</th>
+                <th class="table-cell-num">Tickets</th>
+                <th class="table-cell-num">CSAT N</th>
+                <th class="table-cell-num">CSAT</th>
+                <th class="table-cell-num">Median Handle</th>
+                <th>Hardware Triage</th>
+              </tr>
+            </thead>
+            <tbody id="bottom10-table-body">
+              <!-- Exactly 10 rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Context Analysis Card -->
+        <div class="card">
+          <div class="card-title">Why the Raw Ranking Needs Context</div>
+          <div class="card-subtitle">Structural breakdown of the 10 agents appearing in the unadjusted bottom list.</div>
+          
+          <div class="signals-grid" style="margin-bottom: 0;">
+            <div class="signal-card">
+              <div class="signal-title">Tier 2 Escalations Engineers</div>
+              <div class="signal-metric num" id="b10-tier2-count">6 / 10</div>
+              <div class="signal-evidence">All 6 Tier 2 Escalation specialists in the company appear in the raw bottom 10. They exclusively handle complex, pre-escalated defect cases where customer frustration is already high.</div>
+            </div>
+            <div class="signal-card">
+              <div class="signal-title">Hardware Triage Rota (Tier 1)</div>
+              <div class="signal-metric num" id="b10-hw-count">4 / 10</div>
+              <div class="signal-evidence">The remaining 4 agents in the bottom 10 were all assigned to the high-defect hardware triage queue, handling damaged and non-charging earbud complaints.</div>
+            </div>
+            <div class="signal-card">
+              <div class="signal-title">Standard Tier 1 Frontline</div>
+              <div class="signal-metric num" id="b10-other-count">0 / 10</div>
+              <div class="signal-evidence">Zero generalist Tier 1 agents handling routine queries appear in the raw bottom 10. Raw CSAT tracks ticket technical complexity rather than individual effort.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PAGE 4: AI SIGNALS
+           ===================================================================== -->
+      <section id="view-ai" class="page-view">
+        <div class="page-header">
+          <h1 class="page-headline">Ticket Intelligence</h1>
+          <p class="page-subtitle">AI-assisted text signals. Business metrics remain deterministic.</p>
+        </div>
+
+        <!-- Top Metrics Grid -->
+        <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 24px;">
+          <div class="kpi-card">
+            <div class="kpi-label">Original "Other" Tickets</div>
+            <div class="kpi-value num">1,732</div>
+            <div class="kpi-subtext">Intake chatbot default catch-all</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Predicted Actionable Themes</div>
+            <div class="kpi-value num" style="color: var(--accent);">1,524</div>
+            <div class="kpi-subtext">Successfully mapped to operational queues</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Remaining Ambiguous</div>
+            <div class="kpi-value num">208</div>
+            <div class="kpi-subtext">Preserved under other_unclear (12.01%)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Decomposition Recovery</div>
+            <div class="kpi-value num" style="color: var(--success);">87.99%</div>
+            <div class="kpi-subtext">Actionable recovery percentage</div>
+          </div>
+        </div>
+
+        <!-- Category Decomposition Chart -->
+        <div class="card">
+          <div class="card-title">Theme Recovery: Intake "Other" Decomposition</div>
+          <div class="card-subtitle">Distribution of actionable operational categories recovered from ambiguous intake tickets.</div>
+          <div id="ai-category-bars" style="margin-top: 16px;">
+            <!-- Horizontal bars rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Model Quality Section -->
+        <div class="card">
+          <div class="card-title">
+            <span>AI Model Quality: Held-Out Baseline Hierarchy</span>
+            <span class="badge badge-accent">Rule-assisted pseudo-label benchmark</span>
+          </div>
+          <div class="card-subtitle">5-fold cross-validation performance evaluated strictly on unseen validation folds with zero vectorizer leakage.</div>
+          
+          <div class="banner banner-accent" style="margin-bottom: 16px;">
+            <span class="banner-icon">ℹ</span>
+            <div><strong>Transparency Notice:</strong> These results reflect held-out evaluation against deterministic pseudo-labels. They are not independent human gold-label validation.</div>
+          </div>
+
+          <div class="signals-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 0;">
+            <div class="signal-card">
+              <div class="signal-title">Majority Class Baseline</div>
+              <div class="signal-metric num">26.67%</div>
+              <div class="signal-evidence">Macro F1: 0.0468. Statistical floor predicting the most frequent class (connectivity_pairing).</div>
+            </div>
+            <div class="signal-card">
+              <div class="signal-title">Keyword Rules Baseline</div>
+              <div class="signal-metric num">46.11%</div>
+              <div class="signal-evidence">Macro F1: 0.5399. Pure regex pattern matching without statistical machine learning.</div>
+            </div>
+            <div class="signal-card">
+              <div class="signal-title">Pure ML (5-Fold CV)</div>
+              <div class="signal-metric num">55.56%</div>
+              <div class="signal-evidence">Macro F1: 0.5388. Out-of-fold generalization (+28.89% above majority baseline).</div>
+            </div>
+            <div class="signal-card">
+              <div class="signal-title">Hybrid Pipeline</div>
+              <div class="signal-metric num" style="color: var(--accent);">65.56%</div>
+              <div class="signal-evidence">Macro F1: 0.6443. High-priority deterministic rules combined with ML fallback.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hardware Defect Text Signal -->
+        <div class="card">
+          <div class="card-title">
+            <span>Hardware Defect Text Signal</span>
+            <span class="badge badge-default">Conservative text signal</span>
+          </div>
+          <div class="card-subtitle">Regex pattern matcher evaluated on the 180-ticket benchmark sample.</div>
+
+          <div class="signals-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 16px;">
+            <div class="signal-card">
+              <div class="signal-title">Signal Precision</div>
+              <div class="signal-metric num" style="color: var(--success);">100.00%</div>
+              <div class="signal-evidence">TP = 8, FP = 0. Zero false positive alarms across the benchmark evaluation set.</div>
+            </div>
+            <div class="signal-card">
+              <div class="signal-title">Signal Recall</div>
+              <div class="signal-metric num">47.06%</div>
+              <div class="signal-evidence">TP = 8, FN = 9. Captures severe overt defect language, while missing colloquial phrasing.</div>
+            </div>
+            <div class="signal-card">
+              <div class="signal-title">F1-Score</div>
+              <div class="signal-metric num">64.00%</div>
+              <div class="signal-evidence">Harmonic mean reflecting high precision and intentionally conservative recall.</div>
+            </div>
+          </div>
+
+          <div class="spec-body" style="font-size: 12px; color: var(--text-muted);">
+            <strong>Engineering Note:</strong> High precision, limited recall. It identifies explicit defect language but can miss colloquial descriptions. This is a text signal, not a proven physical defect diagnosis.
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PAGE 5: REPLACEMENTS
+           ===================================================================== -->
+      <section id="view-replacements" class="page-view">
+        <div class="page-header">
+          <h1 class="page-headline">Replacement Risk</h1>
+          <p class="page-subtitle">Product-level warranty exposure, lot concentration, and policy cost reconciliation.</p>
+        </div>
+
+        <div class="kpi-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 24px;">
+          <div class="kpi-card">
+            <div class="kpi-label">Total Replacements Authorized</div>
+            <div class="kpi-value num">1,896 Units</div>
+            <div class="kpi-subtext">Across 14 product models over 18 months</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Policy-Defined Replacement Spend</div>
+            <div class="kpi-value num">₹34.16L</div>
+            <div class="kpi-subtext">Actual product unit cost + ₹340 logistics (Policy §4)</div>
+          </div>
+        </div>
+
+        <!-- Product Table -->
+        <div class="card">
+          <div class="card-title">Replacement Volume by Product SKU</div>
+          <div class="card-subtitle">Sorted by total replacement count descending. Pulse 2 surfaces naturally at the top.</div>
+          <div class="table-wrapper">
+            <table class="data-table" id="product-repl-table">
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Product</th>
+                  <th class="table-cell-num">Tickets</th>
+                  <th class="table-cell-num">Replacements</th>
+                  <th class="table-cell-num">Replacement Rate</th>
+                  <th class="table-cell-num">Policy Spend</th>
+                </tr>
+              </thead>
+              <tbody id="product-repl-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Lot Investigation Table -->
+        <div class="card">
+          <div class="card-title">
+            <span>Lot Investigation</span>
+            <span class="badge badge-warning">High-replacement lot candidate</span>
+          </div>
+          <div class="card-subtitle">Concentration of replacement events across matched production lots (Pulse 2 lots highlighted).</div>
+
+          <div class="banner banner-warning" style="margin-bottom: 16px;">
+            <span class="banner-icon">⚠</span>
+            <div>Ticket and order data show concentration patterns; physical manufacturing causality is not established by this analysis.</div>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="data-table" id="lot-table">
+              <thead>
+                <tr>
+                  <th>Lot Code</th>
+                  <th>Product SKU</th>
+                  <th class="table-cell-num">Orders</th>
+                  <th class="table-cell-num">Tickets</th>
+                  <th class="table-cell-num">Replacement Count</th>
+                  <th class="table-cell-num">Replacement Rate</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="lot-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Finance Cost Comparison -->
+        <div class="card">
+          <div class="card-title">Finance Cost Comparison: Budget Variance</div>
+          <div class="card-subtitle">Reconciling Finance's flat estimate against actual policy replacement costing.</div>
+          
+          <div class="signals-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 16px;">
+            <div class="signal-card">
+              <div class="signal-title">Finance Flat Estimate</div>
+              <div class="signal-metric num">₹47.40L</div>
+              <div class="signal-evidence">Based on arbitrary flat assumption of ₹2,500/unit across all 1,896 replacements.</div>
+            </div>
+            <div class="signal-card">
+              <div class="signal-title">Policy-Based Actual Cost</div>
+              <div class="signal-metric num" style="color: var(--accent);">₹34.16L</div>
+              <div class="signal-evidence">Unit BOM cost + ₹340 logistics (Average unit spend: ₹1,801.68).</div>
+            </div>
+            <div class="signal-card">
+              <div class="signal-title">Finance Overstatement</div>
+              <div class="signal-metric num" style="color: var(--success);">₹13.24L</div>
+              <div class="signal-evidence">Finance overestimated replacement budget by +38.76% (overstatement variance).</div>
+            </div>
+          </div>
+
+          <div class="spec-body" style="font-size: 12px; color: var(--text-muted);">
+            <strong>Policy Context:</strong> Replacement planning cost follows policy: product unit cost + ₹340 logistics. Because high-volume wireless earbuds (Pulse 2) have unit costs between ₹1,100 and ₹1,580, using a flat ₹2,500 assumption creates massive phantom liability.
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PAGE 6: SLA & COST
+           ===================================================================== -->
+      <section id="view-sla" class="page-view">
+        <div class="page-header">
+          <h1 class="page-headline">Service Levels & Cost</h1>
+          <p class="page-subtitle">Channel response compliance, automatic store credits, and tracked operating exposure.</p>
+        </div>
+
+        <!-- Channel Table -->
+        <div class="card">
+          <div class="card-title">Channel Service Levels & Breach Exposure</div>
+          <div class="card-subtitle">First-response targets, violation counts, and associated store credit liabilities.</div>
+          <div class="table-wrapper" style="margin-bottom: 20px;">
+            <table class="data-table" id="sla-channel-table">
+              <thead>
+                <tr>
+                  <th>Channel</th>
+                  <th class="table-cell-num">Tickets</th>
+                  <th class="table-cell-num">SLA Target</th>
+                  <th class="table-cell-num">Breaches</th>
+                  <th class="table-cell-num">Breach %</th>
+                  <th class="table-cell-num">Credit Exposure</th>
+                  <th class="table-cell-num">Contact Cost</th>
+                </tr>
+              </thead>
+              <tbody id="sla-channel-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card-title" style="font-size: 13px; margin-top: 20px;">First-Response Breach Rate Comparison</div>
+          <div id="sla-breach-bars" style="margin-top: 12px;">
+            <!-- Horizontal bars rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Tracked Support Operating Exposure -->
+        <div class="card">
+          <div class="card-title">
+            <span>Tracked Support Operating Exposure</span>
+            <span class="badge badge-default">₹1.076 Cr Total Tracked</span>
+          </div>
+          <div class="card-subtitle">Comprehensive ledger of policy allocations across customer support channels.</div>
+
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Cost Allocation Category</th>
+                  <th class="table-cell-num">Tracked Amount</th>
+                  <th>Accounting Context</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Channel Contact Costs</strong></td>
+                  <td class="table-cell-num num">₹32,53,060</td>
+                  <td>Staffing & operational handling across Chat, Voice, Email, Social</td>
+                </tr>
+                <tr>
+                  <td><strong>Internal Transfer Overhead</strong></td>
+                  <td class="table-cell-num num">₹3,70,575</td>
+                  <td>1,215 inter-tier transfers penalized at ₹305/transfer (Policy §6)</td>
+                </tr>
+                <tr>
+                  <td><strong>First-Response SLA Credits</strong></td>
+                  <td class="table-cell-num num">₹3,72,400</td>
+                  <td>1,064 automatic customer store credits for SLA breaches (Policy §3)</td>
+                </tr>
+                <tr>
+                  <td><strong>Policy Replacement Inventory</strong></td>
+                  <td class="table-cell-num num">₹34,15,990</td>
+                  <td>1,896 product replacements @ actual unit cost + ₹340 logistics (Policy §4)</td>
+                </tr>
+                <tr>
+                  <td><strong>Customer Refunds Processed</strong></td>
+                  <td class="table-cell-num num">₹53,50,871</td>
+                  <td>1,869 transactions refunded to original payment method</td>
+                </tr>
+                <tr style="background-color: var(--surface-subtle); font-weight: 700;">
+                  <td><strong>Total Tracked Support Operating Exposure</strong></td>
+                  <td class="table-cell-num num" style="color: var(--accent);">₹1,27,62,896</td>
+                  <td>Direct customer support operational allocation under policy rules</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="spec-body" style="font-size: 11px; color: var(--text-muted); margin-top: 12px;">
+            <strong>Terminology Governance:</strong> Tracked support operating exposure represents direct customer support financial allocations under policy rules; it is not a corporate profit and loss statement.
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PAGE 7: METHODOLOGY
+           ===================================================================== -->
+      <section id="view-methodology" class="page-view">
+        <div class="page-header">
+          <h1 class="page-headline">Methodology & Data Quality</h1>
+          <p class="page-subtitle">Complete transparency regarding data provenance, mathematical integrity, and technical boundaries.</p>
+        </div>
+
+        <div class="spec-list">
+          <div class="spec-item">
+            <div class="spec-dot"></div>
+            <div class="spec-content">
+              <div class="spec-heading">Data Integrity & Referential Completeness</div>
+              <div class="spec-body">
+                Processed 11,750 support tickets, 44 agents, 15,500 orders, 9,500 customers, and 14 products. Verified 0 primary key duplicates and 0 foreign key orphans across all tables. Order IDs directly populated in 7,643 tickets (0 unmatched). Identified 1,388 multi-order pairs to completely prevent Cartesian fan-out errors.
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-item">
+            <div class="spec-dot"></div>
+            <div class="spec-content">
+              <div class="spec-heading">Timestamp Offset Reconciliation (+05:30 IST)</div>
+              <div class="spec-body">
+                Diagnosed legacy Freshdesk ingestion flaw affecting 2,309 tickets where resolved timestamps lacked timezone metadata, creating negative handle times. Reconciled via derived <code class="num">resolved_at_reporting = resolved_at + 05:30</code> while strictly preserving raw timestamps in source data.
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-item">
+            <div class="spec-dot"></div>
+            <div class="spec-content">
+              <div class="spec-heading">Customer Satisfaction (CSAT) Measurement Protocol</div>
+              <div class="spec-body">
+                Evaluated 5,196 survey responses (44.22% response rate). In strict compliance with operating standards, blanks were excluded from the denominator and never imputed as zero or group averages, preventing artificial performance deflation.
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-item">
+            <div class="spec-dot"></div>
+            <div class="spec-content">
+              <div class="spec-heading">AI & Machine Learning Governance</div>
+              <div class="spec-body">
+                Implemented a 100% local TF-IDF + Logistic Regression architecture with deterministic rule overrides. Zero external cloud API calls executed (₹0 paid model cost; ₹58,750 cost avoidance). Generalization verified via held-out 5-fold stratified cross-validation (55.56% ML accuracy, 65.56% hybrid accuracy) against rule-assisted pseudo-labels.
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-item">
+            <div class="spec-dot"></div>
+            <div class="spec-content">
+              <div class="spec-heading">Documented System Limitations</div>
+              <div class="spec-body">
+                1. Benchmark annotations are rule-assisted pseudo-labels; human double-blind labels should be gathered for production deployment.<br>
+                2. The hardware defect detector operates with 100% precision and 47.06% recall; colloquial customer complaints require human technical triage.<br>
+                3. Operational correlation between defect signals and low CSAT does not establish legal or physical manufacturing causality without hardware teardown testing.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       Agent Detail Slide-Out Flyout Drawer
+       ========================================================================= -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="drawer" id="agent-drawer" aria-label="Agent Detail">
+    <div class="drawer-header">
+      <div>
+        <div class="drawer-title" id="drawer-agent-name">Agent Detail</div>
+        <div class="drawer-subtitle" id="drawer-agent-id">A3000</div>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Drawer">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Role & Team Details -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Assignment & Roster Context</div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
+          <span class="badge badge-default" id="drawer-team">-</span>
+          <span class="badge badge-accent" id="drawer-tier">-</span>
+          <span class="badge badge-default" id="drawer-site">-</span>
+          <span class="badge badge-default" id="drawer-shift">-</span>
+          <span class="badge badge-warning" id="drawer-triage-badge" style="display: none;">Hardware Triage Rota</span>
+        </div>
+      </div>
+
+      <!-- Core Metrics Grid -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Performance Metrics</div>
+        <div class="drawer-metric-grid">
+          <div class="drawer-metric-box">
+            <div class="drawer-metric-label">CSAT (Mean)</div>
+            <div class="drawer-metric-val" id="drawer-csat">-</div>
+          </div>
+          <div class="drawer-metric-box">
+            <div class="drawer-metric-label">CSAT Sample Size</div>
+            <div class="drawer-metric-val" id="drawer-csat-n">-</div>
+          </div>
+          <div class="drawer-metric-box">
+            <div class="drawer-metric-label">Median Handle Time</div>
+            <div class="drawer-metric-val" id="drawer-handle">-</div>
+          </div>
+          <div class="drawer-metric-box">
+            <div class="drawer-metric-label">SLA Breach Rate</div>
+            <div class="drawer-metric-val" id="drawer-sla">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Intelligence & Exposure -->
+      <div class="drawer-section">
+        <div class="drawer-section-title">Ticket Theme Profile</div>
+        <div style="margin-bottom: 12px;">
+          <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 4px;">Top Issue Categories:</div>
+          <div style="font-size: 12px; font-weight: 600; color: var(--text);" id="drawer-top-cats">-</div>
+        </div>
+
+        <div class="drawer-metric-grid">
+          <div class="drawer-metric-box">
+            <div class="drawer-metric-label">Hardware Defect Tickets</div>
+            <div class="drawer-metric-val" id="drawer-hw-count">-</div>
+          </div>
+          <div class="drawer-metric-box">
+            <div class="drawer-metric-label">Hardware Defect Share</div>
+            <div class="drawer-metric-val" id="drawer-hw-pct">-</div>
+          </div>
+          <div class="drawer-metric-box">
+            <div class="drawer-metric-label">Uninformative Notes</div>
+            <div class="drawer-metric-val" id="drawer-notes-count">-</div>
+          </div>
+          <div class="drawer-metric-box">
+            <div class="drawer-metric-label">Low CSAT Tickets (≤2)</div>
+            <div class="drawer-metric-val" id="drawer-low-csat">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Objective Context Note -->
+      <div class="spec-body" style="font-size: 11px; color: var(--text-subtle);">
+        Evaluated within peer benchmark group. No opaque AI employee scores are generated.
+      </div>
+    </div>
+  </aside>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
