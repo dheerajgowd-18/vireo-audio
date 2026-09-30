@@ -1,0 +1,1003 @@
+lot_code,product_sku,ticket_count,replacement_count,replacement_rate,total_orders_in_lot,candidate_status
+PL2-2510-3,VA-EB-PL2,171,70,0.4093567251461988,208,high-replacement lot candidate
+PL2-2510-1,VA-EB-PL2,163,69,0.4233128834355828,193,high-replacement lot candidate
+PL2-2511-3,VA-EB-PL2,146,66,0.4520547945205479,177,high-replacement lot candidate
+PL2-2510-4,VA-EB-PL2,158,64,0.4050632911392405,194,high-replacement lot candidate
+PL2-2510-2,VA-EB-PL2,168,59,0.35119047619047616,186,high-replacement lot candidate
+PL2-2511-4,VA-EB-PL2,171,58,0.3391812865497076,183,high-replacement lot candidate
+PL2-2511-2,VA-EB-PL2,128,50,0.390625,167,high-replacement lot candidate
+PL2-2511-1,VA-EB-PL2,154,50,0.3246753246753247,152,high-replacement lot candidate
+PL2-2512-4,VA-EB-PL2,115,45,0.391304347826087,136,high-replacement lot candidate
+PL2-2512-2,VA-EB-PL2,107,36,0.3364485981308411,125,high-replacement lot candidate
+PL2-2512-1,VA-EB-PL2,127,34,0.2677165354330709,135,high-replacement lot candidate
+PL2-2512-3,VA-EB-PL2,93,30,0.3225806451612903,123,high-replacement lot candidate
+PL2-2509-2,VA-EB-PL2,91,10,0.10989010989010989,153,standard lot
+PL2-2507-3,VA-EB-PL2,41,9,0.21951219512195122,83,standard lot
+PL2-2509-3,VA-EB-PL2,71,8,0.11267605633802817,144,standard lot
+PL2-2509-1,VA-EB-PL2,64,6,0.09375,153,standard lot
+PL2-2508-3,VA-EB-PL2,60,6,0.1,115,standard lot
+PL2-2601-2,VA-EB-PL2,33,6,0.18181818181818182,78,standard lot
+PL2-2509-4,VA-EB-PL2,61,6,0.09836065573770492,123,standard lot
+PL2-2601-3,VA-EB-PL2,50,6,0.12,99,standard lot
+PL2-2508-4,VA-EB-PL2,48,5,0.10416666666666667,104,standard lot
+PL2-2508-1,VA-EB-PL2,56,5,0.08928571428571429,109,standard lot
+PL1-2503-1,VA-EB-PL1,16,5,0.3125,21,high-replacement lot candidate
+PL2-2601-4,VA-EB-PL2,30,5,0.16666666666666666,74,standard lot
+PL1-2411-2,VA-EB-PL1,16,4,0.25,23,high-replacement lot candidate
+PL2-2603-4,VA-EB-PL2,15,4,0.26666666666666666,44,high-replacement lot candidate
+MINI-2511-4,VA-SP-MINI,11,4,0.36363636363636365,16,high-replacement lot candidate
+PL1-2508-4,VA-EB-PL1,10,4,0.4,31,high-replacement lot candidate
+AIR-2506-1,VA-EB-AIR,7,4,0.5714285714285714,17,high-replacement lot candidate
+PL2-2507-2,VA-EB-PL2,36,4,0.1111111111111111,60,standard lot
+NX2-2502-3,VA-SW-NX2,18,4,0.2222222222222222,29,standard lot
+PL2-2507-4,VA-EB-PL2,26,4,0.15384615384615385,64,standard lot
+PL2-2601-1,VA-EB-PL2,50,4,0.08,89,standard lot
+PL2-2508-2,VA-EB-PL2,51,4,0.0784313725490196,110,standard lot
+PL2-2602-1,VA-EB-PL2,24,4,0.16666666666666666,44,standard lot
+NX2-2501-2,VA-SW-NX2,25,4,0.16,28,standard lot
+NX2-2412-3,VA-SW-NX2,9,3,0.3333333333333333,16,high-replacement lot candidate
+FIT-2505-3,VA-SW-FIT,11,3,0.2727272727272727,11,high-replacement lot candidate
+PL1-2501-3,VA-EB-PL1,13,3,0.23076923076923078,24,standard lot
+PL2-2506-2,VA-EB-PL2,24,3,0.125,46,standard lot
+NX2-2503-2,VA-SW-NX2,12,3,0.25,23,high-replacement lot candidate
+ST2-2601-4,VA-HP-ST2,4,3,0.75,5,high-replacement lot candidate
+NX2-2511-2,VA-SW-NX2,7,3,0.42857142857142855,18,high-replacement lot candidate
+MINI-2508-1,VA-SP-MINI,10,3,0.3,18,high-replacement lot candidate
+AIR-2506-3,VA-EB-AIR,13,3,0.23076923076923078,18,standard lot
+PL1-2501-2,VA-EB-PL1,16,3,0.1875,25,standard lot
+FIT-2511-3,VA-SW-FIT,14,3,0.21428571428571427,15,standard lot
+NX2-2509-1,VA-SW-NX2,11,3,0.2727272727272727,24,high-replacement lot candidate
+NX2-2601-2,VA-SW-NX2,20,3,0.15,25,standard lot
+PL2-2602-3,VA-EB-PL2,17,3,0.17647058823529413,36,standard lot
+CASE-2601-4,VA-AC-CASE,7,3,0.42857142857142855,9,high-replacement lot candidate
+PL1-2506-1,VA-EB-PL1,14,3,0.21428571428571427,11,standard lot
+PL1-2512-3,VA-EB-PL1,13,3,0.23076923076923078,17,standard lot
+PL1-2410-1,VA-EB-PL1,11,3,0.2727272727272727,24,high-replacement lot candidate
+NX2-2508-2,VA-SW-NX2,11,3,0.2727272727272727,33,high-replacement lot candidate
+PL1-2512-1,VA-EB-PL1,11,3,0.2727272727272727,29,high-replacement lot candidate
+NX2-2503-1,VA-SW-NX2,16,2,0.125,21,standard lot
+NX2-2509-2,VA-SW-NX2,10,2,0.2,22,standard lot
+NX2-2504-3,VA-SW-NX2,15,2,0.13333333333333333,20,standard lot
+NX2-2603-3,VA-SW-NX2,6,2,0.3333333333333333,22,high-replacement lot candidate
+NX2-2507-1,VA-SW-NX2,9,2,0.2222222222222222,19,standard lot
+NX2-2601-3,VA-SW-NX2,8,2,0.25,13,high-replacement lot candidate
+NX2-2506-4,VA-SW-NX2,13,2,0.15384615384615385,20,standard lot
+NX2-2506-3,VA-SW-NX2,12,2,0.16666666666666666,19,standard lot
+PL2-2506-3,VA-EB-PL2,17,2,0.11764705882352941,34,standard lot
+PL1-2409-2,VA-EB-PL1,4,2,0.5,23,high-replacement lot candidate
+PL1-2508-2,VA-EB-PL1,12,2,0.16666666666666666,33,standard lot
+PL1-2501-4,VA-EB-PL1,14,2,0.14285714285714285,18,standard lot
+PL1-2502-1,VA-EB-PL1,9,2,0.2222222222222222,21,standard lot
+PL1-2502-3,VA-EB-PL1,13,2,0.15384615384615385,25,standard lot
+ARC-2601-1,VA-NB-ARC,6,2,0.3333333333333333,8,high-replacement lot candidate
+PL1-2411-3,VA-EB-PL1,12,2,0.16666666666666666,20,standard lot
+PL1-2503-4,VA-EB-PL1,11,2,0.18181818181818182,20,standard lot
+PL1-2504-1,VA-EB-PL1,11,2,0.18181818181818182,22,standard lot
+PL1-2505-4,VA-EB-PL1,14,2,0.14285714285714285,17,standard lot
+PL1-2506-4,VA-EB-PL1,13,2,0.15384615384615385,26,standard lot
+PL1-2510-3,VA-EB-PL1,12,2,0.16666666666666666,23,standard lot
+PL1-2410-3,VA-EB-PL1,9,2,0.2222222222222222,18,standard lot
+ARC-2507-2,VA-NB-ARC,6,2,0.3333333333333333,7,high-replacement lot candidate
+PL1-2511-1,VA-EB-PL1,4,2,0.5,16,high-replacement lot candidate
+PL1-2602-1,VA-EB-PL1,9,2,0.2222222222222222,17,standard lot
+PL1-2602-3,VA-EB-PL1,9,2,0.2222222222222222,19,standard lot
+PL2-2505-2,VA-EB-PL2,14,2,0.14285714285714285,34,standard lot
+PL2-2505-3,VA-EB-PL2,23,2,0.08695652173913043,32,standard lot
+PL2-2505-4,VA-EB-PL2,13,2,0.15384615384615385,30,standard lot
+PL2-2506-1,VA-EB-PL2,20,2,0.1,55,standard lot
+PL2-2507-1,VA-EB-PL2,37,2,0.05405405405405406,69,standard lot
+MINI-2602-3,VA-SP-MINI,5,2,0.4,13,high-replacement lot candidate
+NX2-2510-4,VA-SW-NX2,17,2,0.11764705882352941,23,standard lot
+AIR-2501-2,VA-EB-AIR,8,2,0.25,16,high-replacement lot candidate
+ST3-2509-2,VA-HP-ST3,18,2,0.1111111111111111,23,standard lot
+AIR-2411-2,VA-EB-AIR,5,2,0.4,12,high-replacement lot candidate
+MINI-2502-3,VA-SP-MINI,10,2,0.2,10,standard lot
+ST3-2508-1,VA-HP-ST3,8,2,0.25,14,high-replacement lot candidate
+ST2-2511-3,VA-HP-ST2,2,2,1.0,1,high-replacement lot candidate
+FIT-2502-2,VA-SW-FIT,4,2,0.5,6,high-replacement lot candidate
+ST3-2505-2,VA-HP-ST3,12,2,0.16666666666666666,14,standard lot
+AIR-2409-1,VA-EB-AIR,11,2,0.18181818181818182,22,standard lot
+AIR-2503-2,VA-EB-AIR,9,2,0.2222222222222222,14,standard lot
+AIR-2505-4,VA-EB-AIR,8,2,0.25,20,high-replacement lot candidate
+AIR-2503-3,VA-EB-AIR,5,2,0.4,25,high-replacement lot candidate
+MINI-2503-1,VA-SP-MINI,6,2,0.3333333333333333,9,high-replacement lot candidate
+FIT-2603-1,VA-SW-FIT,3,2,0.6666666666666666,7,high-replacement lot candidate
+AIR-2505-2,VA-EB-AIR,13,2,0.15384615384615385,22,standard lot
+ST3-2510-4,VA-HP-ST3,17,2,0.11764705882352941,23,standard lot
+ST3-2501-3,VA-HP-ST3,15,2,0.13333333333333333,20,standard lot
+AIR-2410-1,VA-EB-AIR,6,2,0.3333333333333333,20,high-replacement lot candidate
+ST3-2502-2,VA-HP-ST3,8,2,0.25,7,high-replacement lot candidate
+ST3-2509-4,VA-HP-ST3,10,2,0.2,23,standard lot
+AIR-2410-3,VA-EB-AIR,17,2,0.11764705882352941,25,standard lot
+PL2-2603-1,VA-EB-PL2,21,2,0.09523809523809523,53,standard lot
+ST2-2509-3,VA-HP-ST2,7,2,0.2857142857142857,9,high-replacement lot candidate
+AIR-2508-4,VA-EB-AIR,13,2,0.15384615384615385,27,standard lot
+ST2-2507-1,VA-HP-ST2,7,2,0.2857142857142857,6,high-replacement lot candidate
+AIR-2509-4,VA-EB-AIR,9,2,0.2222222222222222,22,standard lot
+PL2-2603-2,VA-EB-PL2,19,2,0.10526315789473684,37,standard lot
+PL2-2603-3,VA-EB-PL2,17,2,0.11764705882352941,50,standard lot
+AIR-2602-3,VA-EB-AIR,12,2,0.16666666666666666,22,standard lot
+ST3-2507-1,VA-HP-ST3,10,2,0.2,13,standard lot
+AIR-2602-1,VA-EB-AIR,4,2,0.5,7,high-replacement lot candidate
+PL2-2605-4,VA-EB-PL2,7,2,0.2857142857142857,16,high-replacement lot candidate
+FIT-2510-1,VA-SW-FIT,9,2,0.2222222222222222,12,standard lot
+MINI-2508-2,VA-SP-MINI,9,2,0.2222222222222222,18,standard lot
+AIR-2601-1,VA-EB-AIR,11,2,0.18181818181818182,22,standard lot
+AIR-2512-3,VA-EB-AIR,5,2,0.4,8,high-replacement lot candidate
+FIT-2410-1,VA-SW-FIT,7,2,0.2857142857142857,15,high-replacement lot candidate
+FIT-2411-1,VA-SW-FIT,6,2,0.3333333333333333,9,high-replacement lot candidate
+ST2-2502-2,VA-HP-ST2,7,2,0.2857142857142857,4,high-replacement lot candidate
+MINI-2506-4,VA-SP-MINI,12,2,0.16666666666666666,18,standard lot
+MINI-2506-2,VA-SP-MINI,16,2,0.125,19,standard lot
+MINI-2505-4,VA-SP-MINI,6,2,0.3333333333333333,9,high-replacement lot candidate
+ST2-2505-2,VA-HP-ST2,5,2,0.4,8,high-replacement lot candidate
+MINI-2504-2,VA-SP-MINI,7,2,0.2857142857142857,12,high-replacement lot candidate
+AIR-2408-1,VA-EB-AIR,4,2,0.5,23,high-replacement lot candidate
+AIR-2501-1,VA-EB-AIR,8,2,0.25,22,high-replacement lot candidate
+FIT-2602-2,VA-SW-FIT,8,2,0.25,11,high-replacement lot candidate
+NX1-2604-4,VA-SW-NX1,1,1,1.0,3,high-replacement lot candidate
+FIT-2507-1,VA-SW-FIT,6,1,0.16666666666666666,15,standard lot
+FIT-2507-4,VA-SW-FIT,6,1,0.16666666666666666,7,standard lot
+FIT-2506-3,VA-SW-FIT,7,1,0.14285714285714285,8,standard lot
+NX1-2602-2,VA-SW-NX1,5,1,0.2,6,standard lot
+NX2-2501-1,VA-SW-NX2,13,1,0.07692307692307693,22,standard lot
+MINI-2510-2,VA-SP-MINI,4,1,0.25,11,high-replacement lot candidate
+FIT-2505-4,VA-SW-FIT,12,1,0.08333333333333333,15,standard lot
+NX2-2501-3,VA-SW-NX2,13,1,0.07692307692307693,17,standard lot
+NX2-2510-2,VA-SW-NX2,8,1,0.125,19,standard lot
+FIT-2409-2,VA-SW-FIT,2,1,0.5,8,high-replacement lot candidate
+NX2-2509-4,VA-SW-NX2,13,1,0.07692307692307693,29,standard lot
+FIT-2412-1,VA-SW-FIT,9,1,0.1111111111111111,7,standard lot
+NX2-2508-3,VA-SW-NX2,6,1,0.16666666666666666,20,standard lot
+FIT-2503-2,VA-SW-FIT,2,1,0.5,4,high-replacement lot candidate
+NX2-2507-3,VA-SW-NX2,16,1,0.0625,33,standard lot
+NX2-2507-2,VA-SW-NX2,8,1,0.125,18,standard lot
+FIT-2508-4,VA-SW-FIT,8,1,0.125,8,standard lot
+FIT-2504-4,VA-SW-FIT,2,1,0.5,11,high-replacement lot candidate
+NX2-2506-1,VA-SW-NX2,9,1,0.1111111111111111,16,standard lot
+NX2-2505-1,VA-SW-NX2,10,1,0.1,23,standard lot
+NX2-2504-4,VA-SW-NX2,7,1,0.14285714285714285,20,standard lot
+FIT-2505-2,VA-SW-FIT,9,1,0.1111111111111111,11,standard lot
+NX2-2501-4,VA-SW-NX2,16,1,0.0625,29,standard lot
+FIT-2504-2,VA-SW-FIT,7,1,0.14285714285714285,10,standard lot
+AIR-2407-1,VA-EB-AIR,1,1,1.0,19,high-replacement lot candidate
+FIT-2509-4,VA-SW-FIT,3,1,0.3333333333333333,9,high-replacement lot candidate
+MINI-2412-4,VA-SP-MINI,3,1,0.3333333333333333,8,high-replacement lot candidate
+MINI-2603-4,VA-SP-MINI,3,1,0.3333333333333333,9,high-replacement lot candidate
+MINI-2512-1,VA-SP-MINI,6,1,0.16666666666666666,8,standard lot
+FIT-2603-3,VA-SW-FIT,8,1,0.125,13,standard lot
+FIT-2603-4,VA-SW-FIT,3,1,0.3333333333333333,5,high-replacement lot candidate
+MINI-2411-3,VA-SP-MINI,4,1,0.25,4,high-replacement lot candidate
+MINI-2511-3,VA-SP-MINI,15,1,0.06666666666666667,18,standard lot
+MINI-2511-1,VA-SP-MINI,7,1,0.14285714285714285,10,standard lot
+MINI-2501-2,VA-SP-MINI,6,1,0.16666666666666666,6,standard lot
+NX1-2602-1,VA-SW-NX1,3,1,0.3333333333333333,5,high-replacement lot candidate
+MINI-2501-4,VA-SP-MINI,6,1,0.16666666666666666,16,standard lot
+MINI-2503-2,VA-SP-MINI,7,1,0.14285714285714285,12,standard lot
+MINI-2503-4,VA-SP-MINI,9,1,0.1111111111111111,13,standard lot
+MINI-2507-3,VA-SP-MINI,7,1,0.14285714285714285,9,standard lot
+MINI-2507-4,VA-SP-MINI,5,1,0.2,16,standard lot
+MINI-2508-3,VA-SP-MINI,15,1,0.06666666666666667,19,standard lot
+MINI-2508-4,VA-SP-MINI,12,1,0.08333333333333333,23,standard lot
+MINI-2604-4,VA-SP-MINI,4,1,0.25,10,high-replacement lot candidate
+NX1-2405-4,VA-SW-NX1,1,1,1.0,8,high-replacement lot candidate
+NX1-2409-3,VA-SW-NX1,1,1,1.0,6,high-replacement lot candidate
+NX1-2409-4,VA-SW-NX1,1,1,1.0,5,high-replacement lot candidate
+FIT-2510-4,VA-SW-FIT,6,1,0.16666666666666666,19,standard lot
+NX1-2601-1,VA-SW-NX1,3,1,0.3333333333333333,6,high-replacement lot candidate
+NX1-2512-4,VA-SW-NX1,1,1,1.0,5,high-replacement lot candidate
+NX1-2510-1,VA-SW-NX1,6,1,0.16666666666666666,8,standard lot
+FIT-2511-1,VA-SW-FIT,4,1,0.25,8,high-replacement lot candidate
+NX1-2507-4,VA-SW-NX1,7,1,0.14285714285714285,13,standard lot
+NX1-2507-3,VA-SW-NX1,3,1,0.3333333333333333,5,high-replacement lot candidate
+NX1-2507-1,VA-SW-NX1,9,1,0.1111111111111111,11,standard lot
+FIT-2601-2,VA-SW-FIT,2,1,0.5,11,high-replacement lot candidate
+NX1-2506-2,VA-SW-NX1,3,1,0.3333333333333333,3,high-replacement lot candidate
+NX1-2504-4,VA-SW-NX1,6,1,0.16666666666666666,9,standard lot
+NX1-2503-1,VA-SW-NX1,9,1,0.1111111111111111,8,standard lot
+NX1-2412-1,VA-SW-NX1,4,1,0.25,5,high-replacement lot candidate
+NX1-2411-1,VA-SW-NX1,7,1,0.14285714285714285,9,standard lot
+FIT-2602-3,VA-SW-FIT,4,1,0.25,12,high-replacement lot candidate
+NX1-2506-3,VA-SW-NX1,6,1,0.16666666666666666,12,standard lot
+PL1-2506-2,VA-EB-PL1,15,1,0.06666666666666667,24,standard lot
+NX2-2512-1,VA-SW-NX2,20,1,0.05,21,standard lot
+PL2-2504-3,VA-EB-PL2,5,1,0.2,12,standard lot
+ST3-2412-3,VA-HP-ST3,10,1,0.1,18,standard lot
+ST3-2411-4,VA-HP-ST3,8,1,0.125,16,standard lot
+ST3-2410-4,VA-HP-ST3,8,1,0.125,9,standard lot
+ST3-2410-2,VA-HP-ST3,6,1,0.16666666666666666,17,standard lot
+ST2-2604-2,VA-HP-ST2,1,1,1.0,3,high-replacement lot candidate
+ST2-2510-3,VA-HP-ST2,6,1,0.16666666666666666,5,standard lot
+ST2-2509-4,VA-HP-ST2,3,1,0.3333333333333333,6,high-replacement lot candidate
+ST2-2507-3,VA-HP-ST2,3,1,0.3333333333333333,9,high-replacement lot candidate
+ST2-2506-1,VA-HP-ST2,4,1,0.25,6,high-replacement lot candidate
+ST2-2505-4,VA-HP-ST2,5,1,0.2,11,standard lot
+ST2-2505-3,VA-HP-ST2,5,1,0.2,8,standard lot
+ST2-2503-3,VA-HP-ST2,1,1,1.0,2,high-replacement lot candidate
+ST2-2503-2,VA-HP-ST2,6,1,0.16666666666666666,9,standard lot
+ST2-2503-1,VA-HP-ST2,2,1,0.5,8,high-replacement lot candidate
+ST2-2412-2,VA-HP-ST2,9,1,0.1111111111111111,7,standard lot
+ST2-2411-4,VA-HP-ST2,3,1,0.3333333333333333,7,high-replacement lot candidate
+ST2-2410-3,VA-HP-ST2,6,1,0.16666666666666666,12,standard lot
+ST2-2409-2,VA-HP-ST2,2,1,0.5,8,high-replacement lot candidate
+ST2-2407-3,VA-HP-ST2,2,1,0.5,12,high-replacement lot candidate
+PL2-2605-2,VA-EB-PL2,2,1,0.5,18,high-replacement lot candidate
+PL2-2602-2,VA-EB-PL2,21,1,0.047619047619047616,45,standard lot
+ST3-2501-2,VA-HP-ST3,10,1,0.1,18,standard lot
+ST3-2502-3,VA-HP-ST3,6,1,0.16666666666666666,14,standard lot
+ST3-2502-4,VA-HP-ST3,3,1,0.3333333333333333,6,high-replacement lot candidate
+ST3-2510-2,VA-HP-ST3,7,1,0.14285714285714285,13,standard lot
+ST3-2604-3,VA-HP-ST3,2,1,0.5,10,high-replacement lot candidate
+ST3-2603-4,VA-HP-ST3,2,1,0.5,6,high-replacement lot candidate
+ST3-2603-1,VA-HP-ST3,7,1,0.14285714285714285,13,standard lot
+ST3-2601-2,VA-HP-ST3,8,1,0.125,11,standard lot
+ST3-2601-1,VA-HP-ST3,8,1,0.125,15,standard lot
+ST3-2512-3,VA-HP-ST3,6,1,0.16666666666666666,9,standard lot
+ST3-2512-2,VA-HP-ST3,7,1,0.14285714285714285,14,standard lot
+ST3-2511-4,VA-HP-ST3,9,1,0.1111111111111111,10,standard lot
+ST3-2510-3,VA-HP-ST3,12,1,0.08333333333333333,14,standard lot
+ST3-2510-1,VA-HP-ST3,6,1,0.16666666666666666,9,standard lot
+ST3-2503-2,VA-HP-ST3,2,1,0.5,7,high-replacement lot candidate
+ST3-2509-3,VA-HP-ST3,7,1,0.14285714285714285,17,standard lot
+ST3-2508-4,VA-HP-ST3,8,1,0.125,19,standard lot
+ST3-2508-3,VA-HP-ST3,8,1,0.125,24,standard lot
+ST3-2507-4,VA-HP-ST3,9,1,0.1111111111111111,16,standard lot
+ST3-2507-2,VA-HP-ST3,7,1,0.14285714285714285,10,standard lot
+ST3-2506-3,VA-HP-ST3,19,1,0.05263157894736842,17,standard lot
+ST3-2506-1,VA-HP-ST3,10,1,0.1,12,standard lot
+ST3-2503-4,VA-HP-ST3,10,1,0.1,17,standard lot
+ST3-2503-3,VA-HP-ST3,6,1,0.16666666666666666,14,standard lot
+PL2-2505-1,VA-EB-PL2,22,1,0.045454545454545456,39,standard lot
+PL2-2504-2,VA-EB-PL2,6,1,0.16666666666666666,8,standard lot
+NX2-2512-3,VA-SW-NX2,3,1,0.3333333333333333,11,high-replacement lot candidate
+PL1-2601-3,VA-EB-PL1,9,1,0.1111111111111111,22,standard lot
+ORB-2603-4,VA-SP-ORB,2,1,0.5,4,high-replacement lot candidate
+ORB-2512-4,VA-SP-ORB,4,1,0.25,6,high-replacement lot candidate
+ORB-2512-2,VA-SP-ORB,2,1,0.5,4,high-replacement lot candidate
+ORB-2511-4,VA-SP-ORB,4,1,0.25,8,high-replacement lot candidate
+ORB-2511-1,VA-SP-ORB,3,1,0.3333333333333333,5,high-replacement lot candidate
+ORB-2510-4,VA-SP-ORB,5,1,0.2,8,standard lot
+ORB-2510-3,VA-SP-ORB,5,1,0.2,9,standard lot
+ORB-2510-2,VA-SP-ORB,12,1,0.08333333333333333,9,standard lot
+ORB-2508-4,VA-SP-ORB,4,1,0.25,8,high-replacement lot candidate
+ORB-2507-3,VA-SP-ORB,7,1,0.14285714285714285,8,standard lot
+ORB-2505-1,VA-SP-ORB,2,1,0.5,7,high-replacement lot candidate
+ORB-2503-1,VA-SP-ORB,4,1,0.25,7,high-replacement lot candidate
+ORB-2501-3,VA-SP-ORB,3,1,0.3333333333333333,5,high-replacement lot candidate
+ORB-2412-4,VA-SP-ORB,1,1,1.0,4,high-replacement lot candidate
+ORB-2411-4,VA-SP-ORB,3,1,0.3333333333333333,6,high-replacement lot candidate
+ORB-2411-3,VA-SP-ORB,5,1,0.2,10,standard lot
+ORB-2410-1,VA-SP-ORB,3,1,0.3333333333333333,7,high-replacement lot candidate
+ORB-2408-2,VA-SP-ORB,1,1,1.0,11,high-replacement lot candidate
+NX2-2603-4,VA-SW-NX2,6,1,0.16666666666666666,17,standard lot
+NX2-2602-2,VA-SW-NX2,12,1,0.08333333333333333,28,standard lot
+NX2-2512-4,VA-SW-NX2,8,1,0.125,13,standard lot
+PL1-2407-3,VA-EB-PL1,3,1,0.3333333333333333,22,high-replacement lot candidate
+PL1-2409-4,VA-EB-PL1,3,1,0.3333333333333333,34,high-replacement lot candidate
+PL1-2410-4,VA-EB-PL1,8,1,0.125,21,standard lot
+PL1-2509-2,VA-EB-PL1,11,1,0.09090909090909091,27,standard lot
+PL1-2601-2,VA-EB-PL1,15,1,0.06666666666666667,26,standard lot
+PL1-2601-1,VA-EB-PL1,12,1,0.08333333333333333,20,standard lot
+PL1-2512-4,VA-EB-PL1,13,1,0.07692307692307693,19,standard lot
+PL1-2511-3,VA-EB-PL1,21,1,0.047619047619047616,33,standard lot
+PL1-2511-2,VA-EB-PL1,11,1,0.09090909090909091,24,standard lot
+PL1-2510-4,VA-EB-PL1,12,1,0.08333333333333333,18,standard lot
+PL1-2510-2,VA-EB-PL1,9,1,0.1111111111111111,18,standard lot
+PL1-2510-1,VA-EB-PL1,9,1,0.1111111111111111,26,standard lot
+PL1-2509-3,VA-EB-PL1,14,1,0.07142857142857142,27,standard lot
+PL1-2509-1,VA-EB-PL1,10,1,0.1,21,standard lot
+PL1-2411-1,VA-EB-PL1,9,1,0.1111111111111111,16,standard lot
+PL1-2508-3,VA-EB-PL1,9,1,0.1111111111111111,26,standard lot
+PL1-2507-3,VA-EB-PL1,12,1,0.08333333333333333,27,standard lot
+PL1-2507-2,VA-EB-PL1,8,1,0.125,13,standard lot
+FIT-2406-3,VA-SW-FIT,1,1,1.0,12,high-replacement lot candidate
+PL1-2505-3,VA-EB-PL1,13,1,0.07692307692307693,19,standard lot
+PL1-2505-2,VA-EB-PL1,7,1,0.14285714285714285,21,standard lot
+PL1-2504-4,VA-EB-PL1,12,1,0.08333333333333333,19,standard lot
+PL1-2503-3,VA-EB-PL1,10,1,0.1,18,standard lot
+PL1-2412-4,VA-EB-PL1,15,1,0.06666666666666667,18,standard lot
+FIT-2408-3,VA-SW-FIT,1,1,1.0,12,high-replacement lot candidate
+ST3-2605-2,VA-HP-ST3,3,1,0.3333333333333333,4,high-replacement lot candidate
+ARC-2411-2,VA-NB-ARC,3,1,0.3333333333333333,6,high-replacement lot candidate
+AIR-2505-1,VA-EB-AIR,11,1,0.09090909090909091,15,standard lot
+ARC-2604-4,VA-NB-ARC,2,1,0.5,7,high-replacement lot candidate
+CASE-2512-1,VA-AC-CASE,2,1,0.5,8,high-replacement lot candidate
+CASE-2511-4,VA-AC-CASE,2,1,0.5,6,high-replacement lot candidate
+AIR-2507-2,VA-EB-AIR,11,1,0.09090909090909091,18,standard lot
+AIR-2507-1,VA-EB-AIR,10,1,0.1,19,standard lot
+ARC-2507-1,VA-NB-ARC,5,1,0.2,9,standard lot
+CASE-2511-1,VA-AC-CASE,6,1,0.16666666666666666,7,standard lot
+AIR-2601-2,VA-EB-AIR,12,1,0.08333333333333333,21,standard lot
+AIR-2505-3,VA-EB-AIR,12,1,0.08333333333333333,18,standard lot
+ARC-2505-2,VA-NB-ARC,6,1,0.16666666666666666,7,standard lot
+AIR-2603-2,VA-EB-AIR,6,1,0.16666666666666666,11,standard lot
+AIR-2504-2,VA-EB-AIR,7,1,0.14285714285714285,13,standard lot
+CH65-2505-3,VA-AC-CH65,3,1,0.3333333333333333,3,high-replacement lot candidate
+CH65-2506-2,VA-AC-CH65,2,1,0.5,2,high-replacement lot candidate
+ARC-2504-4,VA-NB-ARC,8,1,0.125,10,standard lot
+CBL-2503-2,VA-AC-CBL,5,1,0.2,8,standard lot
+CBL-2511-4,VA-AC-CBL,2,1,0.5,2,high-replacement lot candidate
+AIR-2602-2,VA-EB-AIR,7,1,0.14285714285714285,17,standard lot
+CH65-2507-2,VA-AC-CH65,5,1,0.2,3,standard lot
+CASE-2510-3,VA-AC-CASE,5,1,0.2,8,standard lot
+AIR-2507-3,VA-EB-AIR,13,1,0.07692307692307693,24,standard lot
+ARC-2508-3,VA-NB-ARC,6,1,0.16666666666666666,9,standard lot
+ARC-2508-4,VA-NB-ARC,4,1,0.25,5,high-replacement lot candidate
+ARC-2509-1,VA-NB-ARC,3,1,0.3333333333333333,7,high-replacement lot candidate
+ARC-2511-3,VA-NB-ARC,4,1,0.25,8,high-replacement lot candidate
+AIR-2509-3,VA-EB-AIR,7,1,0.14285714285714285,11,standard lot
+AIR-2510-1,VA-EB-AIR,7,1,0.14285714285714285,19,standard lot
+AIR-2509-2,VA-EB-AIR,6,1,0.16666666666666666,18,standard lot
+AIR-2510-4,VA-EB-AIR,9,1,0.1111111111111111,15,standard lot
+CASE-2603-3,VA-AC-CASE,3,1,0.3333333333333333,2,high-replacement lot candidate
+AIR-2508-3,VA-EB-AIR,11,1,0.09090909090909091,22,standard lot
+ARC-2512-3,VA-NB-ARC,7,1,0.14285714285714285,9,standard lot
+AIR-2508-2,VA-EB-AIR,7,1,0.14285714285714285,18,standard lot
+ARC-2512-4,VA-NB-ARC,9,1,0.1111111111111111,10,standard lot
+ARC-2601-3,VA-NB-ARC,3,1,0.3333333333333333,10,high-replacement lot candidate
+ARC-2510-1,VA-NB-ARC,1,1,1.0,3,high-replacement lot candidate
+CH65-2501-4,VA-AC-CH65,1,1,1.0,3,high-replacement lot candidate
+AIR-2511-2,VA-EB-AIR,12,1,0.08333333333333333,16,standard lot
+CH65-2502-2,VA-AC-CH65,2,1,0.5,5,high-replacement lot candidate
+AIR-2507-4,VA-EB-AIR,15,1,0.06666666666666667,23,standard lot
+CASE-2601-2,VA-AC-CASE,7,1,0.14285714285714285,6,standard lot
+ARC-2602-4,VA-NB-ARC,1,1,1.0,4,high-replacement lot candidate
+AIR-2511-4,VA-EB-AIR,11,1,0.09090909090909091,21,standard lot
+CASE-2510-2,VA-AC-CASE,2,1,0.5,7,high-replacement lot candidate
+AIR-2601-3,VA-EB-AIR,2,1,0.5,11,high-replacement lot candidate
+CH65-2410-4,VA-AC-CH65,1,1,1.0,3,high-replacement lot candidate
+ARC-2410-2,VA-NB-ARC,3,1,0.3333333333333333,6,high-replacement lot candidate
+ARC-2409-4,VA-NB-ARC,4,1,0.25,11,high-replacement lot candidate
+CBL-2508-3,VA-AC-CBL,3,1,0.3333333333333333,2,high-replacement lot candidate
+ARC-2501-1,VA-NB-ARC,2,1,0.5,6,high-replacement lot candidate
+AIR-2411-1,VA-EB-AIR,7,1,0.14285714285714285,22,standard lot
+ARC-2501-2,VA-NB-ARC,5,1,0.2,5,standard lot
+ARC-2501-3,VA-NB-ARC,4,1,0.25,10,high-replacement lot candidate
+AIR-2410-4,VA-EB-AIR,6,1,0.16666666666666666,23,standard lot
+CH65-2512-1,VA-AC-CH65,4,1,0.25,5,high-replacement lot candidate
+ARC-2408-2,VA-NB-ARC,3,1,0.3333333333333333,8,high-replacement lot candidate
+AIR-2408-3,VA-EB-AIR,3,1,0.3333333333333333,21,high-replacement lot candidate
+AIR-2409-4,VA-EB-AIR,5,1,0.2,18,standard lot
+ARC-2503-4,VA-NB-ARC,3,1,0.3333333333333333,7,high-replacement lot candidate
+CH65-2512-3,VA-AC-CH65,5,1,0.2,4,standard lot
+ARC-2502-2,VA-NB-ARC,6,1,0.16666666666666666,11,standard lot
+ARC-2502-4,VA-NB-ARC,2,1,0.5,6,high-replacement lot candidate
+ARC-2412-4,VA-NB-ARC,5,1,0.2,6,standard lot
+CBL-2510-3,VA-AC-CBL,2,1,0.5,2,high-replacement lot candidate
+AIR-2412-3,VA-EB-AIR,12,1,0.08333333333333333,20,standard lot
+AIR-2501-3,VA-EB-AIR,17,1,0.058823529411764705,13,standard lot
+AIR-2502-1,VA-EB-AIR,10,1,0.1,15,standard lot
+CH65-2602-2,VA-AC-CH65,2,1,0.5,3,high-replacement lot candidate
+CBL-2508-1,VA-AC-CBL,4,1,0.25,3,high-replacement lot candidate
+CH65-2509-2,VA-AC-CH65,3,1,0.3333333333333333,6,high-replacement lot candidate
+AIR-2407-3,VA-EB-AIR,4,1,0.25,12,high-replacement lot candidate
+CH65-2510-1,VA-AC-CH65,4,1,0.25,4,high-replacement lot candidate
+ARC-2503-2,VA-NB-ARC,5,1,0.2,6,standard lot
+CBL-2511-1,VA-AC-CBL,1,1,1.0,3,high-replacement lot candidate
+ARC-2509-4,VA-NB-ARC,5,0,0.0,5,standard lot
+ARC-2412-2,VA-NB-ARC,2,0,0.0,4,standard lot
+ARC-2509-2,VA-NB-ARC,2,0,0.0,7,standard lot
+ARC-2412-1,VA-NB-ARC,8,0,0.0,5,standard lot
+ARC-2503-1,VA-NB-ARC,5,0,0.0,3,standard lot
+PL1-2506-3,VA-EB-PL1,6,0,0.0,9,standard lot
+ARC-2509-3,VA-NB-ARC,2,0,0.0,8,standard lot
+ARC-2511-1,VA-NB-ARC,2,0,0.0,7,standard lot
+ARC-2412-3,VA-NB-ARC,1,0,0.0,2,standard lot
+PL1-2508-1,VA-EB-PL1,14,0,0.0,33,standard lot
+PL1-2507-1,VA-EB-PL1,10,0,0.0,22,standard lot
+ARC-2510-4,VA-NB-ARC,8,0,0.0,6,standard lot
+ARC-2510-2,VA-NB-ARC,5,0,0.0,8,standard lot
+PL2-2506-4,VA-EB-PL2,20,0,0.0,49,standard lot
+ARC-2510-3,VA-NB-ARC,2,0,0.0,5,standard lot
+PL1-2507-4,VA-EB-PL1,5,0,0.0,20,standard lot
+PL1-2603-2,VA-EB-PL1,5,0,0.0,15,standard lot
+PL2-2504-4,VA-EB-PL2,4,0,0.0,7,standard lot
+PL1-2512-2,VA-EB-PL1,5,0,0.0,17,standard lot
+ARC-2504-1,VA-NB-ARC,5,0,0.0,4,standard lot
+PL1-2602-2,VA-EB-PL1,9,0,0.0,28,standard lot
+ARC-2504-2,VA-NB-ARC,1,0,0.0,2,standard lot
+PL1-2603-3,VA-EB-PL1,6,0,0.0,16,standard lot
+PL1-2601-4,VA-EB-PL1,8,0,0.0,21,standard lot
+ARC-2504-3,VA-NB-ARC,3,0,0.0,10,standard lot
+PL1-2603-4,VA-EB-PL1,2,0,0.0,18,standard lot
+PL1-2604-2,VA-EB-PL1,3,0,0.0,15,standard lot
+ARC-2505-1,VA-NB-ARC,5,0,0.0,10,standard lot
+ARC-2511-2,VA-NB-ARC,1,0,0.0,4,standard lot
+PL1-2604-3,VA-EB-PL1,2,0,0.0,14,standard lot
+PL1-2604-4,VA-EB-PL1,3,0,0.0,17,standard lot
+ARC-2505-3,VA-NB-ARC,3,0,0.0,3,standard lot
+PL1-2605-2,VA-EB-PL1,4,0,0.0,10,standard lot
+ARC-2503-3,VA-NB-ARC,5,0,0.0,6,standard lot
+ARC-2505-4,VA-NB-ARC,4,0,0.0,5,standard lot
+PL1-2605-3,VA-EB-PL1,1,0,0.0,5,standard lot
+PL1-2511-4,VA-EB-PL1,4,0,0.0,13,standard lot
+ARC-2506-2,VA-NB-ARC,3,0,0.0,5,standard lot
+ARC-2506-3,VA-NB-ARC,1,0,0.0,3,standard lot
+ARC-2506-4,VA-NB-ARC,2,0,0.0,7,standard lot
+ARC-2507-3,VA-NB-ARC,3,0,0.0,8,standard lot
+ARC-2507-4,VA-NB-ARC,1,0,0.0,6,standard lot
+PL1-2605-4,VA-EB-PL1,2,0,0.0,8,standard lot
+ARC-2508-1,VA-NB-ARC,4,0,0.0,9,standard lot
+PL1-2603-1,VA-EB-PL1,6,0,0.0,8,standard lot
+PL1-2509-4,VA-EB-PL1,4,0,0.0,23,standard lot
+ARC-2508-2,VA-NB-ARC,2,0,0.0,6,standard lot
+PL2-2504-1,VA-EB-PL2,4,0,0.0,9,standard lot
+CH65-2603-1,VA-AC-CH65,3,0,0.0,6,standard lot
+PL1-2505-1,VA-EB-PL1,13,0,0.0,18,standard lot
+ARC-2511-4,VA-NB-ARC,1,0,0.0,4,standard lot
+ORB-2601-3,VA-SP-ORB,4,0,0.0,7,standard lot
+ORB-2601-4,VA-SP-ORB,2,0,0.0,9,standard lot
+ORB-2602-1,VA-SP-ORB,7,0,0.0,6,standard lot
+ORB-2602-2,VA-SP-ORB,2,0,0.0,6,standard lot
+ORB-2602-3,VA-SP-ORB,2,0,0.0,6,standard lot
+ORB-2602-4,VA-SP-ORB,2,0,0.0,5,standard lot
+ORB-2603-1,VA-SP-ORB,4,0,0.0,9,standard lot
+ORB-2603-2,VA-SP-ORB,5,0,0.0,7,standard lot
+ORB-2603-3,VA-SP-ORB,1,0,0.0,7,standard lot
+CASE-2505-3,VA-AC-CASE,1,0,0.0,5,standard lot
+ORB-2604-1,VA-SP-ORB,2,0,0.0,4,standard lot
+ORB-2604-2,VA-SP-ORB,1,0,0.0,5,standard lot
+ORB-2604-3,VA-SP-ORB,1,0,0.0,3,standard lot
+ORB-2604-4,VA-SP-ORB,1,0,0.0,2,standard lot
+ORB-2605-2,VA-SP-ORB,1,0,0.0,5,standard lot
+PL1-2403-1,VA-EB-PL1,1,0,0.0,4,standard lot
+PL1-2403-2,VA-EB-PL1,1,0,0.0,7,standard lot
+ORB-2601-2,VA-SP-ORB,2,0,0.0,3,standard lot
+ORB-2601-1,VA-SP-ORB,4,0,0.0,7,standard lot
+CASE-2505-4,VA-AC-CASE,2,0,0.0,2,standard lot
+CASE-2507-2,VA-AC-CASE,2,0,0.0,4,standard lot
+ORB-2508-3,VA-SP-ORB,4,0,0.0,8,standard lot
+CASE-2507-3,VA-AC-CASE,5,0,0.0,10,standard lot
+ORB-2509-1,VA-SP-ORB,1,0,0.0,7,standard lot
+ORB-2509-2,VA-SP-ORB,6,0,0.0,10,standard lot
+ORB-2509-3,VA-SP-ORB,3,0,0.0,7,standard lot
+ORB-2509-4,VA-SP-ORB,2,0,0.0,6,standard lot
+ORB-2510-1,VA-SP-ORB,2,0,0.0,4,standard lot
+CASE-2507-1,VA-AC-CASE,5,0,0.0,8,standard lot
+ORB-2512-3,VA-SP-ORB,2,0,0.0,7,standard lot
+CASE-2506-4,VA-AC-CASE,1,0,0.0,5,standard lot
+CASE-2506-3,VA-AC-CASE,5,0,0.0,3,standard lot
+ORB-2511-2,VA-SP-ORB,3,0,0.0,5,standard lot
+ORB-2511-3,VA-SP-ORB,6,0,0.0,7,standard lot
+CASE-2506-2,VA-AC-CASE,1,0,0.0,2,standard lot
+ORB-2512-1,VA-SP-ORB,2,0,0.0,8,standard lot
+CASE-2506-1,VA-AC-CASE,4,0,0.0,7,standard lot
+PL1-2404-2,VA-EB-PL1,1,0,0.0,7,standard lot
+PL1-2404-3,VA-EB-PL1,1,0,0.0,14,standard lot
+PL1-2405-2,VA-EB-PL1,1,0,0.0,17,standard lot
+ARC-2411-3,VA-NB-ARC,5,0,0.0,2,standard lot
+PL1-2411-4,VA-EB-PL1,2,0,0.0,15,standard lot
+PL1-2412-1,VA-EB-PL1,8,0,0.0,19,standard lot
+PL1-2412-2,VA-EB-PL1,12,0,0.0,23,standard lot
+PL1-2412-3,VA-EB-PL1,10,0,0.0,23,standard lot
+PL1-2501-1,VA-EB-PL1,5,0,0.0,19,standard lot
+ARC-2602-3,VA-NB-ARC,2,0,0.0,4,standard lot
+ARC-2602-2,VA-NB-ARC,2,0,0.0,6,standard lot
+ARC-2601-4,VA-NB-ARC,3,0,0.0,5,standard lot
+ARC-2603-2,VA-NB-ARC,2,0,0.0,6,standard lot
+PL1-2502-2,VA-EB-PL1,5,0,0.0,19,standard lot
+PL1-2502-4,VA-EB-PL1,11,0,0.0,21,standard lot
+PL1-2503-2,VA-EB-PL1,4,0,0.0,14,standard lot
+ARC-2512-2,VA-NB-ARC,2,0,0.0,6,standard lot
+ARC-2512-1,VA-NB-ARC,4,0,0.0,6,standard lot
+PL1-2504-2,VA-EB-PL1,11,0,0.0,17,standard lot
+PL1-2504-3,VA-EB-PL1,8,0,0.0,20,standard lot
+ARC-2603-1,VA-NB-ARC,5,0,0.0,8,standard lot
+ARC-2603-3,VA-NB-ARC,3,0,0.0,6,standard lot
+PL1-2405-4,VA-EB-PL1,3,0,0.0,21,standard lot
+PL1-2408-2,VA-EB-PL1,3,0,0.0,21,standard lot
+PL1-2406-3,VA-EB-PL1,2,0,0.0,26,standard lot
+PL1-2406-4,VA-EB-PL1,2,0,0.0,20,standard lot
+PL1-2407-1,VA-EB-PL1,4,0,0.0,27,standard lot
+PL1-2407-2,VA-EB-PL1,3,0,0.0,17,standard lot
+CASE-2505-1,VA-AC-CASE,1,0,0.0,3,standard lot
+PL1-2407-4,VA-EB-PL1,3,0,0.0,25,standard lot
+PL1-2408-1,VA-EB-PL1,2,0,0.0,13,standard lot
+PL1-2408-3,VA-EB-PL1,1,0,0.0,21,standard lot
+ARC-2605-1,VA-NB-ARC,1,0,0.0,2,standard lot
+PL1-2408-4,VA-EB-PL1,3,0,0.0,27,standard lot
+PL1-2409-1,VA-EB-PL1,5,0,0.0,23,standard lot
+CASE-2504-1,VA-AC-CASE,1,0,0.0,3,standard lot
+PL1-2409-3,VA-EB-PL1,5,0,0.0,20,standard lot
+ARC-2605-4,VA-NB-ARC,1,0,0.0,3,standard lot
+ARC-2605-2,VA-NB-ARC,1,0,0.0,2,standard lot
+PL1-2410-2,VA-EB-PL1,9,0,0.0,29,standard lot
+ARC-2602-1,VA-NB-ARC,3,0,0.0,10,standard lot
+AIR-2604-4,VA-EB-AIR,5,0,0.0,9,standard lot
+ARC-2411-1,VA-NB-ARC,1,0,0.0,1,standard lot
+AIR-2504-3,VA-EB-AIR,3,0,0.0,10,standard lot
+ST3-2412-1,VA-HP-ST3,4,0,0.0,12,standard lot
+ST3-2412-2,VA-HP-ST3,8,0,0.0,17,standard lot
+AIR-2506-2,VA-EB-AIR,13,0,0.0,17,standard lot
+ST3-2412-4,VA-HP-ST3,8,0,0.0,12,standard lot
+ST3-2501-1,VA-HP-ST3,7,0,0.0,16,standard lot
+ST3-2501-4,VA-HP-ST3,6,0,0.0,12,standard lot
+AIR-2504-4,VA-EB-AIR,5,0,0.0,9,standard lot
+ST3-2503-1,VA-HP-ST3,9,0,0.0,19,standard lot
+ST3-2411-3,VA-HP-ST3,8,0,0.0,14,standard lot
+AIR-2504-1,VA-EB-AIR,2,0,0.0,13,standard lot
+AIR-2503-4,VA-EB-AIR,7,0,0.0,16,standard lot
+AIR-2503-1,VA-EB-AIR,9,0,0.0,16,standard lot
+ST3-2504-1,VA-HP-ST3,3,0,0.0,11,standard lot
+ST3-2504-2,VA-HP-ST3,4,0,0.0,10,standard lot
+ST3-2504-3,VA-HP-ST3,6,0,0.0,9,standard lot
+ST3-2504-4,VA-HP-ST3,3,0,0.0,11,standard lot
+AIR-2506-4,VA-EB-AIR,8,0,0.0,18,standard lot
+ST3-2411-2,VA-HP-ST3,4,0,0.0,12,standard lot
+ST2-2512-3,VA-HP-ST2,6,0,0.0,10,standard lot
+ST2-2603-4,VA-HP-ST2,3,0,0.0,10,standard lot
+ST2-2601-1,VA-HP-ST2,4,0,0.0,8,standard lot
+ST2-2602-2,VA-HP-ST2,1,0,0.0,3,standard lot
+ST2-2602-3,VA-HP-ST2,5,0,0.0,5,standard lot
+ST2-2602-4,VA-HP-ST2,1,0,0.0,4,standard lot
+ST2-2603-1,VA-HP-ST2,2,0,0.0,5,standard lot
+ST2-2603-2,VA-HP-ST2,1,0,0.0,5,standard lot
+ST2-2603-3,VA-HP-ST2,6,0,0.0,11,standard lot
+ST2-2604-1,VA-HP-ST2,1,0,0.0,3,standard lot
+ST3-2411-1,VA-HP-ST3,5,0,0.0,13,standard lot
+ST3-2408-1,VA-HP-ST3,1,0,0.0,2,standard lot
+ST3-2408-2,VA-HP-ST3,2,0,0.0,4,standard lot
+ST3-2408-4,VA-HP-ST3,2,0,0.0,5,standard lot
+ST3-2409-1,VA-HP-ST3,8,0,0.0,10,standard lot
+ST3-2409-2,VA-HP-ST3,2,0,0.0,5,standard lot
+ST3-2410-1,VA-HP-ST3,7,0,0.0,17,standard lot
+ST3-2410-3,VA-HP-ST3,1,0,0.0,12,standard lot
+ST3-2505-1,VA-HP-ST3,8,0,0.0,10,standard lot
+AIR-2502-4,VA-EB-AIR,9,0,0.0,17,standard lot
+ST3-2505-3,VA-HP-ST3,5,0,0.0,10,standard lot
+ST3-2602-2,VA-HP-ST3,7,0,0.0,14,standard lot
+AIR-2409-2,VA-EB-AIR,4,0,0.0,13,standard lot
+AIR-2408-4,VA-EB-AIR,3,0,0.0,18,standard lot
+ST3-2512-4,VA-HP-ST3,9,0,0.0,17,standard lot
+AIR-2408-2,VA-EB-AIR,5,0,0.0,23,standard lot
+ST3-2601-3,VA-HP-ST3,2,0,0.0,6,standard lot
+ST3-2601-4,VA-HP-ST3,5,0,0.0,11,standard lot
+ST3-2602-1,VA-HP-ST3,7,0,0.0,16,standard lot
+ST3-2602-3,VA-HP-ST3,6,0,0.0,13,standard lot
+ST3-2505-4,VA-HP-ST3,7,0,0.0,13,standard lot
+ST3-2602-4,VA-HP-ST3,4,0,0.0,7,standard lot
+AIR-2407-4,VA-EB-AIR,2,0,0.0,10,standard lot
+ST3-2603-2,VA-HP-ST3,7,0,0.0,13,standard lot
+ST3-2603-3,VA-HP-ST3,2,0,0.0,5,standard lot
+ST3-2604-1,VA-HP-ST3,1,0,0.0,9,standard lot
+AIR-2407-2,VA-EB-AIR,2,0,0.0,13,standard lot
+ST3-2604-4,VA-HP-ST3,2,0,0.0,8,standard lot
+ST3-2512-1,VA-HP-ST3,3,0,0.0,10,standard lot
+AIR-2409-3,VA-EB-AIR,6,0,0.0,21,standard lot
+ST3-2511-3,VA-HP-ST3,8,0,0.0,12,standard lot
+ST3-2511-2,VA-HP-ST3,3,0,0.0,6,standard lot
+AIR-2502-3,VA-EB-AIR,5,0,0.0,10,standard lot
+ST3-2506-2,VA-HP-ST3,1,0,0.0,4,standard lot
+AIR-2502-2,VA-EB-AIR,5,0,0.0,14,standard lot
+ST3-2506-4,VA-HP-ST3,5,0,0.0,14,standard lot
+AIR-2501-4,VA-EB-AIR,3,0,0.0,12,standard lot
+ST3-2507-3,VA-HP-ST3,6,0,0.0,19,standard lot
+AIR-2412-4,VA-EB-AIR,8,0,0.0,21,standard lot
+ST3-2508-2,VA-HP-ST3,18,0,0.0,22,standard lot
+AIR-2412-2,VA-EB-AIR,9,0,0.0,19,standard lot
+ST3-2509-1,VA-HP-ST3,4,0,0.0,18,standard lot
+AIR-2412-1,VA-EB-AIR,3,0,0.0,11,standard lot
+AIR-2411-4,VA-EB-AIR,9,0,0.0,27,standard lot
+AIR-2411-3,VA-EB-AIR,2,0,0.0,14,standard lot
+AIR-2410-2,VA-EB-AIR,6,0,0.0,22,standard lot
+ST3-2511-1,VA-HP-ST3,7,0,0.0,13,standard lot
+ST2-2512-4,VA-HP-ST2,1,0,0.0,2,standard lot
+ST2-2512-1,VA-HP-ST2,2,0,0.0,5,standard lot
+ARC-2410-4,VA-NB-ARC,4,0,0.0,5,standard lot
+PL2-2604-4,VA-EB-PL2,11,0,0.0,31,standard lot
+PL2-2602-4,VA-EB-PL2,16,0,0.0,46,standard lot
+AIR-2603-3,VA-EB-AIR,8,0,0.0,14,standard lot
+AIR-2603-1,VA-EB-AIR,5,0,0.0,13,standard lot
+AIR-2602-4,VA-EB-AIR,5,0,0.0,14,standard lot
+PL2-2604-1,VA-EB-PL2,9,0,0.0,37,standard lot
+PL2-2604-2,VA-EB-PL2,7,0,0.0,25,standard lot
+PL2-2604-3,VA-EB-PL2,11,0,0.0,35,standard lot
+PL2-2605-1,VA-EB-PL2,4,0,0.0,22,standard lot
+AIR-2604-1,VA-EB-AIR,2,0,0.0,9,standard lot
+AIR-2601-4,VA-EB-AIR,4,0,0.0,14,standard lot
+PL2-2606-3,VA-EB-PL2,1,0,0.0,2,standard lot
+ST2-2406-4,VA-HP-ST2,3,0,0.0,7,standard lot
+ST2-2407-4,VA-HP-ST2,1,0,0.0,9,standard lot
+ST2-2408-1,VA-HP-ST2,1,0,0.0,8,standard lot
+ST2-2408-3,VA-HP-ST2,2,0,0.0,6,standard lot
+ST2-2409-1,VA-HP-ST2,1,0,0.0,9,standard lot
+AIR-2603-4,VA-EB-AIR,5,0,0.0,11,standard lot
+AIR-2604-2,VA-EB-AIR,5,0,0.0,10,standard lot
+AIR-2508-1,VA-EB-AIR,5,0,0.0,18,standard lot
+ARC-2407-1,VA-NB-ARC,2,0,0.0,12,standard lot
+ARC-2410-3,VA-NB-ARC,1,0,0.0,6,standard lot
+ARC-2410-1,VA-NB-ARC,1,0,0.0,3,standard lot
+ARC-2409-3,VA-NB-ARC,1,0,0.0,7,standard lot
+ARC-2409-1,VA-NB-ARC,1,0,0.0,8,standard lot
+ARC-2408-4,VA-NB-ARC,2,0,0.0,4,standard lot
+ARC-2408-3,VA-NB-ARC,2,0,0.0,7,standard lot
+ARC-2407-4,VA-NB-ARC,1,0,0.0,7,standard lot
+ARC-2406-3,VA-NB-ARC,1,0,0.0,5,standard lot
+AIR-2604-3,VA-EB-AIR,2,0,0.0,8,standard lot
+ARC-2406-1,VA-NB-ARC,1,0,0.0,6,standard lot
+ARC-2405-3,VA-NB-ARC,1,0,0.0,3,standard lot
+ARC-2405-1,VA-NB-ARC,1,0,0.0,6,standard lot
+AIR-2605-4,VA-EB-AIR,1,0,0.0,3,standard lot
+AIR-2605-3,VA-EB-AIR,2,0,0.0,6,standard lot
+AIR-2605-2,VA-EB-AIR,1,0,0.0,1,standard lot
+ORB-2508-1,VA-SP-ORB,8,0,0.0,13,standard lot
+ST2-2409-3,VA-HP-ST2,2,0,0.0,13,standard lot
+ST2-2409-4,VA-HP-ST2,2,0,0.0,8,standard lot
+ST2-2410-2,VA-HP-ST2,1,0,0.0,7,standard lot
+ST2-2508-3,VA-HP-ST2,3,0,0.0,12,standard lot
+AIR-2510-3,VA-EB-AIR,7,0,0.0,13,standard lot
+AIR-2510-2,VA-EB-AIR,10,0,0.0,22,standard lot
+ST2-2506-2,VA-HP-ST2,1,0,0.0,7,standard lot
+ST2-2506-4,VA-HP-ST2,5,0,0.0,9,standard lot
+ST2-2507-2,VA-HP-ST2,3,0,0.0,9,standard lot
+ST2-2508-1,VA-HP-ST2,2,0,0.0,1,standard lot
+ST2-2508-2,VA-HP-ST2,1,0,0.0,5,standard lot
+ST2-2508-4,VA-HP-ST2,2,0,0.0,9,standard lot
+AIR-2512-4,VA-EB-AIR,13,0,0.0,17,standard lot
+ST2-2509-2,VA-HP-ST2,1,0,0.0,7,standard lot
+AIR-2509-1,VA-EB-AIR,5,0,0.0,16,standard lot
+ST2-2510-1,VA-HP-ST2,1,0,0.0,11,standard lot
+ST2-2510-2,VA-HP-ST2,3,0,0.0,6,standard lot
+ST2-2510-4,VA-HP-ST2,4,0,0.0,5,standard lot
+ST2-2511-1,VA-HP-ST2,2,0,0.0,5,standard lot
+ST2-2511-2,VA-HP-ST2,2,0,0.0,5,standard lot
+ST2-2504-4,VA-HP-ST2,6,0,0.0,6,standard lot
+ST2-2504-3,VA-HP-ST2,3,0,0.0,6,standard lot
+ST2-2504-2,VA-HP-ST2,1,0,0.0,4,standard lot
+ST2-2504-1,VA-HP-ST2,2,0,0.0,6,standard lot
+ST2-2410-4,VA-HP-ST2,1,0,0.0,8,standard lot
+ST2-2411-1,VA-HP-ST2,2,0,0.0,5,standard lot
+ST2-2411-3,VA-HP-ST2,1,0,0.0,8,standard lot
+AIR-2512-2,VA-EB-AIR,6,0,0.0,12,standard lot
+ST2-2412-1,VA-HP-ST2,3,0,0.0,7,standard lot
+AIR-2512-1,VA-EB-AIR,8,0,0.0,14,standard lot
+ST2-2412-4,VA-HP-ST2,1,0,0.0,3,standard lot
+ST2-2501-1,VA-HP-ST2,2,0,0.0,3,standard lot
+ST2-2501-3,VA-HP-ST2,4,0,0.0,5,standard lot
+ST2-2501-4,VA-HP-ST2,6,0,0.0,10,standard lot
+ST2-2502-3,VA-HP-ST2,1,0,0.0,1,standard lot
+ST2-2502-4,VA-HP-ST2,4,0,0.0,8,standard lot
+AIR-2511-3,VA-EB-AIR,5,0,0.0,10,standard lot
+AIR-2511-1,VA-EB-AIR,7,0,0.0,15,standard lot
+ST2-2503-4,VA-HP-ST2,2,0,0.0,7,standard lot
+ORB-2508-2,VA-SP-ORB,9,0,0.0,11,standard lot
+ORB-2504-3,VA-SP-ORB,4,0,0.0,6,standard lot
+ORB-2507-4,VA-SP-ORB,9,0,0.0,14,standard lot
+CH65-2408-1,VA-AC-CH65,1,0,0.0,2,standard lot
+CH65-2412-1,VA-AC-CH65,1,0,0.0,3,standard lot
+MINI-2506-3,VA-SP-MINI,7,0,0.0,14,standard lot
+CH65-2411-4,VA-AC-CH65,1,0,0.0,3,standard lot
+MINI-2507-1,VA-SP-MINI,4,0,0.0,12,standard lot
+MINI-2507-2,VA-SP-MINI,4,0,0.0,19,standard lot
+CH65-2410-3,VA-AC-CH65,1,0,0.0,5,standard lot
+CH65-2410-2,VA-AC-CH65,1,0,0.0,5,standard lot
+CH65-2410-1,VA-AC-CH65,1,0,0.0,3,standard lot
+CH65-2406-4,VA-AC-CH65,1,0,0.0,6,standard lot
+MINI-2412-1,VA-SP-MINI,7,0,0.0,12,standard lot
+MINI-2509-1,VA-SP-MINI,7,0,0.0,8,standard lot
+MINI-2509-2,VA-SP-MINI,5,0,0.0,13,standard lot
+MINI-2509-3,VA-SP-MINI,3,0,0.0,15,standard lot
+MINI-2509-4,VA-SP-MINI,14,0,0.0,21,standard lot
+MINI-2510-1,VA-SP-MINI,9,0,0.0,12,standard lot
+CBL-2604-4,VA-AC-CBL,1,0,0.0,2,standard lot
+MINI-2510-3,VA-SP-MINI,7,0,0.0,14,standard lot
+MINI-2510-4,VA-SP-MINI,4,0,0.0,17,standard lot
+MINI-2506-1,VA-SP-MINI,4,0,0.0,19,standard lot
+CH65-2412-3,VA-AC-CH65,3,0,0.0,3,standard lot
+MINI-2505-3,VA-SP-MINI,3,0,0.0,12,standard lot
+MINI-2505-2,VA-SP-MINI,6,0,0.0,18,standard lot
+MINI-2412-3,VA-SP-MINI,7,0,0.0,6,standard lot
+CH65-2502-4,VA-AC-CH65,1,0,0.0,2,standard lot
+MINI-2501-1,VA-SP-MINI,7,0,0.0,8,standard lot
+CH65-2502-3,VA-AC-CH65,1,0,0.0,2,standard lot
+MINI-2501-3,VA-SP-MINI,6,0,0.0,7,standard lot
+MINI-2502-1,VA-SP-MINI,4,0,0.0,5,standard lot
+MINI-2502-2,VA-SP-MINI,1,0,0.0,6,standard lot
+MINI-2502-4,VA-SP-MINI,4,0,0.0,10,standard lot
+CH65-2501-3,VA-AC-CH65,1,0,0.0,2,standard lot
+CH65-2501-2,VA-AC-CH65,4,0,0.0,5,standard lot
+MINI-2503-3,VA-SP-MINI,5,0,0.0,17,standard lot
+CH65-2501-1,VA-AC-CH65,3,0,0.0,3,standard lot
+MINI-2504-1,VA-SP-MINI,6,0,0.0,12,standard lot
+CH65-2412-4,VA-AC-CH65,2,0,0.0,3,standard lot
+MINI-2504-3,VA-SP-MINI,10,0,0.0,13,standard lot
+MINI-2504-4,VA-SP-MINI,5,0,0.0,15,standard lot
+MINI-2505-1,VA-SP-MINI,7,0,0.0,12,standard lot
+CBL-2602-4,VA-AC-CBL,1,0,0.0,1,standard lot
+MINI-2511-2,VA-SP-MINI,6,0,0.0,16,standard lot
+CBL-2602-1,VA-AC-CBL,2,0,0.0,2,standard lot
+MINI-2605-3,VA-SP-MINI,3,0,0.0,7,standard lot
+NX1-2404-4,VA-SW-NX1,1,0,0.0,3,standard lot
+NX1-2406-2,VA-SW-NX1,2,0,0.0,8,standard lot
+NX1-2406-4,VA-SW-NX1,2,0,0.0,7,standard lot
+NX1-2407-2,VA-SW-NX1,1,0,0.0,6,standard lot
+NX1-2407-3,VA-SW-NX1,1,0,0.0,8,standard lot
+NX1-2408-1,VA-SW-NX1,2,0,0.0,8,standard lot
+NX1-2408-3,VA-SW-NX1,2,0,0.0,9,standard lot
+NX1-2409-1,VA-SW-NX1,2,0,0.0,7,standard lot
+CBL-2511-3,VA-AC-CBL,1,0,0.0,1,standard lot
+CBL-2511-2,VA-AC-CBL,1,0,0.0,2,standard lot
+NX1-2410-1,VA-SW-NX1,2,0,0.0,8,standard lot
+NX1-2410-3,VA-SW-NX1,2,0,0.0,8,standard lot
+NX1-2410-4,VA-SW-NX1,2,0,0.0,6,standard lot
+NX1-2411-2,VA-SW-NX1,3,0,0.0,4,standard lot
+NX1-2411-3,VA-SW-NX1,6,0,0.0,4,standard lot
+NX1-2412-2,VA-SW-NX1,7,0,0.0,6,standard lot
+NX1-2412-3,VA-SW-NX1,2,0,0.0,5,standard lot
+MINI-2605-4,VA-SP-MINI,2,0,0.0,9,standard lot
+MINI-2605-1,VA-SP-MINI,2,0,0.0,3,standard lot
+CBL-2601-3,VA-AC-CBL,1,0,0.0,1,standard lot
+CBL-2512-1,VA-AC-CBL,1,0,0.0,2,standard lot
+CBL-2601-1,VA-AC-CBL,2,0,0.0,1,standard lot
+MINI-2512-2,VA-SP-MINI,2,0,0.0,6,standard lot
+MINI-2512-3,VA-SP-MINI,1,0,0.0,8,standard lot
+MINI-2512-4,VA-SP-MINI,3,0,0.0,8,standard lot
+MINI-2601-1,VA-SP-MINI,2,0,0.0,7,standard lot
+MINI-2601-2,VA-SP-MINI,6,0,0.0,12,standard lot
+MINI-2601-3,VA-SP-MINI,2,0,0.0,14,standard lot
+MINI-2601-4,VA-SP-MINI,3,0,0.0,10,standard lot
+MINI-2602-1,VA-SP-MINI,3,0,0.0,13,standard lot
+MINI-2602-2,VA-SP-MINI,4,0,0.0,7,standard lot
+CBL-2512-4,VA-AC-CBL,1,0,0.0,2,standard lot
+MINI-2602-4,VA-SP-MINI,11,0,0.0,20,standard lot
+MINI-2603-1,VA-SP-MINI,4,0,0.0,13,standard lot
+MINI-2603-2,VA-SP-MINI,4,0,0.0,16,standard lot
+MINI-2603-3,VA-SP-MINI,7,0,0.0,17,standard lot
+CBL-2512-3,VA-AC-CBL,3,0,0.0,2,standard lot
+MINI-2604-3,VA-SP-MINI,1,0,0.0,5,standard lot
+MINI-2412-2,VA-SP-MINI,7,0,0.0,10,standard lot
+MINI-2411-4,VA-SP-MINI,5,0,0.0,14,standard lot
+NX1-2501-1,VA-SW-NX1,3,0,0.0,4,standard lot
+FIT-2503-3,VA-SW-FIT,6,0,0.0,15,standard lot
+FIT-2501-1,VA-SW-FIT,4,0,0.0,9,standard lot
+FIT-2501-3,VA-SW-FIT,2,0,0.0,9,standard lot
+FIT-2501-4,VA-SW-FIT,6,0,0.0,13,standard lot
+FIT-2502-1,VA-SW-FIT,7,0,0.0,10,standard lot
+FIT-2502-3,VA-SW-FIT,4,0,0.0,13,standard lot
+FIT-2502-4,VA-SW-FIT,3,0,0.0,13,standard lot
+FIT-2503-1,VA-SW-FIT,2,0,0.0,5,standard lot
+CH65-2511-3,VA-AC-CH65,6,0,0.0,5,standard lot
+FIT-2503-4,VA-SW-FIT,7,0,0.0,9,standard lot
+CH65-2503-2,VA-AC-CH65,3,0,0.0,4,standard lot
+FIT-2504-1,VA-SW-FIT,2,0,0.0,14,standard lot
+CH65-2511-2,VA-AC-CH65,2,0,0.0,3,standard lot
+FIT-2504-3,VA-SW-FIT,7,0,0.0,11,standard lot
+CH65-2511-1,VA-AC-CH65,1,0,0.0,3,standard lot
+FIT-2505-1,VA-SW-FIT,4,0,0.0,11,standard lot
+CH65-2509-3,VA-AC-CH65,1,0,0.0,2,standard lot
+FIT-2506-1,VA-SW-FIT,9,0,0.0,11,standard lot
+FIT-2506-2,VA-SW-FIT,3,0,0.0,10,standard lot
+FIT-2412-4,VA-SW-FIT,5,0,0.0,12,standard lot
+FIT-2412-3,VA-SW-FIT,10,0,0.0,11,standard lot
+CH65-2512-2,VA-AC-CH65,1,0,0.0,3,standard lot
+FIT-2411-4,VA-SW-FIT,4,0,0.0,6,standard lot
+CH65-2604-1,VA-AC-CH65,2,0,0.0,4,standard lot
+FIT-2407-1,VA-SW-FIT,1,0,0.0,13,standard lot
+FIT-2407-2,VA-SW-FIT,1,0,0.0,13,standard lot
+FIT-2408-1,VA-SW-FIT,2,0,0.0,11,standard lot
+FIT-2408-2,VA-SW-FIT,2,0,0.0,12,standard lot
+CH65-2601-3,VA-AC-CH65,2,0,0.0,1,standard lot
+FIT-2408-4,VA-SW-FIT,4,0,0.0,17,standard lot
+FIT-2409-1,VA-SW-FIT,3,0,0.0,10,standard lot
+CH65-2601-2,VA-AC-CH65,1,0,0.0,2,standard lot
+FIT-2409-3,VA-SW-FIT,1,0,0.0,14,standard lot
+FIT-2409-4,VA-SW-FIT,2,0,0.0,15,standard lot
+CH65-2601-1,VA-AC-CH65,2,0,0.0,5,standard lot
+FIT-2410-2,VA-SW-FIT,4,0,0.0,7,standard lot
+FIT-2410-3,VA-SW-FIT,3,0,0.0,12,standard lot
+FIT-2410-4,VA-SW-FIT,5,0,0.0,14,standard lot
+FIT-2411-2,VA-SW-FIT,5,0,0.0,7,standard lot
+FIT-2411-3,VA-SW-FIT,2,0,0.0,8,standard lot
+CH65-2509-1,VA-AC-CH65,2,0,0.0,7,standard lot
+FIT-2506-4,VA-SW-FIT,2,0,0.0,7,standard lot
+CH65-2508-3,VA-AC-CH65,1,0,0.0,3,standard lot
+CH65-2505-1,VA-AC-CH65,1,0,0.0,4,standard lot
+FIT-2601-4,VA-SW-FIT,7,0,0.0,12,standard lot
+FIT-2602-1,VA-SW-FIT,3,0,0.0,10,standard lot
+CH65-2504-4,VA-AC-CH65,2,0,0.0,3,standard lot
+CH65-2504-3,VA-AC-CH65,1,0,0.0,3,standard lot
+FIT-2602-4,VA-SW-FIT,3,0,0.0,7,standard lot
+CH65-2504-1,VA-AC-CH65,4,0,0.0,3,standard lot
+FIT-2603-2,VA-SW-FIT,5,0,0.0,9,standard lot
+CH65-2503-4,VA-AC-CH65,1,0,0.0,3,standard lot
+CH65-2503-3,VA-AC-CH65,1,0,0.0,2,standard lot
+FIT-2604-1,VA-SW-FIT,3,0,0.0,10,standard lot
+FIT-2604-2,VA-SW-FIT,1,0,0.0,7,standard lot
+FIT-2604-3,VA-SW-FIT,1,0,0.0,5,standard lot
+FIT-2604-4,VA-SW-FIT,3,0,0.0,4,standard lot
+FIT-2605-2,VA-SW-FIT,4,0,0.0,4,standard lot
+FIT-2605-4,VA-SW-FIT,1,0,0.0,1,standard lot
+MINI-2411-1,VA-SP-MINI,1,0,0.0,5,standard lot
+MINI-2411-2,VA-SP-MINI,1,0,0.0,2,standard lot
+FIT-2601-3,VA-SW-FIT,4,0,0.0,3,standard lot
+FIT-2601-1,VA-SW-FIT,5,0,0.0,11,standard lot
+FIT-2507-2,VA-SW-FIT,1,0,0.0,7,standard lot
+FIT-2512-4,VA-SW-FIT,3,0,0.0,10,standard lot
+FIT-2507-3,VA-SW-FIT,5,0,0.0,8,standard lot
+CH65-2508-1,VA-AC-CH65,1,0,0.0,1,standard lot
+FIT-2508-1,VA-SW-FIT,12,0,0.0,14,standard lot
+FIT-2508-2,VA-SW-FIT,3,0,0.0,5,standard lot
+FIT-2508-3,VA-SW-FIT,5,0,0.0,8,standard lot
+FIT-2509-1,VA-SW-FIT,2,0,0.0,8,standard lot
+FIT-2509-2,VA-SW-FIT,7,0,0.0,12,standard lot
+FIT-2509-3,VA-SW-FIT,10,0,0.0,13,standard lot
+CH65-2506-4,VA-AC-CH65,3,0,0.0,5,standard lot
+CH65-2506-3,VA-AC-CH65,5,0,0.0,5,standard lot
+FIT-2510-2,VA-SW-FIT,5,0,0.0,10,standard lot
+FIT-2510-3,VA-SW-FIT,4,0,0.0,8,standard lot
+FIT-2511-2,VA-SW-FIT,2,0,0.0,9,standard lot
+CH65-2505-2,VA-AC-CH65,1,0,0.0,2,standard lot
+FIT-2511-4,VA-SW-FIT,6,0,0.0,8,standard lot
+FIT-2512-1,VA-SW-FIT,1,0,0.0,3,standard lot
+FIT-2512-2,VA-SW-FIT,4,0,0.0,7,standard lot
+NX1-2412-4,VA-SW-NX1,1,0,0.0,7,standard lot
+NX1-2501-2,VA-SW-NX1,1,0,0.0,4,standard lot
+CASE-2508-1,VA-AC-CASE,5,0,0.0,6,standard lot
+NX2-2603-2,VA-SW-NX2,1,0,0.0,13,standard lot
+CASE-2512-2,VA-AC-CASE,5,0,0.0,10,standard lot
+NX2-2601-1,VA-SW-NX2,7,0,0.0,18,standard lot
+NX2-2601-4,VA-SW-NX2,13,0,0.0,19,standard lot
+NX2-2602-1,VA-SW-NX2,5,0,0.0,10,standard lot
+CASE-2511-2,VA-AC-CASE,4,0,0.0,6,standard lot
+NX2-2602-3,VA-SW-NX2,4,0,0.0,14,standard lot
+NX2-2602-4,VA-SW-NX2,4,0,0.0,19,standard lot
+NX2-2603-1,VA-SW-NX2,7,0,0.0,21,standard lot
+CASE-2510-4,VA-AC-CASE,3,0,0.0,7,standard lot
+CASE-2604-2,VA-AC-CASE,2,0,0.0,4,standard lot
+NX2-2604-2,VA-SW-NX2,5,0,0.0,11,standard lot
+NX2-2604-3,VA-SW-NX2,3,0,0.0,8,standard lot
+NX2-2604-4,VA-SW-NX2,5,0,0.0,14,standard lot
+NX2-2605-1,VA-SW-NX2,1,0,0.0,6,standard lot
+NX2-2605-4,VA-SW-NX2,2,0,0.0,6,standard lot
+ORB-2402-4,VA-SP-ORB,1,0,0.0,1,standard lot
+ORB-2404-3,VA-SP-ORB,1,0,0.0,4,standard lot
+ORB-2405-1,VA-SP-ORB,1,0,0.0,4,standard lot
+CASE-2512-3,VA-AC-CASE,3,0,0.0,8,standard lot
+NX2-2512-2,VA-SW-NX2,8,0,0.0,10,standard lot
+CASE-2512-4,VA-AC-CASE,4,0,0.0,10,standard lot
+NX2-2511-4,VA-SW-NX2,8,0,0.0,15,standard lot
+CASE-2603-4,VA-AC-CASE,3,0,0.0,6,standard lot
+CASE-2603-2,VA-AC-CASE,4,0,0.0,9,standard lot
+NX2-2507-4,VA-SW-NX2,10,0,0.0,15,standard lot
+NX2-2508-1,VA-SW-NX2,13,0,0.0,20,standard lot
+CASE-2603-1,VA-AC-CASE,5,0,0.0,10,standard lot
+CASE-2602-4,VA-AC-CASE,1,0,0.0,4,standard lot
+NX2-2508-4,VA-SW-NX2,13,0,0.0,20,standard lot
+CASE-2602-3,VA-AC-CASE,3,0,0.0,7,standard lot
+CASE-2602-2,VA-AC-CASE,4,0,0.0,3,standard lot
+NX2-2509-3,VA-SW-NX2,16,0,0.0,25,standard lot
+CASE-2602-1,VA-AC-CASE,6,0,0.0,7,standard lot
+NX2-2510-1,VA-SW-NX2,8,0,0.0,14,standard lot
+CASE-2601-3,VA-AC-CASE,3,0,0.0,11,standard lot
+NX2-2510-3,VA-SW-NX2,5,0,0.0,15,standard lot
+NX2-2511-1,VA-SW-NX2,6,0,0.0,16,standard lot
+CASE-2601-1,VA-AC-CASE,5,0,0.0,7,standard lot
+NX2-2511-3,VA-SW-NX2,10,0,0.0,19,standard lot
+ORB-2405-2,VA-SP-ORB,1,0,0.0,5,standard lot
+ORB-2405-3,VA-SP-ORB,1,0,0.0,4,standard lot
+ORB-2406-2,VA-SP-ORB,1,0,0.0,6,standard lot
+ORB-2502-3,VA-SP-ORB,7,0,0.0,8,standard lot
+CASE-2508-3,VA-AC-CASE,2,0,0.0,9,standard lot
+ORB-2503-2,VA-SP-ORB,3,0,0.0,7,standard lot
+ORB-2503-3,VA-SP-ORB,1,0,0.0,3,standard lot
+ORB-2503-4,VA-SP-ORB,1,0,0.0,2,standard lot
+ORB-2504-1,VA-SP-ORB,2,0,0.0,8,standard lot
+ORB-2504-2,VA-SP-ORB,7,0,0.0,11,standard lot
+CH65-2603-4,VA-AC-CH65,2,0,0.0,5,standard lot
+ORB-2504-4,VA-SP-ORB,4,0,0.0,8,standard lot
+CASE-2508-2,VA-AC-CASE,6,0,0.0,11,standard lot
+ORB-2505-2,VA-SP-ORB,8,0,0.0,11,standard lot
+ORB-2505-3,VA-SP-ORB,1,0,0.0,3,standard lot
+ORB-2505-4,VA-SP-ORB,2,0,0.0,6,standard lot
+ORB-2506-1,VA-SP-ORB,5,0,0.0,9,standard lot
+ORB-2506-2,VA-SP-ORB,1,0,0.0,5,standard lot
+ORB-2506-4,VA-SP-ORB,3,0,0.0,9,standard lot
+ORB-2507-1,VA-SP-ORB,2,0,0.0,6,standard lot
+ORB-2507-2,VA-SP-ORB,4,0,0.0,9,standard lot
+ORB-2502-4,VA-SP-ORB,2,0,0.0,5,standard lot
+ORB-2502-1,VA-SP-ORB,2,0,0.0,3,standard lot
+ORB-2407-3,VA-SP-ORB,2,0,0.0,12,standard lot
+CASE-2509-1,VA-AC-CASE,6,0,0.0,11,standard lot
+ORB-2408-1,VA-SP-ORB,3,0,0.0,13,standard lot
+ORB-2408-4,VA-SP-ORB,1,0,0.0,5,standard lot
+ORB-2409-2,VA-SP-ORB,3,0,0.0,11,standard lot
+ORB-2409-3,VA-SP-ORB,1,0,0.0,3,standard lot
+ORB-2410-2,VA-SP-ORB,2,0,0.0,7,standard lot
+ORB-2410-3,VA-SP-ORB,1,0,0.0,5,standard lot
+ORB-2410-4,VA-SP-ORB,1,0,0.0,9,standard lot
+ORB-2411-1,VA-SP-ORB,3,0,0.0,5,standard lot
+ORB-2411-2,VA-SP-ORB,6,0,0.0,8,standard lot
+CASE-2510-1,VA-AC-CASE,5,0,0.0,7,standard lot
+CASE-2509-4,VA-AC-CASE,3,0,0.0,8,standard lot
+ORB-2412-1,VA-SP-ORB,3,0,0.0,6,standard lot
+ORB-2412-2,VA-SP-ORB,1,0,0.0,9,standard lot
+ORB-2412-3,VA-SP-ORB,1,0,0.0,7,standard lot
+CASE-2509-2,VA-AC-CASE,3,0,0.0,8,standard lot
+ORB-2501-1,VA-SP-ORB,1,0,0.0,2,standard lot
+ORB-2501-2,VA-SP-ORB,5,0,0.0,6,standard lot
+CASE-2604-1,VA-AC-CASE,3,0,0.0,2,standard lot
+NX2-2506-2,VA-SW-NX2,12,0,0.0,17,standard lot
+NX1-2502-1,VA-SW-NX1,2,0,0.0,4,standard lot
+NX1-2510-4,VA-SW-NX1,7,0,0.0,6,standard lot
+NX1-2508-2,VA-SW-NX1,5,0,0.0,5,standard lot
+NX1-2508-3,VA-SW-NX1,2,0,0.0,8,standard lot
+NX1-2508-4,VA-SW-NX1,2,0,0.0,5,standard lot
+NX1-2509-1,VA-SW-NX1,3,0,0.0,6,standard lot
+NX1-2509-4,VA-SW-NX1,4,0,0.0,6,standard lot
+CBL-2506-2,VA-AC-CBL,1,0,0.0,1,standard lot
+NX1-2510-2,VA-SW-NX1,12,0,0.0,8,standard lot
+NX1-2510-3,VA-SW-NX1,4,0,0.0,6,standard lot
+NX1-2511-1,VA-SW-NX1,1,0,0.0,4,standard lot
+CASE-2604-4,VA-AC-CASE,1,0,0.0,3,standard lot
+NX1-2511-2,VA-SW-NX1,2,0,0.0,5,standard lot
+NX1-2511-3,VA-SW-NX1,1,0,0.0,3,standard lot
+NX1-2511-4,VA-SW-NX1,2,0,0.0,9,standard lot
+NX1-2512-1,VA-SW-NX1,1,0,0.0,7,standard lot
+NX1-2512-2,VA-SW-NX1,2,0,0.0,10,standard lot
+NX1-2512-3,VA-SW-NX1,1,0,0.0,5,standard lot
+CBL-2505-3,VA-AC-CBL,6,0,0.0,5,standard lot
+CBL-2505-1,VA-AC-CBL,2,0,0.0,2,standard lot
+NX1-2508-1,VA-SW-NX1,3,0,0.0,8,standard lot
+CBL-2506-4,VA-AC-CBL,1,0,0.0,2,standard lot
+CBL-2507-2,VA-AC-CBL,2,0,0.0,2,standard lot
+NX1-2507-2,VA-SW-NX1,3,0,0.0,4,standard lot
+NX1-2502-2,VA-SW-NX1,5,0,0.0,8,standard lot
+NX1-2502-3,VA-SW-NX1,1,0,0.0,4,standard lot
+NX1-2502-4,VA-SW-NX1,3,0,0.0,4,standard lot
+CBL-2508-4,VA-AC-CBL,2,0,0.0,3,standard lot
+NX1-2503-2,VA-SW-NX1,1,0,0.0,3,standard lot
+NX1-2503-3,VA-SW-NX1,1,0,0.0,5,standard lot
+NX1-2503-4,VA-SW-NX1,3,0,0.0,6,standard lot
+NX1-2504-1,VA-SW-NX1,3,0,0.0,4,standard lot
+NX1-2504-2,VA-SW-NX1,3,0,0.0,6,standard lot
+NX1-2504-3,VA-SW-NX1,1,0,0.0,2,standard lot
+NX1-2505-2,VA-SW-NX1,1,0,0.0,3,standard lot
+NX1-2505-3,VA-SW-NX1,6,0,0.0,5,standard lot
+NX1-2505-4,VA-SW-NX1,4,0,0.0,8,standard lot
+NX1-2506-1,VA-SW-NX1,2,0,0.0,4,standard lot
+CBL-2508-2,VA-AC-CBL,1,0,0.0,1,standard lot
+NX1-2506-4,VA-SW-NX1,7,0,0.0,9,standard lot
+CBL-2507-3,VA-AC-CBL,1,0,0.0,3,standard lot
+NX1-2601-2,VA-SW-NX1,2,0,0.0,5,standard lot
+NX1-2601-3,VA-SW-NX1,2,0,0.0,7,standard lot
+NX1-2601-4,VA-SW-NX1,2,0,0.0,7,standard lot
+CBL-2501-1,VA-AC-CBL,1,0,0.0,1,standard lot
+CBL-2411-3,VA-AC-CBL,1,0,0.0,2,standard lot
+NX2-2502-1,VA-SW-NX2,7,0,0.0,13,standard lot
+NX2-2502-2,VA-SW-NX2,7,0,0.0,22,standard lot
+CBL-2411-2,VA-AC-CBL,2,0,0.0,1,standard lot
+NX2-2502-4,VA-SW-NX2,4,0,0.0,13,standard lot
+CBL-2410-3,VA-AC-CBL,3,0,0.0,6,standard lot
+CBL-2410-1,VA-AC-CBL,1,0,0.0,1,standard lot
+NX2-2503-3,VA-SW-NX2,4,0,0.0,13,standard lot
+NX2-2503-4,VA-SW-NX2,5,0,0.0,18,standard lot
+NX2-2504-1,VA-SW-NX2,5,0,0.0,18,standard lot
+NX2-2504-2,VA-SW-NX2,8,0,0.0,15,standard lot
+CBL-2409-4,VA-AC-CBL,1,0,0.0,1,standard lot
+CBL-2409-2,VA-AC-CBL,2,0,0.0,2,standard lot
+CASE-2605-4,VA-AC-CASE,1,0,0.0,2,standard lot
+NX2-2505-2,VA-SW-NX2,10,0,0.0,20,standard lot
+NX2-2505-3,VA-SW-NX2,12,0,0.0,23,standard lot
+NX2-2505-4,VA-SW-NX2,12,0,0.0,22,standard lot
+CBL-2411-4,VA-AC-CBL,1,0,0.0,2,standard lot
+CBL-2501-2,VA-AC-CBL,1,0,0.0,1,standard lot
+CBL-2504-4,VA-AC-CBL,1,0,0.0,3,standard lot
+NX2-2412-4,VA-SW-NX2,9,0,0.0,17,standard lot
+CBL-2504-3,VA-AC-CBL,4,0,0.0,2,standard lot
+NX1-2602-3,VA-SW-NX1,4,0,0.0,5,standard lot
+NX1-2602-4,VA-SW-NX1,2,0,0.0,9,standard lot
+NX1-2603-1,VA-SW-NX1,5,0,0.0,8,standard lot
+NX1-2603-2,VA-SW-NX1,5,0,0.0,5,standard lot
+NX1-2604-1,VA-SW-NX1,1,0,0.0,3,standard lot
+NX1-2605-1,VA-SW-NX1,2,0,0.0,3,standard lot
+NX2-2410-1,VA-SW-NX2,1,0,0.0,3,standard lot
+NX2-2410-3,VA-SW-NX2,1,0,0.0,2,standard lot
+NX2-2410-4,VA-SW-NX2,2,0,0.0,9,standard lot
+NX2-2411-1,VA-SW-NX2,9,0,0.0,8,standard lot
+NX2-2411-2,VA-SW-NX2,1,0,0.0,6,standard lot
+NX2-2411-3,VA-SW-NX2,4,0,0.0,11,standard lot
+NX2-2411-4,VA-SW-NX2,3,0,0.0,7,standard lot
+NX2-2412-1,VA-SW-NX2,9,0,0.0,15,standard lot
+NX2-2412-2,VA-SW-NX2,9,0,0.0,13,standard lot
+CBL-2501-3,VA-AC-CBL,2,0,0.0,2,standard lot
+AIR-2406-3,VA-EB-AIR,1,0,0.0,8,standard lot
