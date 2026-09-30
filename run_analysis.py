@@ -32,6 +32,7 @@ from src.text_classifier import (
     generate_ground_truth,
     LocalTicketClassifier,
     evaluate_predictions,
+    run_held_out_cross_validation,
 )
 from src.text_analysis import (
     analyze_other_category,
@@ -119,25 +120,31 @@ def run_pipeline():
               f"Tickets={r['tickets']}, CSAT={r['mean_csat']:.2f}, HandleTime={r['mean_handle_hours']:.2f}h")
         
     # 6. Text Classification & AI Intelligence Layer
-    print("\n[6/7] Executing local text intelligence pipeline and prompt evaluation...")
+    print("\n[6/7] Executing local text intelligence pipeline and held-out cross-validation...")
     sample_df, excluded_junk = create_stratified_evaluation_sample(tickets, sample_size=180, random_seed=42)
     gt_df = generate_ground_truth(sample_df)
     
-    # Train local text classifier
+    # Run rigorous 5-fold held-out cross-validation
+    cv_metrics, cv_predictions_df = run_held_out_cross_validation(sample_df, gt_df, n_splits=5, seed=42)
+    
+    print(f"  Stratified Evaluation Sample: {len(sample_df)} tickets (Seed=42). Excluded junk: {excluded_junk}.")
+    print(f"  Held-Out 5-Fold Cross-Validation (Pure ML): Accuracy = {cv_metrics['accuracy']*100:.2f}%, "
+          f"Macro F1 = {cv_metrics['macro_f1']:.4f}.")
+    print(f"  Baseline Comparisons:")
+    for b_key, b_info in cv_metrics["baseline_comparison"].items():
+        print(f"    - {b_info['name']}: Accuracy = {b_info['accuracy']*100:.2f}%, Macro F1 = {b_info['macro_f1']:.4f}")
+        
+    hw_bench = cv_metrics["hardware_signal_benchmark"]
+    print(f"  Hardware Defect Detector Benchmark (Sample N=180): Precision = {hw_bench['precision']*100:.1f}%, "
+          f"Recall = {hw_bench['recall']*100:.1f}%, F1 = {hw_bench['f1_score']*100:.1f}%.")
+    print(f"    (TP={hw_bench['true_positives']}, FP={hw_bench['false_positives']}, "
+          f"TN={hw_bench['true_negatives']}, FN={hw_bench['false_negatives']})")
+    
+    # Train production classifier on full benchmark sample for dataset labeling
     classifier = LocalTicketClassifier()
-    # Train on ground-truth sample texts
     train_texts = sample_df["customer_message"].tolist()
     train_labels = gt_df["gt_issue_category"].tolist()
     classifier.fit(train_texts, train_labels)
-    
-    # Evaluate sample predictions
-    sample_preds = classifier.predict(train_texts, sample_df["agent_notes"].tolist())
-    sample_pred_cats = [p["issue_category"] for p in sample_preds]
-    eval_metrics = evaluate_predictions(train_labels, sample_pred_cats)
-    
-    print(f"  Stratified Evaluation Sample: {len(sample_df)} tickets (Seed=42). Excluded junk: {excluded_junk}.")
-    print(f"  Sample Evaluation Accuracy: {eval_metrics['accuracy']*100:.2f}% (Errors = {eval_metrics['error_count']}/180). "
-          f"Macro F1 = {eval_metrics['macro_f1']:.4f}.")
     
     # Full dataset inference (11,750 records)
     print("  Running local inference across full production dataset (11,750 records)...")
@@ -149,8 +156,10 @@ def run_pipeline():
     tickets_with_preds["ai_issue_category"] = [p["issue_category"] for p in full_preds]
     tickets_with_preds["ai_resolution_outcome"] = [p["resolution_outcome"] for p in full_preds]
     tickets_with_preds["hardware_defect_signal"] = [p["hardware_defect_signal"] for p in full_preds]
+    tickets_with_preds["hardware_signal_source"] = [p["hardware_signal_source"] for p in full_preds]
     tickets_with_preds["ai_confidence"] = [p["confidence"] for p in full_preds]
     tickets_with_preds["is_rule_override"] = [p["is_rule_override"] for p in full_preds]
+    tickets_with_preds["prediction_source"] = [p["prediction_source"] for p in full_preds]
     
     # "Other" Category Decomposition
     other_decomp = analyze_other_category(tickets_with_preds)
@@ -187,14 +196,17 @@ def run_pipeline():
     scorecard.to_csv(reports_dir / "agent_scorecard.csv", index=False)
     lot_analysis.to_csv(reports_dir / "lot_code_analysis.csv", index=False)
     
-    # Save phase 3 deliverables
+    # Save text intelligence deliverables
     sample_df.to_csv(reports_dir / "text_eval_sample.csv", index=False)
     sample_with_gt = sample_df.merge(gt_df, on="ticket_id", how="left")
+    sample_with_gt.to_csv(reports_dir / "text_pseudo_labels.csv", index=False)
     sample_with_gt.to_csv(reports_dir / "text_ground_truth.csv", index=False)
+    cv_predictions_df.to_csv(reports_dir / "cv_predictions.csv", index=False)
     
     pred_cols = [
         "ticket_id", "channel", "category", "ai_issue_category",
-        "ai_resolution_outcome", "hardware_defect_signal", "ai_confidence", "is_rule_override"
+        "ai_resolution_outcome", "hardware_defect_signal", "hardware_signal_source",
+        "ai_confidence", "is_rule_override", "prediction_source"
     ]
     tickets_with_preds[pred_cols].to_csv(reports_dir / "text_predictions.csv", index=False)
     agent_text_summary.to_csv(reports_dir / "ai_agent_text_summary.csv", index=False)
@@ -204,7 +216,9 @@ def run_pipeline():
     print(f"   - reports/monthly_trends.csv ({len(monthly_trends)} months)")
     print(f"   - reports/lot_code_analysis.csv ({len(lot_analysis)} lots)")
     print(f"   - reports/text_eval_sample.csv ({len(sample_df)} sample rows)")
-    print(f"   - reports/text_ground_truth.csv ({len(sample_with_gt)} annotated sample rows)")
+    print(f"   - reports/text_pseudo_labels.csv ({len(sample_with_gt)} pseudo-labeled rows)")
+    print(f"   - reports/text_ground_truth.csv ({len(sample_with_gt)} annotated benchmark rows)")
+    print(f"   - reports/cv_predictions.csv ({len(cv_predictions_df)} held-out CV prediction rows)")
     print(f"   - reports/text_predictions.csv ({len(tickets_with_preds)} production prediction rows)")
     print(f"   - reports/ai_agent_text_summary.csv ({len(agent_text_summary)} agent summary rows)")
     print(f"   - reports/DECISION_SPEC.md (formal system specification)")
@@ -219,7 +233,8 @@ def run_pipeline():
         "scorecard": scorecard,
         "monthly_trends": monthly_trends,
         "tickets_with_preds": tickets_with_preds,
-        "eval_metrics": eval_metrics,
+        "cv_metrics": cv_metrics,
+        "eval_metrics": cv_metrics,
         "other_decomp": other_decomp,
         "cost_audit": cost_audit,
     }
