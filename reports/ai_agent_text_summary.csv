@@ -1,0 +1,45 @@
+agent_id,name,tier,team,total_tickets,top_issue_categories,hw_defect_ticket_count,hw_defect_share_pct,low_csat_ticket_count,uninformative_note_count,uninformative_note_pct
+A3001,Reyansh Bhatt,1,Chat Frontline,208,"connectivity_pairing, returns_refunds",7,3.37,16,1,0.48
+A3002,Megha Sheikh,1,Chat Frontline,194,"connectivity_pairing, returns_refunds",11,5.67,13,63,32.47
+A3003,Deepak Saxena,1,Chat Frontline,190,"connectivity_pairing, returns_refunds",8,4.21,7,3,1.58
+A3004,Siddharth Kapoor,1,Chat Frontline,305,"charging_battery, connectivity_pairing",45,14.75,44,39,12.79
+A3005,Zaid Khanna,1,Chat Frontline,299,"charging_battery, connectivity_pairing",42,14.05,41,9,3.01
+A3006,Kavya Pandey,1,Chat Frontline,281,"connectivity_pairing, charging_battery",43,15.3,51,37,13.17
+A3007,Siddharth Trivedi,1,Chat Frontline,278,"charging_battery, connectivity_pairing",29,10.43,46,1,0.36
+A3008,Isha George,1,Chat Frontline,228,"connectivity_pairing, charging_battery",17,7.46,14,1,0.44
+A3009,Vihaan Menon,1,Chat Frontline,211,"connectivity_pairing, charging_battery",4,1.9,14,116,54.98
+A3010,Aarav Pereira,1,Chat Frontline,238,"connectivity_pairing, returns_refunds",10,4.2,10,4,1.68
+A3011,Divya Jadhav,1,Chat Frontline,240,"connectivity_pairing, returns_refunds",13,5.42,12,3,1.25
+A3012,Steven Ghosh,1,Chat Frontline,205,"connectivity_pairing, returns_refunds",6,2.93,12,7,3.41
+A3013,Sukhwinder Rao,1,Chat Frontline,207,"connectivity_pairing, returns_refunds",13,6.28,9,0,0.0
+A3014,Bhavna Joshi,1,Chat Frontline,190,"connectivity_pairing, returns_refunds",11,5.79,11,2,1.05
+A3015,Ishaan Dutta,1,Chat Frontline,200,"connectivity_pairing, returns_refunds",6,3.0,11,8,4.0
+A3016,Om Khanna,1,Email Frontline,219,"connectivity_pairing, returns_refunds",13,5.94,15,5,2.28
+A3017,Aadhya Rao,1,Email Frontline,208,"connectivity_pairing, returns_refunds",6,2.88,14,12,5.77
+A3018,Kunal Pillai,1,Email Frontline,247,"connectivity_pairing, charging_battery",12,4.86,7,5,2.02
+A3019,Sai Joshi,1,Email Frontline,260,"connectivity_pairing, returns_refunds",17,6.54,11,4,1.54
+A3020,Riya Pillai,1,Email Frontline,250,"connectivity_pairing, returns_refunds",6,2.4,20,10,4.0
+A3021,Geeta Sen,1,Email Frontline,255,"connectivity_pairing, charging_battery",11,4.31,15,10,3.92
+A3022,Manpreet Yadav,1,Email Frontline,231,"connectivity_pairing, returns_refunds",10,4.33,11,8,3.46
+A3023,Meera Patel,1,Voice Frontline,96,"connectivity_pairing, billing_payment",11,11.46,4,1,1.04
+A3024,Suresh Sethi,1,Voice Frontline,479,"connectivity_pairing, charging_battery",27,5.64,30,20,4.18
+A3025,Ananya Das,1,Voice Frontline,118,"connectivity_pairing, delivery_shipping",3,2.54,5,0,0.0
+A3026,Suresh Pereira,1,Voice Frontline,104,"connectivity_pairing, billing_payment",3,2.88,8,3,2.88
+A3027,Harpreet Goyal,1,Logistics,447,"delivery_shipping, returns_refunds",2,0.45,42,2,0.45
+A3028,Vivaan Pandey,1,Logistics,348,"delivery_shipping, returns_refunds",0,0.0,35,9,2.59
+A3029,Kavya Pandey,1,Logistics,340,"delivery_shipping, returns_refunds",1,0.29,36,4,1.18
+A3030,Geeta Iyer,1,Logistics,337,"delivery_shipping, returns_refunds",0,0.0,29,14,4.15
+A3031,Zoya Menon,1,Logistics,435,"delivery_shipping, returns_refunds",1,0.23,43,13,2.99
+A3032,Kunal Jain,1,Billing,382,"billing_payment, returns_refunds",0,0.0,29,19,4.97
+A3033,Thomas Reddy,1,Billing,338,"billing_payment, connectivity_pairing",0,0.0,16,5,1.48
+A3034,Meera Pereira,1,Billing,361,"billing_payment, connectivity_pairing",1,0.28,24,11,3.05
+A3035,Nisha Rao,1,Billing,413,"billing_payment, connectivity_pairing",1,0.24,32,17,4.12
+A3036,Divya Tiwari,1,Returns Desk,257,"returns_refunds, delivery_shipping",4,1.56,19,3,1.17
+A3037,Mohammed Desai,1,Returns Desk,563,"returns_refunds, delivery_shipping",6,1.07,55,15,2.66
+A3038,Varun Reddy,1,Returns Desk,284,"returns_refunds, delivery_shipping",2,0.7,28,2,0.7
+A3039,Sameer Ghosh,2,Escalations & Warranty,249,"charging_battery, hardware_audio_defect",41,16.47,46,3,1.2
+A3040,Tarun Fernandes,2,Escalations & Warranty,203,"charging_battery, hardware_audio_defect",46,22.66,48,38,18.72
+A3041,Jaspreet Desai,2,Escalations & Warranty,200,"charging_battery, hardware_audio_defect",40,20.0,50,7,3.5
+A3042,Sneha Sethi,2,Escalations & Warranty,201,"charging_battery, hardware_audio_defect",56,27.86,46,3,1.49
+A3043,Kabir Varghese,2,Escalations & Warranty,200,"charging_battery, hardware_audio_defect",40,20.0,43,1,0.5
+A3044,Pranav Khanna,2,Escalations & Warranty,251,"charging_battery, hardware_audio_defect",46,18.33,49,73,29.08
