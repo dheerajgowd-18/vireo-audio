@@ -1,6 +1,26 @@
 # Vireo Audio Support Intelligence
 
-An enterprise-grade support performance, financial reconciliation, and ticket text intelligence engine built for **Vireo Audio**.
+An enterprise-grade customer support analytics, financial reconciliation, and ticket text intelligence platform built for **Vireo Audio** leadership.
+
+* **Primary Business Goal**: Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h (weighted peer medians: Chat 5.61h -> 3.81h, Email 8.49h -> 7.07h), eliminating 624.9 excess agent-hours per quarter, representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity under Policy §4.
+* **Core Deliverables**: Audited Analytical Engine (`src/`), 7-View Offline-First SaaS Dashboard (`web/`), Executive Memorandum (`reports/VIREO_EXECUTIVE_MEMO.md`), and Client Technical Audit Form (`reports/SUBMISSION_FINAL.md`).
+
+### Quick Start
+```bash
+# 1. Run full analytical pipeline and cross-validation
+python run_analysis.py
+
+# 2. Run automated test suite (37/37 tests)
+pytest -v
+
+# 3. Compile and verify web dashboard consistency
+python scripts/build_web_data.py
+python scripts/verify_web_consistency.py
+
+# 4. Launch web dashboard
+python -m http.server 8000 --directory web
+# Open http://localhost:8000 in your browser
+```
 
 ---
 

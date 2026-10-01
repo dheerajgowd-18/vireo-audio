@@ -83,9 +83,9 @@
 *What critical data traps and data hygiene issues were uncovered during the technical audit?*
 
 ### Official Submission Answer:
-1. **Display Name Collision**: Two distinct agents share the exact name **"Ananya Rao"**:
-   - `AG-0004`: Tier 1 Voice frontline agent (Bangalore).
-   - `AG-0041`: Tier 2 Escalation specialist (Mumbai).
+1. **Display Name Collision**: Two distinct agents share the exact name **"Kavya Pandey"**:
+   - `A3006`: Tier 1 Chat Frontline agent (Indore).
+   - `A3029`: Tier 1 Logistics agent (Bengaluru).
    - *Fix*: Strict foreign key joining on `agent_id`; zero joins on display name.
 2. **CSAT Missing Data Governance**: 6,554 tickets (55.78%) lack CSAT survey responses. The mean CSAT of 3.33 is computed strictly over the 5,196 valid responses under Policy §8. Treating missing surveys as 0 would artificially distort CSAT to 1.47, destroying metric validity.
 3. **Telephony IVR Glitch**: Approximately 40 tickets contain corrupt phone system IVR navigation transcripts in the customer message field. This is an automated telephony ingestion bug, not an agent performance issue.

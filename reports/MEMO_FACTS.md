@@ -50,14 +50,14 @@
 ### 3.1 The "Bottom 10" Flaw
 - **Client Request**: Flag the bottom 10 agents by raw CSAT / handle time for remedial training.
 - **Analytical Finding**: All 10 agents on the raw bottom list belong to specialized roles:
-  - **6 Agents are Tier 2 Escalation Specialists** (e.g., AG-0041 Ananya Rao, AG-0042 Rajesh Kumar, AG-0043 Sneha Patel, AG-0044 Vikram Malhotra). Tier 2 handles pre-escalated, disgruntled customers with complex multi-day inquiries. Their lower CSAT (2.4 – 2.9) and longer handle times are structural consequences of their role, not incompetence.
-  - **4 Agents are Specialized Hardware Triage Agents** (handling physical RMA requests where customers are already frustrated by broken equipment).
+  - **6 Agents are Tier 2 Escalation Specialists** (A3041 Jaspreet Desai, A3042 Sneha Sethi, A3040 Tarun Fernandes, A3044 Pranav Khanna, A3043 Kabir Varghese, A3039 Sameer Ghosh). Tier 2 handles pre-escalated, disgruntled customers with complex multi-day inquiries. Their lower CSAT (2.42 – 2.83) and longer handle times are structural consequences of their role, not incompetence.
+  - **4 Agents are Specialized Hardware Triage Agents** (A3004 Siddharth Kapoor, A3006 Kavya Pandey, A3007 Siddharth Trivedi, A3005 Zaid Khanna — "Kavya's four" rota handling physical RMA requests where customers are already frustrated by broken equipment).
 - **Executive Implication**: Subjecting Tier 2 senior specialists to frontline Tier 1 remedial training is counterproductive and wastes the ₹4.0L budget. Training must be peer-stratified.
 
 ### 3.2 Agent Display Name Collision
-- **Fact**: Two distinct agents share the exact display name **"Ananya Rao"**:
-  - `AG-0004`: Tier 1 Frontline Voice agent based at Site Bangalore.
-  - `AG-0041`: Tier 2 Escalations specialist based at Site Mumbai.
+- **Fact**: Two distinct agents share the exact display name **"Kavya Pandey"**:
+  - `A3006`: Tier 1 Chat Frontline agent based at Site Indore.
+  - `A3029`: Tier 1 Logistics agent based at Site Bengaluru.
 - **Data Integrity Rule**: All analytical joins, scorecards, and reporting must strictly join on `agent_id`, never display name.
 
 ### 3.3 The Pulse 2 Hardware Replacement Concentration
