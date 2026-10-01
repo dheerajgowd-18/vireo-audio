@@ -38,10 +38,11 @@
 ### Official Submission Answer:
 1. **Do NOT Train the Raw Bottom 10**: The raw bottom 10 agents by CSAT / handle time comprise **6 Tier 2 escalation specialists** and **4 specialized hardware triage agents**. These agents handle complex, multi-day, pre-escalated customer disputes and defective hardware where CSAT is structurally depressed (2.4 – 2.9). Forcing senior specialists into frontline remedial training would waste budget and degrade morale.
 2. **Target Population**: Deploy the training budget to the **22 frontline Tier 1 agents in Chat and Email**, focusing 1-on-1 coaching on the 10 agents currently above their team peer medians.
-3. **Module Budget Allocation**:
-   - **Module 1 (₹1,75,000)**: Diagnostic SOPs & Note Standardization. Currently, 908 tickets (7.73%) contain uninformative shorthand notes ("-", "done", "cx ok"). Standardizing templates prevents repetitive discovery loops.
-   - **Module 2 (₹1,25,000)**: First Contact Resolution (FCR) & Escalation Protocols. Frontline agents learn to resolve tier-appropriate tickets, reducing inter-tier transfers (currently 1,215 transfers costing ₹3,70,575 under Policy §4) and repeat contacts (3,277 repeats costing ₹9,03,890).
-   - **Module 3 (₹1,00,000)**: Tooling, Macros & Aging Ticket Sweep Routines. 93-95% of tickets are resolved in <1 hour; coaching agents on daily sweeps of multi-day pending tickets directly addresses the right-tail skew elevating average handle times.
+3. **Curriculum Deployment**:
+   - **Module 1 (Diagnostic SOPs & Note Standardization)**: Currently, 908 tickets (7.73%) contain uninformative shorthand notes ("-", "done", "cx ok"). Standardizing templates prevents repetitive discovery loops.
+   - **Module 2 (First Contact Resolution & Escalation Protocols)**: Frontline agents learn to resolve tier-appropriate tickets, reducing inter-tier transfers (currently 1,215 transfers costing ₹3,70,575 under Policy §4) and repeat contacts (3,277 repeats costing ₹9,03,890).
+   - **Module 3 (Tooling, Macros & Aging Ticket Sweep Routines)**: 93-95% of tickets are resolved in <1 hour; coaching agents on daily sweeps of multi-day pending tickets directly addresses the right-tail skew elevating average handle times.
+   - *Budget Governance*: Use the ₹4,00,000 budget for peer-benchmarked Tier 1 workflow/troubleshooting training, with final allocation determined by intervention design and baseline needs.
 
 ---
 
@@ -73,7 +74,7 @@
 - **Batch Concentration**: Manufacturing lot **`PL2-2510-3`** generated **70 replacements** across 171 tickets on direct `order_id` join (40.94% replacement rate, ₹1,27,400 spend).
 - **Physical Root Cause (Qualitative Evidence)**: Analysis of customer messages and agent notes identifies physical charging pin contact failure and charging cradle detachment.
 - **Unverified Status**: Physical metallurgy or component failure mechanisms have not been independently laboratory-tested. Lot `PL2-2510-3` is classified as a **"high-replacement lot candidate."**
-- **Strategic Action**: Support training cannot fix defective manufacturing hardware. Recommending support training to reduce replacements would violate Policy §5 warranty obligations. This finding is formally escalated to **Hardware Engineering & Vendor Quality** for component redesign and supplier warranty clawback.
+- **Strategic Action**: Support training cannot fix defective manufacturing hardware. Recommending support training to reduce replacements would violate Policy §5 warranty obligations. This finding is formally escalated to **Hardware Engineering & Supply Chain** as an operational signal requiring hardware and supplier investigation.
 
 ---
 

@@ -1,6 +1,6 @@
 # Executive Memo Facts & Source-of-Truth Reference
 
-**Audit Period**: January 1, 2024 – June 30, 2025 (18 Months / 6 Quarters)  
+**Audit Period**: January 1, 2025 – June 30, 2026 (18 Months / 6 Quarters)  
 **Dataset Scale**: 11,750 Tickets, 44 Support Agents, 15,500 Orders, 9,500 Customers, 14 Product SKUs  
 **Author**: Lead Data & AI Engineer  
 **Purpose**: Verified factual foundation for executive communication and board briefing  

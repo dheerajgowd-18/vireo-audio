@@ -2,7 +2,7 @@
 ## Client Final Submission Form & Technical Audit Responses
 
 **Candidate / Engineer:** Lead Data & AI Engineer  
-**Evaluation Scope:** 11,750 Tickets, 44 Support Agents, 18 Months (Jan 2024 – Jun 2025)  
+**Evaluation Scope:** 11,750 Tickets, 44 Support Agents, 18 Months (January 2025 – June 2026)  
 **Date of Submission:** October 1, 2026  
 **Status:** Complete, Audited & Defensible  
 
@@ -10,16 +10,16 @@
 
 ### Links & Metadata
 
-* **Screen Recording Video Link:** `[PLACEHOLDER — PUBLIC GOOGLE DRIVE VIDEO LINK]`
-* **Public Google Drive Folder Link:** `[PLACEHOLDER — PUBLIC DRIVE FOLDER LINK]`
-* **Engineering Hours Spent:** `[TO BE FILLED BY CANDIDATE]`
-* **Public GitHub Repository URL:** `https://github.com/dheerajgowd-18/vireo-audio.git`
+* **Screen Recording Video Link:** `[PUBLIC GOOGLE DRIVE VIDEO LINK]`
+* **Public Google Drive Folder Link:** `[PUBLIC DRIVE FOLDER LINK]`
+* **Engineering Hours Spent:** `[HONEST HOURS SPENT]`
+* **Public GitHub Repository URL:** `https://github.com/dheerajgowd-18/vireo-audio`
 
 ---
 
 ### Question 1: Primary Business Goal Statement
 
-> **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h (weighted peer medians: Chat 5.61h -> 3.81h, Email 8.49h -> 7.07h), eliminating 624.9 excess agent-hours per quarter, representing approximately ₹1,03,102 per quarter in recoverable staffing capacity."**
+> **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h (weighted peer medians: Chat 5.61h -> 3.81h, Email 8.49h -> 7.07h), eliminating 624.9 excess agent-hours per quarter, representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity."**
 
 **Mathematical & Accounting Derivation:**
 * Evaluated across **11,183 valid attendance tickets** (`status in {resolved, closed}`, duration $\ge 0$). Open and pending tickets (567 tickets) lack resolution timestamps and are excluded from handle-time multipliers.
@@ -41,10 +41,10 @@ A naive company-wide sort by raw CSAT or handle time misdiagnoses support operat
 
 ### Question 3: Recommended Deployment of the ₹4,00,000 Training Budget
 
-Deploy the ₹4,00,000 budget to upskill the **22 frontline Tier 1 agents across Chat (15) and Email (7)**, with dedicated 1-on-1 coaching for the 10 agents operating above their peer medians:
-* **Module 1: Diagnostic SOPs & Note Standardization (₹1,75,000)**: Standardizes diagnostic intake checklists and eliminates shorthand notes. In our audit, 908 tickets (7.73%) contained uninformative shorthand notes (`words <= 2 OR characters <= 9`, e.g., `"-"`, `"done"`), forcing downstream agents into redundant discovery cycles.
-* **Module 2: FCR Protocols & Escalation Boundary Management (₹1,25,000)**: Trains agents on resolving tier-appropriate issues to avoid unnecessary transfers. Historically, 1,215 inter-tier transfers generated ₹3,70,575 in transfer overhead (Policy §4: ₹305/transfer) and drove 3,277 30-day repeat contacts.
-* **Module 3: Queue Sweeps & Aging Ticket Management (₹1,00,000)**: In frontline channels, 93–95% of tickets resolve in under an hour; average handle time is inflated by a 5–7% right-tail of multi-day lingering tickets. Coaching agents on systematic daily sweeps directly compresses this long-tail delay.
+Use the ₹4,00,000 budget for peer-benchmarked Tier 1 workflow/troubleshooting training, with final allocation determined by intervention design and baseline needs across three core operational curricula:
+* **Module 1: Diagnostic SOPs & Note Standardization**: Standardizes diagnostic intake checklists and eliminates shorthand notes. In our audit, 908 tickets (7.73%) contained uninformative shorthand notes (`words <= 2 OR characters <= 9`, e.g., `"-"`, `"done"`), forcing downstream agents into redundant discovery cycles. Target: All 22 frontline Tier 1 agents.
+* **Module 2: FCR Protocols & Escalation Boundary Management**: Trains agents on resolving tier-appropriate issues to avoid unnecessary transfers. Historically, 1,215 inter-tier transfers generated ₹3,70,575 in transfer overhead (Policy §4: ₹305/transfer) and drove 3,277 30-day repeat contacts. Target: All 22 frontline Tier 1 agents.
+* **Module 3: Queue Sweeps & Aging Ticket Management**: In frontline channels, 93–95% of tickets resolve in under an hour; average handle time is inflated by a 5–7% right-tail of multi-day lingering tickets. Coaching agents on systematic daily sweeps directly compresses this long-tail delay. Target: Focused 1-on-1 coaching for the 10 above-median agents.
 
 ---
 
@@ -66,8 +66,8 @@ Deploy the ₹4,00,000 budget to upskill the **22 frontline Tier 1 agents across
 * **Product Concentration**: The **Pulse 2** wireless earbud model (`VA-EB-PL2`) drives **61.50% of all company replacements (1,166 out of 1,896 units)**, incurring **₹21,22,120.00** in policy replacement spend (1,166 units $\times$ [₹1,480 BOM + ₹340 logistics = ₹1,820]).
 * **Manufacturing Lot Concentration**: Production lot **`PL2-2510-3`** generated **70 replacements** across 171 tickets on direct `order_id` join—a severe **40.94% replacement rate** (₹1,27,400 spend).
 * **Observed Text Signature**: Customer messages and agent notes consistently describe physical charging pin contact failure and charging cradle detachment.
-* **Engineering Caveat**: Physical metallurgy and factory solder joints have not been independently laboratory-tested. Lot `PL2-2510-3` is classified as a **"high-replacement lot candidate."**
-* **Strategic Escalation**: Frontline support training cannot fix defective manufacturing hardware. Recommending agent coaching to reduce replacements would violate Policy §5 warranty obligations. This finding is formally escalated to Hardware Engineering and Supply Chain for supplier warranty recovery.
+* **Engineering Caveat**: Physical metallurgy and factory solder joints have not been independently laboratory-tested. Lot `PL2-2510-3` is classified as a **"high-replacement lot candidate with observed charging-contact failure text patterns."**
+* **Strategic Escalation**: Frontline support training cannot fix defective hardware. Recommending agent coaching to reduce replacements would violate Policy §5 warranty obligations. This finding is formally escalated to Hardware Engineering and Supply Chain as an operational investigation signal.
 
 ---
 
@@ -180,7 +180,7 @@ The frontend is built with **zero external dependencies** using native **HTML5, 
 
 1. **Local NLP vs. Cloud LLM Inference**:
    * *Decision*: Deployed local scikit-learn TF-IDF + Logistic Regression instead of calling external LLMs 11,750 times.
-   * *Financial Impact*: Zero paid cost (₹0.00) vs. ₹58,750 estimated cloud API cost (100% cost avoidance). Preserved the client's ₹4.0L budget entirely for human coaching.
+   * *Financial Impact*: Zero paid cost (₹0.00). Hypothetical avoided external-call expense under the client's ₹5/ticket comparison is ₹58,750. Preserved the client's ₹4.0L budget entirely for human coaching.
    * *Latency*: Full dataset classified in **3.8 seconds** (~3,000 tickets/sec) vs. ~98 minutes over HTTPS.
    * *Privacy & Governance*: Zero customer PII transmitted across external networks.
 2. **Deterministic Rules vs. Statistical Models**: High-confidence regex rules handle explicit domain boundaries (e.g., cancellations and defect keywords), while statistical ML classifies ambiguous text.
@@ -198,7 +198,7 @@ The frontend is built with **zero external dependencies** using native **HTML5, 
 
 ### Question 13: Summary Recommendations for Priya & Executive Leadership
 
-1. **Authorize Training Reallocation**: Formally allocate the ₹4,00,000 budget across the three frontline Tier 1 modules (Diagnostic SOPs ₹1.75L, FCR Protocols ₹1.25L, Queue Sweeps ₹1.00L).
+1. **Authorize Training Reallocation**: Use the ₹4,00,000 budget for peer-benchmarked Tier 1 workflow/troubleshooting training across the three frontline curricula (Diagnostic SOPs & Notes, FCR Protocols, and Queue Sweeps).
 2. **Exempt Specialists from Remedial Action**: Remove Tier 2 specialists and hardware triage agents from the "Bottom 10" remediation list. Benchmark agents strictly within their operational peers.
-3. **Escalate Pulse 2 Lot Quality**: Deliver the lot `PL2-2510-3` analysis to Hardware Engineering and Supply Chain to initiate vendor warranty clawbacks on the ₹21.22L replacement exposure.
+3. **Escalate Pulse 2 Lot Quality**: Deliver the lot `PL2-2510-3` analysis to Hardware Engineering and Supply Chain as an operational investigation signal regarding the ₹21.22L replacement exposure.
 4. **Deploy Ticket Note Standards**: Mandate diagnostic intake templates and deprecate uninformative shorthand notes across the helpdesk platform.

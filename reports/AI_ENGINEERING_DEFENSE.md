@@ -149,10 +149,10 @@ Choosing local statistical NLP over external LLM calls was a conscious systems e
 In `src/text_analysis.py`, the `audit_ai_layer_costs()` function quantifies this exact tradeoff:
 * **Actual External API Calls:** 0
 * **Actual Paid Cost:** ₹0.00
-* **Hypothetical Cloud API Benchmark:** ₹58,750.00 (based on Arjun Mehta's email estimating ₹5/ticket across ~12,000 tickets).
-* **Cost Avoidance Savings:** **₹58,750.00 (100% cost avoidance)**.
+* **Hypothetical Avoided External-Call Expense:** **₹58,750.00** (under the client's ₹5/ticket comparison).
+* **Actual Paid Model Cost:** **₹0.00**.
 
-By avoiding this cloud spend, we preserved the client's entire ₹4,00,000 Q3 training budget for human agent upskilling rather than burning 14.7% of it on redundant LLM token compute.
+By choosing a local model, we eliminated external API expenses, preserving the client's entire ₹4,00,000 Q3 training budget for human agent upskilling rather than spending on external LLM tokens.
 
 ---
 

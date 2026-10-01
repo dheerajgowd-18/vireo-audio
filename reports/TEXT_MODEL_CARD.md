@@ -27,7 +27,7 @@
 ### In-Scope Operational Uses:
 * **Thematic Decomposition:** Retrospective classification of customer support messages into 9 standard operational issue categories.
 * **Intake Bot Remediation:** Decomposing tickets originally miscategorized as generic "Other" by the front-end intake bot into actionable support queues.
-* **Hardware Defect Early Warning:** Identifying clusters of overt physical hardware defects (e.g. charging contact corrosion, dead earbuds) to correlate against manufacturing lot codes (such as Pulse 2 lots).
+* **Hardware Defect Early Warning:** Identifying clusters of overt physical hardware issues (e.g. observed charging-contact failure patterns, dead earbuds) to correlate against manufacturing lot codes (such as Pulse 2 lots).
 * **Workload Triage:** Routing complex technical tickets to Tier 2 agents and straightforward courier inquiries to Logistics.
 
 ### Out-of-Scope / Prohibited Uses:

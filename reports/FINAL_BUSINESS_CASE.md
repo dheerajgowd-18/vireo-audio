@@ -1,7 +1,7 @@
 # Final Business Case: Tier 1 Frontline Handle Time Optimization
 
 **Target Investment**: ₹4,00,000 Q3 Support Training Budget  
-**Evaluation Scope**: 11,750 Support Tickets, 44 Agents, 18 Months (Jan 2024 – Jun 2025)  
+**Evaluation Scope**: 11,750 Support Tickets, 44 Agents, 18 Months (Jan 2025 – Jun 2026)  
 **Author**: Lead Data & AI Engineer  
 **Status**: Formally Reconciled & Audited  
 
@@ -114,21 +114,18 @@ Evaluation of all Tier 1 teams (using valid handle-time tickets only):
 
 ## 6. Training Budget Allocation & Program Governance
 
-The ₹4,00,000 Q3 training budget is allocated across three practical workflow modules:
+Use the ₹4,00,000 budget for peer-benchmarked Tier 1 workflow and troubleshooting training, with final allocation determined by the intervention design and baseline needs across three core operational curricula:
 
-```
-+-----------------------------------------------------------------------------------+
-|               ₹4,00,000 Q3 TRAINING BUDGET ALLOCATION ROADMAP                     |
-+-----------------------------------------------------------------------------------+
-| Module 1: Diagnostic SOPs & Note Standardization               | ₹1,75,000 (43.75%)|
-| Module 2: Escalation Protocols & FCR Optimization              | ₹1,25,000 (31.25%)|
-| Module 3: Tooling, Macros & Queue Management                   | ₹1,00,000 (25.00%)|
-+-----------------------------------------------------------------------------------+
-```
+1. **Module 1: Diagnostic SOPs & Note Standardization**  
+   Target: All 22 frontline Tier 1 agents. Standardize diagnostic intake procedures and eliminate uninformative shorthand notes (currently 908 tickets / 7.73% of volume).
+2. **Module 2: Escalation Protocols & FCR Optimization**  
+   Target: All 22 frontline Tier 1 agents. Teach clear scope boundaries to resolve tier-appropriate tickets on first contact and curb unnecessary inter-tier transfers.
+3. **Module 3: Tooling, Macros & Queue Management Routines**  
+   Target: Focused 1-on-1 coaching for the 10 above-median agents. Implement daily sweeps of multi-day pending tickets to directly address the right-tail skew elevating average handle times.
 
 ### Targeted Population:
 - **Target Cohort**: The **22 Tier 1 Frontline agents** in Chat (15) and Email (7), with individualized coaching focused on the 10 agents currently above their team peer medians.
 - **Excluded Cohort**: Senior Tier 2 escalation specialists and hardware triage agents from the raw bottom 10 are **excluded from frontline remedial training**, preserving departmental morale and capital efficiency.
 
 ### Quality Guardrail:
-- **CSAT Baseline Floor**: Individual agent performance reviews will verify that efficiency gains do not cause customer satisfaction to deteriorate below the historical team baseline (**3.33 / 5.00**).
+- **CSAT Monitoring**: Individual agent performance reviews will verify that efficiency gains do not cause customer satisfaction to deteriorate, monitoring performance alongside the historical team baseline (**3.33 / 5.00**).

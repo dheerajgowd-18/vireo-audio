@@ -1,6 +1,6 @@
 # Financial Reconciliation Report: Support Operating Exposure
 
-**Audit Period**: January 1, 2024 – June 30, 2025 (18 Months / 6 Calendar Quarters)  
+**Audit Period**: January 1, 2025 – June 30, 2026 (18 Months / 6 Calendar Quarters)  
 **Dataset Scope**: 11,750 Support Tickets, 44 Support Agents, 15,500 Orders, 14 Product SKUs  
 **Author**: Lead Data & AI Engineer  
 **Status**: Verified & Audited  

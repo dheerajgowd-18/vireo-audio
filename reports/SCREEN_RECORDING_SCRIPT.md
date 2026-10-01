@@ -22,7 +22,7 @@
   > Instead, our analytical engine establishes our primary business goal:
   > **'Reduce Tier 1 frontline Chat and Email above-median handle time from 6.54 hours to 4.86 hours, eliminating 624.9 excess agent-hours per quarter, representing approximately ₹1.03 lakh per quarter in modeled recoverable staffing capacity.'**
   > 
-  > Over four quarters, this unlocks ₹4.12 lakhs in operational labor capacity under Policy Section 4, fully paying back the ₹4.0 lakh training budget."
+  > Over four quarters, this unlocks ₹4.12 lakhs in annualized modeled capacity value under Policy Section 4, while monitoring CSAT alongside efficiency gains to avoid deterioration in our 3.33 historical baseline."
 
 ---
 
@@ -48,11 +48,11 @@
 * **Spoken Script (Voiceover):**  
   > "Next, let's look at our AI text layer. 
   > 
-  > Rather than spending ₹58,750 calling external cloud APIs 11,750 times, we engineered a local scikit-learn TF-IDF and Logistic Regression pipeline. It ran across the entire dataset in 3.8 seconds at zero paid cost.
+  > Rather than spending on external cloud APIs across 11,750 tickets, we engineered a local scikit-learn TF-IDF and Logistic Regression pipeline. It ran across the entire dataset in 3.8 seconds at zero paid model cost.
   > 
   > In the intake data, 1,732 tickets—nearly 15%—were dumped into an unhelpful 'Other' category. Our model recovered 87.99% of them into actionable operational categories like delivery, connectivity, and billing.
   > 
-  > Crucially, we believe in engineering honesty: while in-sample alignment reached 98%, our held-out 5-fold cross-validation proves a true generalization accuracy of 55.56% and a macro F1 of 0.5388—more than double the majority baseline. Our hardware defect detector operates with 100% precision and zero false positives, ensuring no unauthorized replacements are triggered."
+  > Crucially, we maintain engineering honesty: while in-sample alignment reached 98%, our held-out 5-fold cross-validation proves a true generalization accuracy of 55.56% and a macro F1 of 0.5388—more than double the majority baseline. Our hardware defect detector operates with 100% precision and zero false positives, ensuring no unauthorized replacements are triggered."
 
 ---
 
@@ -67,9 +67,9 @@
   > 
   > More importantly, our product breakdown reveals that a single product—the Pulse 2 wireless earbuds—drives 61.5% of all replacements, totaling ₹21.22 lakhs.
   > 
-  > When we trace lot codes from orders, production lot `PL2-2510-3` shows an alarming 40.94% replacement rate, with text signatures consistently reporting charging pin contact failure. 
+  > When we trace lot codes from orders, production lot candidate `PL2-2510-3` shows an alarming 40.94% replacement rate, with text signatures consistently reporting charging pin contact failure. 
   > 
-  > This is a manufacturing quality defect. Support training cannot fix defective hardware. We formally escalate this to Hardware Engineering and Supply Chain for supplier warranty recovery."
+  > Support training cannot fix physical hardware issues. We formally escalate this operational signal to Hardware Engineering and Supply Chain for investigation."
 
 ---
 
@@ -78,24 +78,24 @@
 * **Visual on Screen:**  
   Click on **"SLA & Cost"** (`#sla`). Point to the channel breach rates (Email at 12.21%, Chat at 7.86%) and the financial exposure ledger. Then click on an agent in the table to open the **Agent Detail Drawer**.
 * **Spoken Script (Voiceover):**  
-  > "In the SLA & Cost view, we track total operating exposure of ₹1.28 Crore, including ₹3.72 lakhs in SLA breach credits across 1,064 breaches. Email is our most vulnerable channel with a 12.21% breach rate.
+  > "In the SLA & Cost view, we track total operating exposure of ₹1.28 Crore, including ₹3.72 lakhs in SLA breach credits across 1,064 breaches. Email is our most vulnerable channel with a 12.21% breach rate under Policy Section 3.
   > 
   > Opening the agent detail drawer, leadership can inspect an agent's peer standing, contact history, and defect exposure.
   > 
-  > Here we also see why handle times inflate: 908 tickets contain uninformative shorthand notes like '-' or 'done'. Standardizing diagnostic notes in Module 1 of our training program directly prevents duplicate discovery cycles when tickets are transferred."
+  > Here we also see why handle times inflate: 908 tickets contain uninformative shorthand notes like '-' or 'done'. Standardizing diagnostic notes in our training curriculum directly prevents duplicate discovery cycles when tickets are transferred."
 
 ---
 
 ### [2:25 – 3:00] Training Recommendations & Closing
 
 * **Visual on Screen:**  
-  Click on **"Methodology"** (`#methodology`). Scroll to the **Q3 Training Budget Allocation** table showing the three modules (₹1.75L, ₹1.25L, ₹1.00L totaling ₹4.00L). Finish on the top header showing full system integrity.
+  Click on **"Methodology"** (`#methodology`). Scroll to the **Q3 Training Budget Allocation** section showing the three frontline curricula. Finish on the top header showing full system integrity.
 * **Spoken Script (Voiceover):**  
   > "To summarize our recommendations for Priya and leadership:
   > 
-  > 1. Deploy the ₹4.0 lakh training budget across three structured modules for our 22 frontline Chat and Email agents: Diagnostic SOPs at ₹1.75L, First-Contact Resolution protocols at ₹1.25L, and Queue Management Sweeps at ₹1.0L.
+  > 1. Use the ₹4.0 lakh training budget for peer-benchmarked Tier 1 workflow and troubleshooting training across our 22 frontline Chat and Email agents: Diagnostic SOPs, First-Contact Resolution protocols, and Queue Management Sweeps.
   > 2. Exempt Tier 2 specialists and hardware triage agents from remedial lists, benchmarking them strictly against peers.
-  > 3. Escalate the ₹21.22 lakh Pulse 2 replacement finding and lot `PL2-2510-3` to Hardware Engineering for supplier warranty clawbacks.
+  > 3. Escalate the ₹21.22 lakh Pulse 2 replacement finding and lot `PL2-2510-3` to Hardware Engineering as an operational investigation signal.
   > 
   > This gives Vireo Audio an auditable, peer-stratified, and mathematically defensible roadmap to elevate customer experience while preserving operational capital.
   > 

@@ -1,7 +1,8 @@
 # Vireo Audio Support Intelligence
 
-An enterprise-grade customer support analytics, financial reconciliation, and ticket text intelligence platform built for **Vireo Audio** leadership.
+An evaluation-ready support analytics and ticket-intelligence tool built for **Vireo Audio** leadership.
 
+* **Evaluation Scope**: 11,750 customer support tickets, 44 agents, 18 operating months (**January 2025 – June 2026**).
 * **Primary Business Goal**: Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h (weighted peer medians: Chat 5.61h -> 3.81h, Email 8.49h -> 7.07h), eliminating 624.9 excess agent-hours per quarter, representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity under Policy §4.
 * **Core Deliverables**: Audited Analytical Engine (`src/`), 7-View Offline-First SaaS Dashboard (`web/`), Executive Memorandum (`reports/VIREO_EXECUTIVE_MEMO.md`), and Client Technical Audit Form (`reports/SUBMISSION_FINAL.md`).
 
@@ -11,7 +12,7 @@ An enterprise-grade customer support analytics, financial reconciliation, and ti
 python run_analysis.py
 
 # 2. Run automated test suite (37/37 tests)
-pytest -v
+python -m pytest tests/ -v
 
 # 3. Compile and verify web dashboard consistency
 python scripts/build_web_data.py
@@ -28,10 +29,16 @@ python -m http.server 8000 --directory web
 
 Vireo Audio processes over 11,000 customer support tickets across chat, voice, email, and social channels. This system provides:
 1. **Peer-Stratified Agent Scorecards**: Resolves employee identity collisions (e.g. duplicate display names) and benchmarks agents strictly against operational peers (Tier 1 Frontline vs Tier 2 Escalations vs Logistics).
-2. **Deterministic Financial Ledgers**: Reconciles actual replacement inventory spend (unit BOM + ₹340 logistics under Policy §4) against Finance's flat estimates, revealing a ₹13.24L (+38.76%) cost overstatement.
-3. **Product & Lot Quality Early Warning**: Identifies that the Pulse 2 wireless earbuds (`VA-EB-PL2`) drive 61.5% of all company replacements, isolating defect concentration in specific 2025 supplier production lots (e.g. `PL2-2510-3`).
-4. **Local AI Ticket Intelligence**: Recovers 87.99% of ambiguous tickets originally dumped into the "Other" category, classifying them into 9 operational themes with zero external cloud API spend (₹0 paid cost; ₹58,750 cost avoidance).
+2. **Deterministic Financial Ledgers**: Reconciles actual replacement inventory spend (unit BOM + ₹340 logistics under Policy §5) against Finance's flat estimates, revealing a ₹13.24L (+38.76%) cost overstatement.
+3. **Product & Lot Quality Early Warning**: Identifies that the Pulse 2 wireless earbuds (`VA-EB-PL2`) drive 61.5% of all company replacements, isolating defect concentration in specific supplier production lots (e.g. `PL2-2510-3`).
+4. **Local AI Ticket Intelligence**: Recovers 87.99% of ambiguous tickets originally dumped into the "Other" category, classifying them into 9 operational themes with zero external cloud API spend (₹0 paid model cost).
 5. **Interactive Support Intelligence Dashboard**: A fast, offline-first web dashboard built using native HTML5, CSS3, and Vanilla JavaScript with custom SVG charts and zero external dependencies.
+
+---
+
+## Data Provenance & Synthetic Evaluation Notice
+
+The supplied support evaluation data pack (`tickets.csv`, `agents.csv`, `orders.csv`, `customers.csv`, `products.csv`, `support-policy.pdf`, `email-thread.txt`) is a synthetic, anonymized benchmarking pack covering the 18-month evaluation window from 1 Jan 2025 to 30 Jun 2026. All customer identifiers, phone numbers, and addresses are mock records created specifically for this technical evaluation.
 
 ---
 
@@ -135,11 +142,10 @@ All 29 unit tests pass in under 2 seconds.
 ---
 
 ## Cost
-
+ 
 * **Actual External Cloud API Calls**: 0
-* **Actual Model Cost**: ₹0.00 (100% local CPU execution)
-* **Hypothetical Cloud LLM Cost (@ ₹5/ticket)**: ₹58,750.00
-* **Cost Avoidance Savings**: **₹58,750.00 (100% cost avoidance)**
+* **Actual Paid Model Cost**: ₹0.00 (100% local CPU execution)
+* **Hypothetical Avoided External-Call Expense (@ ₹5/ticket)**: ₹58,750.00 (under the client's hypothetical comparison)
 * Preserves the client's entire ₹4,00,000 Q3 training budget for human agent development.
 
 ---
