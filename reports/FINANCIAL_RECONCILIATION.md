@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary
 
-A comprehensive financial audit was conducted across all customer support financial allocations defined under Vireo Audio Customer Support Policy (Rev 2026.1). 
+A comprehensive financial audit was conducted across all customer support financial allocations defined under Vireo Audio Customer Support Policy (Rev 3.2). 
 
 The audit establishes:
 1. **Total Tracked Support Operating Exposure**: **₹1,27,62,896** (~**₹1.276 Crore**) across the 18-month evaluation window.
@@ -25,11 +25,11 @@ Every rupee of the **₹1,27,62,896** tracked exposure maps directly to explicit
 
 | Allocation Category | Policy Authority | Unit Count / Basis | Exact Amount (INR) | % of Total Exposure | Operational Nature |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Channel Contact Costs** | Policy §8 (Hourly Rates) | 11,750 ticket handling hours | **₹32,53,060** | 25.49% | Direct Operating Labor |
-| **Internal Transfer Overhead** | Policy §6 (Escalation Fee) | 1,215 transfers @ ₹305 | **₹3,70,575** | 2.90% | Operational Friction Cost |
+| **Channel Contact Costs** | Policy §4 (Cost Standards) | 11,750 ticket handling hours | **₹32,53,060** | 25.49% | Direct Operating Labor |
+| **Internal Transfer Overhead** | Policy §4 (Transfer Fee) | 1,215 transfers @ ₹305 | **₹3,70,575** | 2.90% | Operational Friction Cost |
 | **First-Response SLA Credits** | Policy §3 (Breach Penalties) | 1,064 breaches @ ₹350 | **₹3,72,400** | 2.92% | Service Quality Penalty |
-| **Warranty Replacements** | Policy §4 (BOM + ₹340 Logistics) | 1,896 units replaced | **₹34,15,990** | 26.76% | Direct Inventory Expense |
-| **Customer Refunds Processed** | Policy §5 (Order Value Reversals) | 1,869 transactions refunded | **₹53,50,871** | 41.93% | Commercial Revenue Reversal |
+| **Warranty Replacements** | Policy §5 (BOM + ₹340 Logistics) | 1,896 units replaced | **₹34,15,990** | 26.76% | Direct Inventory Expense |
+| **Customer Refunds Processed** | Policy §5 (Refund Rules) | 1,869 transactions refunded | **₹53,50,871** | 41.93% | Commercial Revenue Reversal |
 | **Total Tracked Support Exposure** | **All Policy Clauses Combined** | **11,750 Tickets Audited** | **₹1,27,62,896** | **100.00%** | **Gross Operational Exposure** |
 
 ---
@@ -37,16 +37,16 @@ Every rupee of the **₹1,27,62,896** tracked exposure maps directly to explicit
 ## 3. Detailed Component Breakdown
 
 ### 3.1 Channel Contact Costs (₹32,53,060)
-Calculated strictly pursuant to Policy §8 based on agent handle times recorded across channels:
-- **Chat Support** (₹165/hour): ₹10,23,660 (6,204 hours across 4,937 tickets)
-- **Voice Support** (₹240/hour): ₹10,64,160 (4,434 hours across 3,562 tickets)
-- **Email Support** (₹195/hour): ₹11,04,420 (5,664 hours across 2,825 tickets)
-- **Social Media Support** (₹150/hour): ₹60,820 (405 hours across 426 tickets)
+Calculated strictly pursuant to Policy §4 based on agent handle times recorded across channels:
+- **Chat Support** (₹165/hour staffing basis): ₹10,23,660 (6,204 hours across 4,937 tickets)
+- **Voice Support** (₹240/hour callback basis): ₹10,64,160 (4,434 hours across 3,562 tickets)
+- **Email Support** (₹195/hour staffing basis): ₹11,04,420 (5,664 hours across 2,825 tickets)
+- **Social Media Support** (₹150/hour staffing basis): ₹60,820 (405 hours across 426 tickets)
 - *Total Handling Outlay*: **₹32,53,060** across 16,707 total logged agent handle hours.
 
 ### 3.2 Internal Transfer Overhead (₹3,70,575)
-- **Policy Provision**: Under Policy §6, tickets requiring routing between tiers or departments incur an administrative overhead penalty of **₹305 per transfer**.
-- **Audit Findings**: 1,215 tickets were transferred beyond initial assignment.
+- **Policy Provision**: Under Policy §4, tickets requiring routing between teams incur an administrative and re-handling overhead penalty of **₹305 per transfer**.
+- **Audit Findings**: 1,215 transfers occurred across 1,097 tickets.
 - *Calculation*: $1,215 \times ₹305 = \mathbf{₹3,70,575}$.
 
 ### 3.3 First-Response SLA Breach Credits (₹3,72,400)
@@ -55,7 +55,7 @@ Calculated strictly pursuant to Policy §8 based on agent handle times recorded 
 - *Calculation*: $1,064 \times ₹350 = \mathbf{₹3,72,400}$.
 
 ### 3.4 Warranty Replacement Inventory (₹34,15,990) vs. Finance Overstatement
-- **Policy Provision**: Under Policy §4, replacement expense is evaluated as `Actual Product Unit BOM Cost + ₹340 Logistics & Handling Fee`.
+- **Policy Provision**: Under Policy §5, replacement expense is evaluated as `Actual Product Unit BOM Cost + ₹340 Reverse Pickup and Forward Logistics Fee`.
 - **Audit Findings**: 1,896 total units authorized for warranty replacement across 14 product models.
 - **True Policy Replacement Cost**: **₹34,15,990**.
 - **Finance Department Estimate**: Finance previously estimated replacement liability by applying an uncalibrated flat assumption of **₹2,500 per unit**, projecting ₹47,40,000 ($1,896 \times ₹2,500$).
@@ -93,7 +93,7 @@ To maintain professional accounting integrity during executive and board reviews
 
 ## 5. UI Badge Typo Audit & Verification
 
-1. **Defect Identified**: The overview badge in `web/index.html` line 539 displayed `"₹1.076 Cr Total Tracked"`.
+1. **Defect Identified**: The overview badge in `web/index.html` line 539 previously displayed `"₹1.076 Cr Total Tracked"`.
 2. **Root Cause Analysis**: During initial frontend prototyping, an engineer manually transcribed ₹1,07,62,896 instead of ₹1,27,62,896 into the static HTML badge string.
 3. **Data Integrity Confirmation**:
    - `web/data/sla.json`: Recorded `"total_exposure_inr": 12762896.0`.

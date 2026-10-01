@@ -123,7 +123,7 @@ def build_all_web_data():
                 "badge": "Hardware Quality",
                 "badge_type": "danger",
                 "metric": "61.5% of All Replacements",
-                "evidence": "Pulse 2 (VA-EB-PL2) drove 1,166 of 1,896 total company replacements (₹22.39L spend). Defect complaints heavily concentrate in late-2025 production lots (e.g. PL2-2510-3).",
+                "evidence": "Pulse 2 (VA-EB-PL2) drove 1,166 of 1,896 total company replacements (₹21.22L spend). Defect complaints heavily concentrate in late-2025 production lots (e.g. PL2-2510-3).",
                 "interpretation": "High replacement volumes stem from a specific supplier component crisis, not widespread customer support mishandling."
             },
             {
