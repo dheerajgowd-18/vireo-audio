@@ -50,9 +50,9 @@
 ### 3.1 The "Bottom 10" Flaw
 - **Client Request**: Flag the bottom 10 agents by raw CSAT / handle time for remedial training.
 - **Analytical Finding**: All 10 agents on the raw bottom list belong to specialized roles:
-  - **6 Agents are Tier 2 Escalation Specialists** (A3041 Jaspreet Desai, A3042 Sneha Sethi, A3040 Tarun Fernandes, A3044 Pranav Khanna, A3043 Kabir Varghese, A3039 Sameer Ghosh). Tier 2 handles pre-escalated, disgruntled customers with complex multi-day inquiries. Their lower CSAT (2.42 – 2.83) and longer handle times are structural consequences of their role, not incompetence.
-  - **4 Agents are Specialized Hardware Triage Agents** (A3004 Siddharth Kapoor, A3006 Kavya Pandey, A3007 Siddharth Trivedi, A3005 Zaid Khanna — "Kavya's four" rota handling physical RMA requests where customers are already frustrated by broken equipment).
-- **Executive Implication**: Subjecting Tier 2 senior specialists to frontline Tier 1 remedial training is counterproductive and wastes the ₹4.0L budget. Training must be peer-stratified.
+  - **6 Agents are Tier 2 Escalation Specialists** (A3041 Jaspreet Desai, A3042 Sneha Sethi, A3040 Tarun Fernandes, A3044 Pranav Khanna, A3043 Kabir Varghese, A3039 Sameer Ghosh). These agents handle structurally different work populations, including Tier 2 escalations and hardware-triage cases; their raw scores therefore should not be interpreted without operational context. Policy §6 explicitly distinguishes Tier 2 work from Tier 1 on workload and measurement characteristics.
+  - **4 Agents are Specialized Hardware Triage Agents** (A3004 Siddharth Kapoor, A3006 Kavya Pandey, A3007 Siddharth Trivedi, A3005 Zaid Khanna — "Kavya's four" rota handling physical RMA requests).
+- **Executive Implication**: Training allocation must account for operational population differences rather than relying solely on raw cross-tier rankings.
 
 ### 3.2 Agent Display Name Collision
 - **Fact**: Two distinct agents share the exact display name **"Kavya Pandey"**:
@@ -65,7 +65,7 @@
 - **Observed Lot Concentration**: Production lot **`PL2-2510-3`** generated **70 replacements** across 171 tickets on direct `order_id` join (40.94% replacement rate, ₹1,27,400 spend).
 - **Inferred Mechanism**: Customer messages and agent notes frequently report charging cradle contact failure, indicating a likely hardware operational defect.
 - **Unverified Status**: Physical component metallurgy or factory root causes have not been independently laboratory-tested. Lot `PL2-2510-3` is classified as a **"high-replacement lot candidate."**
-- **Operational Reality**: Support agents cannot fix hardware defects through training. This is escalated to Hardware Engineering and Supply Chain for vendor warranty recovery.
+- **Operational Reality**: Support agents cannot fix hardware issues through training. This is escalated to Hardware Engineering and Supply Chain as an operational investigation signal.
 
 ### 3.4 Telephony IVR Transcript Corruption
 - **Fact**: Approximately 40 customer messages contain garbled IVR phone navigation text (e.g., *"Press 1 for sales, press 2 for support..."*).
@@ -81,4 +81,4 @@
 
 ## 4. Primary Business Goal Summary
 
-> **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h (weighted peer medians: Chat 5.61h -> 3.81h, Email 8.49h -> 7.07h), eliminating 624.9 excess agent-hours per quarter, representing approximately ₹1,03,102 per quarter in recoverable staffing capacity."**
+> **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h, eliminating approximately 624.9 excess agent-hours per quarter and representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity."**

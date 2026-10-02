@@ -37,8 +37,7 @@
   > 
   > Retraining Tier 2 senior specialists on frontline basics would waste budget and degrade morale.
   > 
-  > In our Agent Performance view, we benchmark agents strictly within their operational peers. When we filter for Tier 1 Chat, we isolate the real operational opportunity: 7 agents operating above their peer median of 3.81 hours, consuming excess hours due to ticket aging rather than lack of effort."
-
+  > "In our Agent Performance view, we benchmark agents strictly within their operational peers. Some tickets have long aging tails, so I report median and mean handle time separately. When we filter for Tier 1 Chat, we isolate the real operational opportunity: 7 agents operating above their peer median of 3.81 hours, consuming excess hours due to ticket aging rather than lack of effort."
 ---
 
 ### [0:55 – 1:25] AI Signals: Local NLP, Cross-Validation, & Recovering "Other"
@@ -52,7 +51,7 @@
   > 
   > In the intake data, 1,732 tickets—nearly 15%—were dumped into an unhelpful 'Other' category. Our model recovered 87.99% of them into actionable operational categories like delivery, connectivity, and billing.
   > 
-  > Crucially, we maintain engineering honesty: while in-sample alignment reached 98%, our held-out 5-fold cross-validation proves a true generalization accuracy of 55.56% and a macro F1 of 0.5388—more than double the majority baseline. Our hardware defect detector operates with 100% precision and zero false positives, ensuring no unauthorized replacements are triggered."
+  > Crucially, we maintain engineering honesty: while in-sample alignment reached 98%, our held-out 5-fold cross-validation proves a true generalization accuracy of 55.56% and a macro F1 of 0.5388—more than double the majority baseline. The hardware signal is intentionally conservative: high precision with limited recall."
 
 ---
 

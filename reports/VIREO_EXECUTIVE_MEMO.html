@@ -231,17 +231,17 @@
 
   <!-- Opening -->
   <p>
-    An audit across all 11,750 support tickets reveals that <strong>allocating the ₹4,00,000 training budget to the raw company-wide "Bottom 10" list would misdirect capital</strong>. Six of those ten are Tier 2 specialists handling complex escalations, and four are frontline staff on the hardware triage rota. Furthermore, the ₹21.22L in Pulse 2 replacement costs is concentrated in lot candidate <code>PL2-2510-3</code> with observed charging-contact failure text patterns—an operational hardware signal that support training cannot solve. Highest-return impact requires focusing strictly on frontline Tier 1 Chat and Email workflow coaching.
+    An audit across all 11,750 support tickets reveals that <strong>allocating the ₹4,00,000 training budget strictly based on the raw company-wide "Bottom 10" list does not account for operational queue differences</strong>. These agents handle structurally different work populations, including Tier 2 escalations and hardware-triage cases. Their raw scores therefore should not be interpreted without operational context. Policy §6 explicitly distinguishes Tier 2 work from Tier 1 on workload and measurement characteristics. Furthermore, the ₹21.22L in Pulse 2 replacement costs is concentrated in lot candidate <code>PL2-2510-3</code> with observed charging-contact failure text patterns—an operational signal requiring hardware and supply-chain investigation that support training cannot solve. Highest-return impact requires focusing strictly on frontline Tier 1 Chat and Email workflow coaching.
   </p>
 
   <!-- Primary Outcome Box -->
   <div class="goal-box">
     <div class="goal-tag">Primary Target Business Outcome</div>
     <div class="goal-statement">
-      "Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h (weighted peer medians: Chat 5.61h &rarr; 3.81h, Email 8.49h &rarr; 7.07h), eliminating 624.9 excess agent-hours per quarter, representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity."
+      "Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h, eliminating approximately 624.9 excess agent-hours per quarter and representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity."
     </div>
     <div class="goal-subtext">
-      Under Policy §4 (₹165/hr fully loaded labor), this recovers <strong>₹4.12 Lakhs in annualized modeled capacity value</strong>, while monitoring CSAT alongside efficiency gains to avoid deterioration in our historical baseline (3.33 overall mean).
+      Under Policy §4 (₹165/hr fully loaded labor), this recovers <strong>approximately ₹4.12 lakh annualized modeled capacity value</strong>, while monitoring CSAT alongside efficiency gains to avoid deterioration in our historical baseline (3.33 overall mean).
     </div>
   </div>
 
@@ -249,16 +249,16 @@
   <h2>Core Analytical Findings</h2>
   <ul class="findings-list">
     <li>
-      <span class="finding-title">The "Bottom 10" Ranking Suffers from Structural Tier Conflation:</span>
-      Sorting agents by raw CSAT places all six Tier 2 Escalation specialists (<code>A3039</code>–<code>A3044</code>, CSAT 2.42–2.83) and four hardware triage agents (<code>A3004</code>–<code>A3007</code>, CSAT 2.98–3.04) at the bottom. Under Policy §6, Tier 2 cases are multi-touch investigations measured across days, not weeks. Comparing them against frontline staff answering routine delivery questions unfairly penalizes them for handling distressed customers.
+      <span class="finding-title">The "Bottom 10" Ranking Does Not Account for Structural Work Differences:</span>
+      Sorting agents by raw CSAT places all six Tier 2 Escalation specialists (<code>A3039</code>–<code>A3044</code>, CSAT 2.42–2.83) and four hardware triage agents (<code>A3004</code>–<code>A3007</code>, CSAT 2.98–3.04) at the bottom. Under Policy §6, Tier 2 cases are multi-touch investigations measured across days, not weeks. Comparing them against frontline staff answering routine delivery questions evaluates structurally dissimilar work.
     </li>
     <li>
       <span class="finding-title">Pulse 2 Replacements Stem from Hardware Lot Quality Patterns, Not Support Execution:</span>
-      Warranty replacements consumed <strong>₹34,15,990</strong> across 1,896 units under Policy §5 (refuting Finance's flat ₹2,500 estimate of ₹47.40L by a ₹13.24L overstatement). The Pulse 2 model accounts for <strong>61.50% of all replacements (1,166 units; ₹21,22,120)</strong>. Production lot <strong><code>PL2-2510-3</code></strong> is a high-replacement lot candidate with an abnormal <strong>40.94% replacement rate</strong> (70 units replaced across 171 tickets). Text analysis isolates charging cradle pin failure signatures. Agent training cannot resolve hardware defects.
+      Warranty replacements consumed <strong>₹34,15,990</strong> across 1,896 units under Policy §5 (refuting Finance's flat ₹2,500 estimate of ₹47.40L by a ₹13.24L overstatement). The Pulse 2 model accounts for <strong>61.50% of all replacements (1,166 units; ₹21,22,120)</strong>. Production lot <strong><code>PL2-2510-3</code></strong> is a high-replacement lot candidate with an abnormal <strong>40.94% replacement rate</strong> (70 units replaced across 171 tickets) and observed charging-contact failure text patterns. Agent training cannot resolve physical hardware issues.
     </li>
     <li>
-      <span class="finding-title">Frontline Handle Time is Inflated by Ticket Aging and Shorthand Notes:</span>
-      While 93–95% of frontline tickets resolve in under an hour, 5–7% linger for days due to incomplete discovery. Crucially, <strong>908 tickets (7.73%)</strong> contain uninformative shorthand notes (<code>words &le; 2 OR characters &le; 9</code>, e.g., <code>"-"</code>, <code>"done"</code>, <code>"cx ok"</code>), forcing successive agents into redundant diagnostic loops.
+      <span class="finding-title">Handle Time Exhibits a Long Right Tail Influenced by Shorthand Notes:</span>
+      Handle-time contains a long right tail, including multi-day cases; the dashboard therefore reports medians alongside means. Crucially, <strong>908 tickets (7.73%)</strong> contain uninformative shorthand notes (<code>words &le; 2 OR characters &le; 9</code>, e.g., <code>"-"</code>, <code>"done"</code>, <code>"cx ok"</code>), forcing successive agents into redundant discovery cycles when tickets are transferred.
     </li>
   </ul>
 

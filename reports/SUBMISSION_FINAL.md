@@ -8,197 +8,183 @@
 
 ---
 
-### Links & Metadata
+### What did you build, and what business outcome does it move?
 
-* **Screen Recording Video Link:** `[PUBLIC GOOGLE DRIVE VIDEO LINK]`
-* **Public Google Drive Folder Link:** `[PUBLIC DRIVE FOLDER LINK]`
-* **Engineering Hours Spent:** `[HONEST HOURS SPENT]`
-* **Public GitHub Repository URL:** `https://github.com/dheerajgowd-18/vireo-audio`
+We built a complete, offline-capable Support Intelligence system comprising:
+1. **Deterministic Analytics Engine (`src/`)**: Ingests, normalizes, and reconciles 11,750 support tickets, 44 agents, 15,500 orders, and 14 product SKUs strictly under operating policy (`support-policy.pdf` v3.2).
+2. **Peer-Stratified Performance Benchmarking**: Resolves display-name collisions (`A3006` vs `A3029` Kavya Pandey), separates Tier 1 frontline queues from Tier 2 escalations and hardware triage, and evaluates handle times against team peer medians.
+3. **Local AI Ticket Intelligence**: A local TF-IDF + Logistic Regression NLP classifier running in 3.8 seconds at ₹0 paid API cost that decomposes 87.99% of ambiguous "Other" tickets into operational themes.
+4. **Replacement & SLA Ledgers**: Deterministically reconciles warranty replacement spend (unit BOM + ₹340 logistics under Policy §5) and SLA breach exposure.
+5. **Interactive Support Intelligence Dashboard (`web/`)**: A fast, offline-first SaaS dashboard built with native HTML5, CSS3, and Vanilla JavaScript with custom SVG charts and zero external dependencies.
 
----
+**Primary Business Outcome Moved:**
+> **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h, eliminating approximately 624.9 excess agent-hours per quarter and representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity."**
 
-### Question 1: Primary Business Goal Statement
-
-> **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h (weighted peer medians: Chat 5.61h -> 3.81h, Email 8.49h -> 7.07h), eliminating 624.9 excess agent-hours per quarter, representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity."**
-
-**Mathematical & Accounting Derivation:**
-* Evaluated across **11,183 valid attendance tickets** (`status in {resolved, closed}`, duration $\ge 0$). Open and pending tickets (567 tickets) lack resolution timestamps and are excluded from handle-time multipliers.
-* **Chat Frontline (15 agents)**: 7 above-median agents handle 1,519 valid tickets at a weighted average of 5.61h vs. the team peer median of 3.81h (-1.80h/ticket). Excess hours = 2,731.18h over 18 months = 455.20h/quarter $\times$ ₹165/hr (Policy §4) = **₹75,107.40/quarter**.
-* **Email Frontline (7 agents)**: 3 above-median agents handle 718 valid tickets at a weighted average of 8.49h vs. the team peer median of 7.07h (-1.42h/ticket). Excess hours = 1,017.97h over 18 months = 169.66h/quarter $\times$ ₹165/hr = **₹27,994.19/quarter**.
-* **Combined Frontline Impact**: Eliminates $455.20 + 169.66 = \mathbf{624.86 \text{ agent-hours/quarter}}$. At the Policy §4 rate of ₹165/hr, this represents **₹1,03,101.59 per quarter** (~₹1.03L/quarter) in modeled recoverable staffing capacity value (operational bandwidth to absorb ticket growth without adding headcount).
-* **Upper-Bound Benchmark Across Tier 1**: Bringing all above-p25 Tier 1 agents to the 25th percentile peer efficiency eliminates 2,154.4 excess hours/quarter, yielding **₹3,55,481 per quarter (~₹3.55L/quarter)**.
+Across four quarters, this unlocks **approximately ₹4.12 lakh annualized modeled capacity value** under Policy §4 (at the fully loaded agent labor rate of ₹165/hour) to absorb volume growth without adding headcount, while monitoring CSAT alongside efficiency gains to avoid deterioration in our historical baseline (3.33 overall mean).
 
 ---
 
-### Question 2: Why the "Bottom 10" Ranking is the Wrong Problem to Solve
+### What does one run cost, and what would a month cost at Vireo's volume (roughly 650 tickets a week)?
 
-A naive company-wide sort by raw CSAT or handle time misdiagnoses support operations due to structural role conflation:
-1. **Tier 2 Structural Penalization**: Six of the bottom ten agents (`A3039` Sameer Ghosh, `A3040` Tarun Fernandes, `A3041` Jaspreet Desai, `A3042` Sneha Sethi, `A3043` Kabir Varghese, `A3044` Pranav Khanna) are Tier 2 Escalation specialists. They handle pre-escalated, highly frustrated customers with complex multi-day warranty and RMA disputes. Under Policy §6, Tier 2 is evaluated on resolution in days, not tickets closed per week. Their lower CSAT (2.42–2.83) reflects ticket complexity, not poor individual performance.
-2. **Hardware Triage Rota Penalization**: The remaining four agents (`A3004` Siddharth Kapoor, `A3005` Zaid Khanna, `A3006` Kavya Pandey, `A3007` Siddharth Trivedi) are frontline agents assigned to the high-friction hardware RMA triage rota ("Kavya's four"). Customers reaching this rota already possess physically defective hardware, structurally depressing CSAT to 2.98–3.04.
-3. **Operational Consequence**: Forcing senior Tier 2 engineers into frontline remedial training would waste the ₹4.0L budget and severely degrade team morale. Support evaluation must benchmark agents strictly against peers within their operational tier.
+**One Run Cost:**
+* **External API Calls:** 0
+* **Actual Paid Model Cost:** **₹0.00**
+* Production inference executes 100% locally on standard CPU hardware via scikit-learn in **3.8 seconds** (~3,000 tickets/sec). The web interface has zero external CDN or cloud hosting dependencies.
+* *Hypothetical Client Benchmark:* Under the client's hypothetical comparison assumption of ₹5/ticket for external cloud LLM calls, classifying the historical dataset of 11,750 tickets would represent a hypothetical external-call expense of **₹58,750.00** ($11,750 \times ₹5.00$). This is a hypothetical benchmark comparison, not an incurred project expense.
 
----
-
-### Question 3: Recommended Deployment of the ₹4,00,000 Training Budget
-
-Use the ₹4,00,000 budget for peer-benchmarked Tier 1 workflow/troubleshooting training, with final allocation determined by intervention design and baseline needs across three core operational curricula:
-* **Module 1: Diagnostic SOPs & Note Standardization**: Standardizes diagnostic intake checklists and eliminates shorthand notes. In our audit, 908 tickets (7.73%) contained uninformative shorthand notes (`words <= 2 OR characters <= 9`, e.g., `"-"`, `"done"`), forcing downstream agents into redundant discovery cycles. Target: All 22 frontline Tier 1 agents.
-* **Module 2: FCR Protocols & Escalation Boundary Management**: Trains agents on resolving tier-appropriate issues to avoid unnecessary transfers. Historically, 1,215 inter-tier transfers generated ₹3,70,575 in transfer overhead (Policy §4: ₹305/transfer) and drove 3,277 30-day repeat contacts. Target: All 22 frontline Tier 1 agents.
-* **Module 3: Queue Sweeps & Aging Ticket Management**: In frontline channels, 93–95% of tickets resolve in under an hour; average handle time is inflated by a 5–7% right-tail of multi-day lingering tickets. Coaching agents on systematic daily sweeps directly compresses this long-tail delay. Target: Focused 1-on-1 coaching for the 10 above-median agents.
+**Monthly Cost at Vireo's Volume:**
+* **Weekly Volume:** Roughly 650 tickets/week.
+* **Monthly Volume Approximation:** $650 \text{ tickets/week} \times \frac{52 \text{ weeks}}{12 \text{ months}} \approx \mathbf{2,817 \text{ tickets/month}}$.
+* **Expected Paid AI Cost:** **₹0.00 per month**.
+* The local model runs incrementally in under 1 second of CPU compute per month with zero cloud API billing, fully preserving Vireo's operational budget.
 
 ---
 
-### Question 4: True Financial Exposure vs. Finance Estimates
+### How do you know it works?
 
-* **Total Tracked Support Financial Exposure**: **₹1,27,62,896** (~₹1.276 Crore).
-* **Direct Operating Expenses**: **₹74,12,025** (~₹74.12 Lakhs):
-  * Channel Contact Labor: **₹32,53,060** (Policy §4 labor across 16,707 handle hours).
-  * Warranty Replacements: **₹34,15,990** (Policy §5 actual BOM + ₹340 logistics).
-  * First-Response SLA Credits: **₹3,72,400** (Policy §3: 1,064 breaches @ ₹350 store credit).
-  * Internal Transfer Overhead: **₹3,70,575** (Policy §4: 1,215 transfers @ ₹305 fee).
-* **Customer Commercial Refunds (Sales Reversals)**: **₹53,50,871** (1,869 transactions refunded under Policy §5).
-* **Finance Overstatement Reconciliation**: Finance Controller Arjun Mehta estimated replacement liability at a flat ₹2,500/unit across 1,896 replacements, projecting ₹47,40,000. Under Policy §5 (actual product BOM cost + ₹340 logistics), actual replacement spend was ₹34,15,990. Finance **overstated replacement liability by ₹13,24,010 (+38.76%)**.
-
----
-
-### Question 5: Product Defect & Operational Root-Cause Findings
-
-* **Product Concentration**: The **Pulse 2** wireless earbud model (`VA-EB-PL2`) drives **61.50% of all company replacements (1,166 out of 1,896 units)**, incurring **₹21,22,120.00** in policy replacement spend (1,166 units $\times$ [₹1,480 BOM + ₹340 logistics = ₹1,820]).
-* **Manufacturing Lot Concentration**: Production lot **`PL2-2510-3`** generated **70 replacements** across 171 tickets on direct `order_id` join—a severe **40.94% replacement rate** (₹1,27,400 spend).
-* **Observed Text Signature**: Customer messages and agent notes consistently describe physical charging pin contact failure and charging cradle detachment.
-* **Engineering Caveat**: Physical metallurgy and factory solder joints have not been independently laboratory-tested. Lot `PL2-2510-3` is classified as a **"high-replacement lot candidate with observed charging-contact failure text patterns."**
-* **Strategic Escalation**: Frontline support training cannot fix defective hardware. Recommending agent coaching to reduce replacements would violate Policy §5 warranty obligations. This finding is formally escalated to Hardware Engineering and Supply Chain as an operational investigation signal.
-
----
-
-### Question 6: Critical Data Traps & Hygiene Discoveries
-
-1. **Display Name Collision**: Two distinct agents share the exact display name **"Kavya Pandey"**:
-   * `A3006`: Tier 1 Chat Frontline agent based in Indore (Morning shift).
-   * `A3029`: Tier 1 Logistics agent based in Bengaluru (Morning shift).  
-   *Resolution*: All joins and metric calculations key strictly on `agent_id`; display names are never used as keys.
-2. **CSAT Missing Data Governance**: 6,554 tickets (55.78%) lack CSAT survey ratings. Under Policy §8, blank surveys must be excluded from averages. Mean CSAT is **3.33 / 5.00** across 5,196 valid responses. Imputing blanks as 0 would have falsely collapsed CSAT to 1.47.
-3. **Legacy Freshdesk Timestamps**: 2,309 tickets from `source_system == 'legacy_fd'` had `resolved_at < first_response_at` due to UTC event log reconstruction. Applying a +05:30 IST offset resolved 100% of negative durations.
-4. **Risky Fallback Order Joins Avoided**: 4,107 tickets lack `order_id`. Joining on `(customer_id, product_sku)` would have created 1,388 duplicate ticket collisions (Cartesian join). Analysis is restricted to direct `order_id` links.
-5. **Telephony IVR Ingestion Glitch**: Approximately 40 tickets contain corrupt phone system navigation text (`"Press 1 for support..."`). This is an automated IVR ingestion defect, not an agent performance flaw.
+We established multi-layered empirical verification across data, machine learning, and frontend layers:
+1. **Automated Test Suite (37/37 Tests Passing)**:
+   * Data quality & primary/foreign key uniqueness (`tests/test_data_quality.py`).
+   * CSAT blank exclusion, attendance-only handle time, and legacy +05:30 offset (`tests/test_metrics.py`).
+   * Policy replacement cost arithmetic and fan-out prevention (`tests/test_financials.py`).
+   * ML cross-validation fold independence and schema preservation (`tests/test_text_classifier.py`).
+   * Business case denominators and capacity formulas (`tests/test_business_reconciliation.py`).
+2. **Production Row Count & Data Invariance**:
+   * Exactly 11,750 ticket rows ingested and preserved across all transformations; zero dropped records.
+3. **Empirical Held-Out Cross-Validation (5-Fold Stratified CV)**:
+   * Evaluated across the 180-ticket benchmark with fold-independent vectorization (zero data leakage):
+     * *Pure ML (TF-IDF + Logistic Regression)*: **Accuracy = 55.56%**, **Macro F1 = 0.5388**.
+     * *Majority Class Floor (`connectivity_pairing`)*: 26.67% accuracy, 0.0468 Macro F1 (+28.89% absolute ML improvement).
+     * *Simple Keyword Rules*: 46.11% accuracy, 0.5399 Macro F1.
+     * *Hybrid Pipeline (Rules + CV ML Fallback)*: **65.56% accuracy**, **0.6443 Macro F1**.
+4. **Hardware Defect Signal Evaluation**:
+   * On the benchmark sample: **Precision = 100.00%**, **Recall = 47.06%**, **F1 = 64.00%** ($TP=8, FP=0, TN=163, FN=9$). The detector operates as an intentionally conservative text signal with zero false alarms.
+5. **Evaluation Honesty & Label Provenance**:
+   * *The benchmark labels are rule-assisted pseudo-labels, not independently human-annotated gold labels.* They were programmatically derived via deterministic policy rules and keyword heuristics (`label_source = "rule_assisted_pseudo_label"`).
+6. **Web Consistency Verifier**:
+   * Automated verification (`scripts/verify_web_consistency.py`) verifies 100% ID matching between `index.html` and `app.js`, zero CDN dependencies, and exact metric parity with analytical outputs.
 
 ---
 
-### Question 7: AI/Text Evaluation Methodology & Honest Cross-Validation Performance
+### Did you change, narrow, or push back on the client's ask? What, when, and why?
 
-* **Cross-Validation Performance**: Evaluated via held-out **5-fold stratified cross-validation** using TF-IDF + Logistic Regression across the 180-ticket benchmark:
-  * **Accuracy:** **55.56%** (100 / 180 out-of-fold correct predictions)
-  * **Macro Precision:** **0.5342**
-  * **Macro Recall:** **0.5528**
-  * **Macro F1-Score:** **0.5388**
-* **The 98.89% In-Sample Clarification**: The previously cited 98.89% was an in-sample training metric caused by evaluating a model on its own training data. True generalization accuracy is 55.56%.
-* **Baseline Hierarchy**:
-  1. *Majority Class Baseline (`connectivity_pairing`)*: 26.67% accuracy (Macro F1: 0.0468) — statistical floor.
-  2. *Simple Keyword Rules*: 46.11% accuracy (Macro F1: 0.5399).
-  3. *Pure ML (5-Fold CV)*: 55.56% accuracy (Macro F1: 0.5388) — +28.89% gain over majority floor.
-  4. *Hybrid Pipeline (Rules + CV ML Fallback)*: 65.56% accuracy (Macro F1: 0.6443) — operational peak.
-* **Hardware Defect Detector Performance**: On the benchmark sample, the regex detector achieves:
-  * **Precision: 100.00%** ($TP=8, FP=0$)
-  * **Recall: 47.06%** ($TP=8, FN=9$)
-  * **F1-Score: 64.00%**  
-  The previously cited 94.87% was negative-class precision ($163 / 172$). The detector operates as a zero-false-positive conservative filter.
-* **Prompt Comparison Status**: Prompt v1 vs. v2 comparisons (82.22% vs. 92.78%) were simulated offline heuristics. Zero cloud LLM API calls were executed; cross-validation is our sole quantitative benchmark.
-* **Label Provenance**: All benchmark labels are explicitly documented as **rule-assisted pseudo-labels**, not double-blind human annotations.
-
----
-
-### Question 8: Recovery of the "Other" Ticket Category
-
-In the intake dataset, 1,732 tickets (14.74% of all tickets) were classified as "Other." Our hybrid classifier recovered **1,524 actionable tickets (87.99%)** into operational categories:
-* `delivery_shipping`: 378 tickets (21.82%)
-* `connectivity_pairing`: 338 tickets (19.52%)
-* `returns_refunds`: 229 tickets (13.22%)
-* `cancellation`: 202 tickets (11.66%)
-* `charging_battery`: 159 tickets (9.18%)
-* `billing_payment`: 91 tickets (5.25%)
-* `hardware_audio_defect`: 74 tickets (4.27%)
-* `product_enquiry_setup`: 53 tickets (3.06%)
-* `other_unclear`: 208 tickets (12.01%) — preserved as genuinely ambiguous.
+Yes. We made deliberate, evidence-based scoping adjustments during the implementation audit:
+1. **Narrowed the "Bottom 10" Training Ask to Comparable Operational Peers**:
+   * *Client Ask:* Flag the bottom 10 agents by raw CSAT / handle time for remedial training.
+   * *Adjustment:* We retained the requested raw "Bottom 10" view in the dashboard, but narrowed training interpretation strictly to comparable operational groups. 
+   * *Why:* Six of the bottom ten agents are Tier 2 Escalation specialists handling multi-day, pre-escalated disputes, and four are frontline hardware triage agents ("Kavya's four"). Policy §6 explicitly states that Tier 2 cases are multi-touch by nature and must not be compared with Tier 1 on volume metrics. These agents handle structurally different work populations; using raw cross-tier rankings to drive remedial training would misdirect capital.
+2. **Replaced Finance's Informal ₹2,500 Replacement Cost with Policy §5 Standards**:
+   * *Client Context:* Finance Controller Arjun Mehta estimated replacements at a flat ₹2,500/unit.
+   * *Adjustment:* We calculated replacement spend using Policy §5: $\text{Unit BOM Cost} + ₹340 \text{ Logistics}$.
+   * *Why:* Product BOM costs range from ₹90 to ₹2,650. Finance's flat assumption overstated replacement liability by ₹13,24,010 (+38.76%). Policy §5 is the binding operational standard.
+3. **Avoided Risky Fallback Order Joins**:
+   * *Client Context:* 4,107 tickets lacked `order_id`; `README.txt` suggested `(customer_id, product_sku)` as a fallback.
+   * *Adjustment:* We restricted order joins strictly to direct `order_id` links.
+   * *Why:* 1,388 customer-SKU pairs placed multiple orders. Joining on customer+SKU would have triggered a Cartesian fan-out, duplicating ticket rows and inflating financial calculations.
+4. **Avoided Per-Ticket Cloud LLM Calls**:
+   * *Client Context:* Email thread discussed ₹5/ticket cloud API costs.
+   * *Adjustment:* We engineered a local scikit-learn NLP pipeline.
+   * *Why:* Avoided ₹58,750 in cloud compute, eliminated PII transmission risks, and cut runtime from ~98 minutes to 3.8 seconds.
 
 ---
 
-### Question 9: Software & Analytical Architecture Overview
+### What is wrong with what you are handing us?
 
-The system is structured as an auditable pipeline with strict separation between business logic, analytical outputs, and UI:
-```
-[Raw CSVs: tickets, agents, orders, products]
-                   │
-                   ▼
-      [Analytical Engine: src/]
-      ├── data_loader.py (type coercion, legacy +05:30 offset)
-      ├── data_quality.py (PK/FK validation, Cartesian prevention)
-      ├── metrics.py (CSAT blanks excluded, attendance handle time)
-      ├── financials.py (policy replacement costs, transfer penalties)
-      ├── agent_analysis.py (peer stratification, rota tagging)
-      ├── text_classifier.py (5-fold CV, TF-IDF + Logistic Regression)
-      └── text_analysis.py ('Other' decomposition, defect ledger)
-                   │
-                   ▼
-   [Analytical Outputs & Governance: reports/]
-   ├── agent_scorecard.csv, monthly_trends.csv, lot_code_analysis.csv
-   ├── text_predictions.csv, cv_predictions.csv, text_pseudo_labels.csv
-   ├── DECISION_SPEC.md, CV_EVALUATION.md, TEXT_MODEL_CARD.md
-   └── AI_ENGINEERING_DEFENSE.md, WEB_UI_DECISIONS.md
-                   │
-                   ▼ (python scripts/build_web_data.py)
-      [Static Web Data: web/data/]
-      ├── overview.json, agents.json, trends.json
-      ├── replacements.json, sla.json, ai_signals.json, methodology.json
-                   │
-                   ▼ (python -m http.server 8000 --directory web)
-      [Vanilla Web Frontend: web/]
-      ├── index.html (Semantic 7-view structure & drawer)
-      ├── styles.css (Minimal SaaS design system)
-      └── app.js (Native DOM router, table sorting, SVG charts)
-```
+To maintain absolute technical and operational honesty:
+1. **Handle Time Reflects Operational Aging and Queue Dynamics**: Mean handle time is heavily skewed by a long right tail of multi-day pending tickets awaiting customer or courier replies. It cannot be treated as pure active keyboard/talk time.
+2. **AI Layer is Assistive, Not Autonomous**: The classifier provides retrospective intelligence and triage signals; it is not an autonomous action agent and does not auto-resolve tickets.
+3. **Benchmark Evaluated on Rule-Assisted Pseudo-Labels**: Ground-truth labels in the 180-ticket sample were derived using deterministic heuristics rather than double-blind human annotations with inter-rater reliability scores.
+4. **Low Validation Support on Rare Classes**: Categories such as `cancellation` ($N=3$) and `product_enquiry_setup` ($N=4$) have limited representation in the sample, requiring rule overrides in production.
+5. **No Physical Manufacturing Root-Cause Proof**: While lot `PL2-2510-3` correlates strongly with replacements (40.94% rate) and charging contact failure phrases, observational text cannot prove physical metallurgy or factory root causes without destructive physical lab teardowns.
+6. **Batch Export, Not Real-Time Streaming**: Ingestion operates as a batch analytics pipeline; real-time Kafka/webhook streaming was not implemented within scope.
+7. **No External LLM Runtime Configured**: System prompt templates (`prompts/text_classifier_v1.md`, `v2.md`) are engineered for future cloud migration, but no live external API integration is active.
 
 ---
 
-### Question 10: Frontend Design Principles & UI Architecture
+### What did you deliberately leave out, and why that rather than something else?
 
-The frontend is built with **zero external dependencies** using native **HTML5, CSS3, and Vanilla JavaScript**:
-1. **Design System & Aesthetics**: Minimalist SaaS aesthetic inspired by Linear and Stripe (restrained monochrome palette, neutral borders, single accent color `#0284c7`, monospace tabular figures).
-2. **Seven Dedicated Views**:
-   * `Overview`: Executive KPI cards, monthly ticket volumes, channel distribution.
-   * `Agent Performance`: Full 44-agent scorecard with peer-group filtering, search, and sorting.
-   * `Requested Bottom 10`: The client's requested view with immediate contextual callouts explaining Tier 2 and hardware triage roles.
-   * `AI Signals`: Issue category distributions, "Other" decomposition breakdown, model card, and confusion matrix.
-   * `Replacements`: Product replacement rates, Pulse 2 cost breakdown (₹21.22L), and manufacturing lot analysis.
-   * `SLA & Cost`: Channel SLA breach rates and financial exposure ledger.
-   * `Methodology`: Complete mathematical definitions, policy citations, and data lineage documentation.
-3. **Agent Drawer**: Slide-out detail drawer displaying an individual agent's metrics, peer benchmark comparison, shift, site, and hardware defect exposure.
-4. **Performance & Reliability**: Zero external CDN calls or heavy JS frameworks. Loads in <50ms with 100% offline operational reliability.
+We deliberately excluded several potential components to maximize reliability, budget efficiency, and interpretability under the 5-hour engineering constraint:
+1. **Per-Ticket Cloud LLM Inference**: Calling commercial APIs across 11,750 tickets would have cost ₹58,750 (14.7% of the entire Q3 training budget) and introduced external network failure modes.
+2. **Complex Multi-Agent Frameworks**: Auto-GPT/CrewAI architectures add non-deterministic latency, debugging opacity, and high token overhead without improving deterministic SQL/pandas accuracy.
+3. **Predictive Time-Series Forecasting**: Forecasting future ticket volume or stockouts requires external seasonal demand and marketing campaign data not present in the historical CSVs.
+4. **Risky Customer+SKU Fallback Joins**: Omitted to prevent Cartesian row duplication across 1,388 multi-order customer-SKU pairs.
+5. **Automated Employee Scoring & Disciplinary Decisioning**: We intentionally avoided single-score punitive rankings, providing peer-stratified context to support human supervisory discretion.
+6. **Definitive Causal Attribution Models**: Omitted causal inference econometric modeling because observational support logs lack instrumental variables or randomized A/B holdouts.
 
 ---
 
-### Question 11: Systems Engineering Trade-offs & Budget Optimization
+### Anything you built or found that nobody asked for?
 
-1. **Local NLP vs. Cloud LLM Inference**:
-   * *Decision*: Deployed local scikit-learn TF-IDF + Logistic Regression instead of calling external LLMs 11,750 times.
-   * *Financial Impact*: Zero paid cost (₹0.00). Hypothetical avoided external-call expense under the client's ₹5/ticket comparison is ₹58,750. Preserved the client's ₹4.0L budget entirely for human coaching.
-   * *Latency*: Full dataset classified in **3.8 seconds** (~3,000 tickets/sec) vs. ~98 minutes over HTTPS.
-   * *Privacy & Governance*: Zero customer PII transmitted across external networks.
-2. **Deterministic Rules vs. Statistical Models**: High-confidence regex rules handle explicit domain boundaries (e.g., cancellations and defect keywords), while statistical ML classifies ambiguous text.
-3. **Vanilla Web Stack vs. Modern JS Frameworks**: Avoided React/Next.js/Tailwind build pipelines. The zero-dependency vanilla stack runs natively on any modern browser via a lightweight local server.
+Yes. Our forensic audit uncovered several critical operational insights beyond the original prompt:
+1. **Pulse 2 Replacement Concentration & High-Replacement Lot Candidate**:
+   * Pulse 2 earbuds drive **61.50% of all company replacements (1,166 units; ₹21,22,120)**.
+   * Specific manufacturing production lot candidate **`PL2-2510-3`** exhibits an abnormal **40.94% replacement rate** (70 replacements across 171 tickets on direct `order_id` join) with text signatures consistently describing charging cradle pin contact failure.
+2. **Finance Replacement Cost Overstatement (₹13.24L / +38.76%)**:
+   * Reconciled actual Policy §5 replacement spend (₹34.16L) against Finance's flat ₹2,500 estimate (₹47.40L), identifying a ₹13.24L overstatement.
+3. **Decomposition & Recovery of the "Other" Category**:
+   * Recovered **1,524 actionable tickets (87.99%)** from the 1,732 tickets dumped into "Other" by the intake bot, mapping them to concrete operational drivers like delivery (21.8%) and connectivity (19.5%).
+4. **Policy Compliance Exceptions (Dual Refund & Replacement)**:
+   * Identified 6 tickets and 131 orders where both a refund and a replacement were recorded, isolating them for operational review under Policy §5.
+5. **Agent Display Name Collision Safeguard**:
+   * Identified and protected two distinct agents named "Kavya Pandey" (`A3006` in Chat vs `A3029` in Logistics), enforcing strict foreign key joins on `agent_id`.
+6. **Telephony IVR Transcription Corruption**:
+   * Isolated ~40 tickets where IVR navigation transcripts were corrupted during telephony gateway export, exonerating agents from responsibility.
 
 ---
 
-### Question 12: Data Modeling Safeguards & Defensibility
+### What did you use AI for?
 
-1. **Cartesian Join Prevention**: Prohibited fallback joins on `(customer_id, product_sku)` for unlinked tickets, preventing 1,388 duplicate ticket collisions.
-2. **Defect Exposure Transparency**: Surfaced `hw_defect_share_pct` on individual agent scorecards, protecting agents assigned to defective Pulse 2 batches from unfair evaluation.
-3. **Non-Punitive Anomaly Classification**: Instances where both a refund and a replacement occurred (6 tickets, 131 orders) are neutrally categorized as "policy compliance exceptions requiring review" rather than fraud.
+We used AI strictly where it added verifiable, transparent, and auditable value:
+1. **Local Statistical NLP (TF-IDF + Logistic Regression)**:
+   * Feature extraction: sublinear TF-IDF vectorization (unigrams + bigrams, 2,500 features).
+   * Classification: Multiclass balanced Logistic Regression to map unstructured customer messages into 9 operational issue themes.
+2. **Deterministic Text Pattern Signal**:
+   * Regular expression pattern matcher targeting physical hardware failure phrases in customer messages and agent notes.
+3. **Prompt Engineering Specifications (Future Migration)**:
+   * Authored `prompts/text_classifier_v1.md` and `prompts/text_classifier_v2.md` as structured system prompt templates for eventual cloud deployment.
+4. **Engineering Assistance**:
+   * Used agentic coding tools during development for rapid scaffolding, automated test generation, and documentation drafting.
+5. **What Was Discarded / Proved Unreliable**:
+   * Discarded earlier in-sample alignment claims (98.89%) in favor of honest 5-fold cross-validation (55.56%).
+   * Discarded initial heuristic prompt comparisons (82% vs 92%) from empirical claims because no external API calls were executed.
 
 ---
 
-### Question 13: Summary Recommendations for Priya & Executive Leadership
+### Link your three-minute screen recording here.
 
-1. **Authorize Training Reallocation**: Use the ₹4,00,000 budget for peer-benchmarked Tier 1 workflow/troubleshooting training across the three frontline curricula (Diagnostic SOPs & Notes, FCR Protocols, and Queue Sweeps).
-2. **Exempt Specialists from Remedial Action**: Remove Tier 2 specialists and hardware triage agents from the "Bottom 10" remediation list. Benchmark agents strictly within their operational peers.
-3. **Escalate Pulse 2 Lot Quality**: Deliver the lot `PL2-2510-3` analysis to Hardware Engineering and Supply Chain as an operational investigation signal regarding the ₹21.22L replacement exposure.
-4. **Deploy Ticket Note Standards**: Mandate diagnostic intake templates and deprecate uninformative shorthand notes across the helpdesk platform.
+`[PUBLIC GOOGLE DRIVE VIDEO LINK]`
+
+---
+
+### Public Google Drive Link
+
+`[PUBLIC DRIVE FOLDER LINK]`
+
+---
+
+### Someone picks this up on Monday and you are unreachable. The three things they need to know.
+
+1. **How to Run the Entire System in Under 60 Seconds**:
+   * Analytical pipeline & CV: `python run_analysis.py`
+   * Automated test suite (37 tests): `python -m pytest tests/ -v`
+   * Web data compilation & consistency check: `python scripts/build_web_data.py && python scripts/verify_web_consistency.py`
+   * Launch frontend: `python -m http.server 8000 --directory web` (Open `http://localhost:8000`).
+2. **Source of Truth for Data & Business Goals**:
+   * Analytical outputs live in `reports/` (`agent_scorecard.csv`, `monthly_trends.csv`, `lot_code_analysis.csv`, `cv_predictions.csv`).
+   * Primary Business Goal: *"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h, eliminating approximately 624.9 excess agent-hours per quarter and representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity under Policy §4."*
+3. **Critical Operational & Analytical Caveats**:
+   * **Do Not Join on Agent Name**: Always join on `agent_id` (`A3006` and `A3029` share the name Kavya Pandey).
+   * **Do Not Train Tier 2 or Hardware Triage Based on Raw CSAT**: Tier 2 cases are multi-touch investigations under Policy §6; hardware triage intentionally handles damaged goods. Compare agents only within their peer benchmark group.
+   * **Pulse 2 is an Operational Hardware Signal**: The ₹21.22L Pulse 2 replacement spend and lot `PL2-2510-3` concentration require hardware/supply-chain investigation; support training cannot fix physical hardware issues.
+
+---
+
+### Honest hours spent.
+
+`[HONEST HOURS SPENT]`
+
+---
+
+### Github Repo Link
+
+https://github.com/dheerajgowd-18/vireo-audio

@@ -36,12 +36,12 @@
 *How should Priya deploy the ₹4,00,000 Q3 training budget, and who should (or should not) be trained?*
 
 ### Official Submission Answer:
-1. **Do NOT Train the Raw Bottom 10**: The raw bottom 10 agents by CSAT / handle time comprise **6 Tier 2 escalation specialists** and **4 specialized hardware triage agents**. These agents handle complex, multi-day, pre-escalated customer disputes and defective hardware where CSAT is structurally depressed (2.4 – 2.9). Forcing senior specialists into frontline remedial training would waste budget and degrade morale.
+1. **Do NOT Train Based Strictly on the Raw Bottom 10**: The raw bottom 10 agents by CSAT / handle time comprise **6 Tier 2 escalation specialists** and **4 specialized hardware triage agents**. These agents handle structurally different work populations, including Tier 2 escalations and hardware-triage cases; their raw scores therefore should not be interpreted without operational context. Policy §6 explicitly distinguishes Tier 2 work from Tier 1 on workload and measurement characteristics.
 2. **Target Population**: Deploy the training budget to the **22 frontline Tier 1 agents in Chat and Email**, focusing 1-on-1 coaching on the 10 agents currently above their team peer medians.
 3. **Curriculum Deployment**:
    - **Module 1 (Diagnostic SOPs & Note Standardization)**: Currently, 908 tickets (7.73%) contain uninformative shorthand notes ("-", "done", "cx ok"). Standardizing templates prevents repetitive discovery loops.
    - **Module 2 (First Contact Resolution & Escalation Protocols)**: Frontline agents learn to resolve tier-appropriate tickets, reducing inter-tier transfers (currently 1,215 transfers costing ₹3,70,575 under Policy §4) and repeat contacts (3,277 repeats costing ₹9,03,890).
-   - **Module 3 (Tooling, Macros & Aging Ticket Sweep Routines)**: 93-95% of tickets are resolved in <1 hour; coaching agents on daily sweeps of multi-day pending tickets directly addresses the right-tail skew elevating average handle times.
+   - **Module 3 (Tooling, Macros & Aging Ticket Sweep Routines)**: Handle-time contains a long right tail, including multi-day cases; coaching agents on daily sweeps of aging pending tickets directly addresses the right-tail skew elevating average handle times.
    - *Budget Governance*: Use the ₹4,00,000 budget for peer-benchmarked Tier 1 workflow/troubleshooting training, with final allocation determined by intervention design and baseline needs.
 
 ---
