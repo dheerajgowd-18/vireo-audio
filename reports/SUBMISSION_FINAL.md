@@ -15,7 +15,7 @@ We built a complete, offline-capable Support Intelligence system comprising:
 2. **Peer-Stratified Performance Benchmarking**: Resolves display-name collisions (`A3006` vs `A3029` Kavya Pandey), separates Tier 1 frontline queues from Tier 2 escalations and hardware triage, and evaluates handle times against team peer medians.
 3. **Local AI Ticket Intelligence**: A local TF-IDF + Logistic Regression NLP classifier running in 3.8 seconds at ₹0 paid API cost that decomposes 87.99% of ambiguous "Other" tickets into operational themes.
 4. **Replacement & SLA Ledgers**: Deterministically reconciles warranty replacement spend (unit BOM + ₹340 logistics under Policy §5) and SLA breach exposure.
-5. **Interactive Support Intelligence Dashboard (`web/`)**: A fast, offline-first SaaS dashboard built with native HTML5, CSS3, and Vanilla JavaScript with custom SVG charts and zero external dependencies.
+5. **Interactive Support Intelligence Dashboard (`web/`)**: A fast, offline-first Support Intelligence Dashboard built with native HTML5, CSS3, and Vanilla JavaScript with custom SVG charts and zero external dependencies.
 
 **Primary Business Outcome Moved:**
 > **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h, eliminating approximately 624.9 excess agent-hours per quarter and representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity."**
@@ -58,7 +58,7 @@ We established multi-layered empirical verification across data, machine learnin
      * *Simple Keyword Rules*: 46.11% accuracy, 0.5399 Macro F1.
      * *Hybrid Pipeline (Rules + CV ML Fallback)*: **65.56% accuracy**, **0.6443 Macro F1**.
 4. **Hardware Defect Signal Evaluation**:
-   * On the benchmark sample: **Precision = 100.00%**, **Recall = 47.06%**, **F1 = 64.00%** ($TP=8, FP=0, TN=163, FN=9$). The 100% precision represents an internal self-consistency check against deterministic regex pseudo-labels, operating as an intentionally conservative text signal with zero false alarms while capturing ~47% of overt failure phrasing.
+   * On the benchmark sample: **Precision = 100.00%**, **Recall = 47.06%**, **F1 = 64.00%** ($TP=8, FP=0, TN=163, FN=9$). The reported 100% precision reflects an internal self-consistency check against deterministic pseudo-labels generated from the same heuristic logic. It is not an independent gold-standard precision estimate. The detector operates as an intentionally conservative text signal capturing overt defect language (47.06% recall) while routing nuanced cases to Tier 2 triage.
 5. **Evaluation Honesty & Label Provenance**:
    * *The benchmark labels are rule-assisted pseudo-labels, not independently human-annotated gold labels.* They were programmatically derived via deterministic policy rules and keyword heuristics (`label_source = "rule_assisted_pseudo_label"`).
 6. **Web Consistency Verifier**:
@@ -151,7 +151,7 @@ We used AI across two distinct dimensions: embedded statistical NLP within the p
      - *Circular Ground Truth Validation*: AI scripts generated pseudo-labels using deterministic regex rules and then evaluated those same regex rules against them, claiming "100% precision / 47% recall" as an independent benchmark rather than recognizing it as an internal self-consistency check.
      - *Denominator Inconsistencies*: AI drafts computed handle time across attendance-only tickets but initially multiplied excess hours across all tickets including uncompleted tickets, requiring manual mathematical audit and correction.
    * **Discarded Prompt & Model Experiments**:
-     - *Heuristic Prompt Comparison Claims*: Authored structured prompt specifications (`prompts/text_classifier_v1.md`, `v2.md`), but discarded early 82.22% vs 92.78% comparative claims because zero external LLM API calls were executed.
+     - *Conceptual Prompt Iterations*: Authored structured prompt specifications (`prompts/text_classifier_v1.md`, `v2.md`). Early prompt-design iterations were conceptual and were never executed against a live external LLM API, so they are not treated as quantitative benchmark results and were discarded as empirical evidence.
      - *Per-Ticket Cloud LLM Architecture*: Discarded external cloud LLM inference entirely to honor the ₹0 API spend constraint, eliminate PII privacy risks, and reduce processing time from ~98 minutes (hypothetical sequential API latency) to 3.8 seconds locally.
 
 ---
@@ -176,7 +176,7 @@ We used AI across two distinct dimensions: embedded statistical NLP within the p
    * Web data compilation & consistency check: `python scripts/build_web_data.py && python scripts/verify_web_consistency.py`
    * Launch frontend: `python -m http.server 8000 --directory web` (Open `http://localhost:8000`).
 2. **Source of Truth for Data & Business Goals**:
-   * Analytical outputs live in `reports/` (`agent_scorecard.csv`, `monthly_trends.csv`, `lot_code_analysis.csv`, `cv_predictions.csv`).
+   * Analytical outputs live in `reports/` (`agent_scorecard.csv`, `monthly_trends.csv`, `lot_code_analysis.csv`, `ai_agent_text_summary.csv`). (Text benchmark artifacts containing customer-message text are intentionally kept local and can be regenerated from the supplied evaluation data via `python run_analysis.py`).
    * Primary Business Goal: *"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h, eliminating approximately 624.9 excess agent-hours per quarter and representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity under Policy §4."*
 3. **Critical Operational & Analytical Caveats**:
    * **Do Not Join on Agent Name**: Always join on `agent_id` (`A3006` and `A3029` share the name Kavya Pandey).

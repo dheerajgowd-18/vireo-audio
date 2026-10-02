@@ -40,7 +40,7 @@
 * **Visual on Screen:**  
   Click **"AI Signals"** (`#ai`). Highlight the 87.99% Theme Recovery card, the horizontal theme distribution bars, and the Model Quality baseline hierarchy card.
 * **Spoken Script (Voiceover):**  
-  > "For ticket intelligence, we avoided external cloud APIs, deploying a local scikit-learn pipeline that classified all tickets in 3.8 seconds at zero paid model cost. Our model decomposed 87.99% of ambiguous intake 'Other' tickets into actionable operational themes like delivery and connectivity. We maintain engineering transparency: held-out 5-fold cross-validation achieves 55.56% generalization accuracy—more than double the majority baseline—against benchmark pseudo-labels, while our hardware detector provides a conservative zero-false-alarm text signal."
+  > "For ticket intelligence, we avoided external cloud APIs, deploying a local scikit-learn pipeline that classified all tickets in 3.8 seconds at zero paid model cost. Our model decomposed 87.99% of ambiguous intake 'Other' tickets into actionable operational themes like delivery and connectivity. We maintain engineering transparency: held-out 5-fold cross-validation achieves 55.56% generalization accuracy—more than double the majority baseline—against benchmark pseudo-labels, while our hardware detector provides a conservative regex signal with zero false positives against the heuristic pseudo-label benchmark; this is not independent validation."
 
 ---
 

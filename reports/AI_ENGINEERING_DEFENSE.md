@@ -27,7 +27,7 @@ Reporting 55.56% out-of-fold generalization accuracy is mathematically honest, r
 **Engineering Defense:**  
 The client explicitly imposed a ₹0 budget cap on external model calls and prohibited making 11,750 API calls to cloud LLM providers (which would have cost ₹58,750+). In response, we authored two prompt engineering specifications (`prompts/text_classifier_v1.md` and `prompts/text_classifier_v2.md`) to serve as production-ready system prompt templates.
 
-However, because zero cloud API calls were actually executed, the reported comparison (82.22% vs. 92.78%) represents an offline, simulated heuristic evaluation contrasting an uncalibrated keyword baseline against a disambiguated rule set. To maintain absolute scientific integrity, we classify the v1 vs. v2 prompt comparison as **qualitative prompt design iteration**, while designating the **held-out 5-fold cross-validation** (`reports/cv_predictions.csv`) as the sole empirical quantitative benchmark of our deployed codebase.
+However, early prompt-design iterations were conceptual and were never executed against a live external LLM API, so they are not treated as quantitative benchmark results. To maintain absolute scientific integrity, we classify the v1 vs. v2 prompt comparisons as **qualitative prompt design iteration**, while designating the **held-out 5-fold cross-validation** against benchmark pseudo-labels (with aggregate metrics summarized in `reports/agent_scorecard.csv` and evaluation documentation) as the quantitative benchmark of our local codebase. (Text benchmark artifacts containing customer-message text are intentionally kept local and can be regenerated from the supplied evaluation data).
 
 ---
 

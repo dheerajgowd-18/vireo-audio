@@ -22,7 +22,7 @@
 
 ### Why NOT Streamlit?
 * **Heavy Python Overhead:** Streamlit re-executes Python scripts on user interaction, introducing 300–800ms lag on every filter, sort, or tab switch.
-* **Non-Standard UI Paradigm:** Streamlit enforces opinionated, cookie-cutter layouts that resemble quick data science demos rather than an enterprise SaaS product.
+* **Non-Standard UI Paradigm:** Streamlit enforces opinionated, cookie-cutter layouts that resemble quick data science demos rather than a polished Support Intelligence Dashboard.
 * **Limited Interaction Fidelity:** Implementing slide-out flyout drawers, multi-column interactive table sorting, and synchronized tooltips in Streamlit requires awkward custom components and iframe hacks.
 * **Server Dependency:** Streamlit requires a persistent, resource-intensive Python process running a Tornado web socket server, making lightweight static distribution impossible.
 
@@ -39,7 +39,7 @@
 
 ## 3. Design Inspiration & System Principles
 
-The user interface draws direct inspiration from the restrained, high-density, typography-driven SaaS interfaces of **Linear, Vercel, and Stripe**:
+The user interface draws direct inspiration from the restrained, high-density, typography-driven dashboard interfaces of **Linear, Vercel, and Stripe**:
 
 * **Monochrome Palette with Restrained Accent:** 
   The interface relies primarily on slate/neutral shades (`#0f172a`, `#64748b`, `#f8fafc`, `#ffffff`) with a single crisp royal blue accent (`#1e40af` / `#2563eb`). Danger (`#b91c1c`) and warning (`#b45309`) colors are reserved exclusively for critical operational signals (e.g., Pulse 2 defect concentration, SLA breach exposure).

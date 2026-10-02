@@ -183,7 +183,7 @@ def run_pipeline():
     cost_audit = audit_ai_layer_costs(len(tickets), sample_size=180)
     print(f"  AI Cost Audit: {cost_audit['cost_status']}.")
     print(f"  Hypothetical Per-Ticket LLM Cost: Rs {cost_audit['hypothetical_cloud_api_cost_inr']:,} "
-          f"--> Total Savings: Rs {cost_audit['cost_avoidance_savings_inr']:,}.")
+          f"--> Hypothetical External API Cost Benchmark: Rs {cost_audit['cost_avoidance_savings_inr']:,}.")
     
     # 7. Export Reports
     print("\n[7/7] Generating analytical and AI data outputs...")

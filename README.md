@@ -62,7 +62,7 @@ The evaluation data files are kept locally in the `data/` directory (`data/ticke
                      ▼
      [Analytical Outputs & Governance: reports/]
      ├── agent_scorecard.csv, monthly_trends.csv, lot_code_analysis.csv
-     ├── text_predictions.csv, cv_predictions.csv, text_pseudo_labels.csv
+     ├── (Text benchmark CSVs are local-only and regenerable via run_analysis.py)
      ├── DECISION_SPEC.md, CV_EVALUATION.md, TEXT_MODEL_CARD.md
      └── AI_ENGINEERING_DEFENSE.md, WEB_UI_DECISIONS.md
                      │
@@ -74,7 +74,7 @@ The evaluation data files are kept locally in the `data/` directory (`data/ticke
                      ▼ (python -m http.server 8000 --directory web)
         [Vanilla Web Frontend: web/]
         ├── index.html (Semantic 7-view structure & drawer)
-        ├── styles.css (Minimal SaaS design system)
+        ├── styles.css (Minimal Support Intelligence design system)
         └── app.js (Native DOM router, table sorting, SVG charts)
 ```
 
@@ -188,7 +188,7 @@ Validates:
 ## Known Limitations
 
 1. **Rule-Assisted Pseudo-Labels**: Benchmark annotations were derived via deterministic heuristics; double-blind human labels should be gathered for production retraining.
-2. **Conservative Defect Detector**: The hardware defect signal achieves 100% precision but 47.06% recall; informal customer complaints require human technical triage.
+2. **Conservative Defect Detector**: The reported 100% precision is an internal self-consistency result against heuristic pseudo-labels and is not an independent production precision estimate (recall is 47.06% against the benchmark); informal customer complaints require human technical triage.
 3. **Observational Correlation**: Concentration of defect signals in specific lots indicates quality anomalies but does not replace physical hardware teardowns.
 4. **Rare Classes**: Classes with low support (`cancellation` $N=3$, `product_enquiry_setup` $N=4$ in sample) rely on rule overrides to ensure stable inference.
 

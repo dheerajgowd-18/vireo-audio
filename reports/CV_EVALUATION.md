@@ -5,7 +5,7 @@
 **Evaluation Scope:** 180 Stratified Support Tickets (`reports/text_eval_sample.csv`)  
 **Label Provenance:** Rule-Assisted Deterministic Pseudo-Labels (`reports/text_pseudo_labels.csv`)  
 **Evaluation Engine:** 5-Fold Stratified Cross-Validation (`src/text_classifier.py`)  
-**Out-of-Fold Predictions:** `reports/cv_predictions.csv`  
+**Out-of-Fold Predictions:** `reports/cv_predictions.csv` *(Local-only benchmark artifact; regenerable via `run_analysis.py`)*  
 
 ---
 
@@ -34,7 +34,7 @@ Key empirical findings:
 To guarantee complete independence between training and validation data:
 * **Stratified Folds**: 5 folds partitioned proportionally across the 9 issue categories with a fixed seed (`seed=42`).
 * **Zero Feature Leakage**: For each fold, the `TfidfVectorizer` (max features=2,500, n-gram range=(1, 2)) was fitted **strictly on the training fold ($X_{train}$)**. Vocabulary sizes varied across folds (Fold 1: 1,929, Fold 2: 1,876, Fold 3: 1,925, Fold 4: 1,934, Fold 5: 1,917), confirming total vectorizer independence.
-* **Out-of-Fold Evaluation**: Predictions were generated strictly on unseen validation folds ($X_{val}$). Every prediction in `reports/cv_predictions.csv` represents an out-of-fold inference.
+* **Out-of-Fold Evaluation**: Predictions were generated strictly on unseen validation folds ($X_{val}$). Every prediction in `reports/cv_predictions.csv` represents an out-of-fold inference (text benchmark artifacts containing customer message text are intentionally kept local and can be regenerated from the supplied evaluation data).
 
 ---
 
