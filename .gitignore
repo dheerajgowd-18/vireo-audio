@@ -21,3 +21,25 @@ ENV/
 .idea/
 *.swp
 *.swo
+
+# Local-only Evaluation Data Pack (Must not be committed publicly)
+data/
+*-customers.csv
+*-orders.csv
+*-agents.csv
+*-products.csv
+*-tickets.csv
+*-support-policy.pdf
+customers.csv
+orders.csv
+agents.csv
+products.csv
+tickets.csv
+support-policy.pdf
+
+# Local-only derived raw text sample/prediction artifacts containing customer messages
+reports/text_eval_sample.csv
+reports/text_ground_truth.csv
+reports/text_pseudo_labels.csv
+reports/cv_predictions.csv
+reports/text_predictions.csv

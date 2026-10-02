@@ -58,7 +58,7 @@ We established multi-layered empirical verification across data, machine learnin
      * *Simple Keyword Rules*: 46.11% accuracy, 0.5399 Macro F1.
      * *Hybrid Pipeline (Rules + CV ML Fallback)*: **65.56% accuracy**, **0.6443 Macro F1**.
 4. **Hardware Defect Signal Evaluation**:
-   * On the benchmark sample: **Precision = 100.00%**, **Recall = 47.06%**, **F1 = 64.00%** ($TP=8, FP=0, TN=163, FN=9$). The detector operates as an intentionally conservative text signal with zero false alarms.
+   * On the benchmark sample: **Precision = 100.00%**, **Recall = 47.06%**, **F1 = 64.00%** ($TP=8, FP=0, TN=163, FN=9$). The 100% precision represents an internal self-consistency check against deterministic regex pseudo-labels, operating as an intentionally conservative text signal with zero false alarms while capturing ~47% of overt failure phrasing.
 5. **Evaluation Honesty & Label Provenance**:
    * *The benchmark labels are rule-assisted pseudo-labels, not independently human-annotated gold labels.* They were programmatically derived via deterministic policy rules and keyword heuristics (`label_source = "rule_assisted_pseudo_label"`).
 6. **Web Consistency Verifier**:
@@ -134,19 +134,25 @@ Yes. Our forensic audit uncovered several critical operational insights beyond t
 
 ### What did you use AI for?
 
-We used AI strictly where it added verifiable, transparent, and auditable value:
-1. **Local Statistical NLP (TF-IDF + Logistic Regression)**:
-   * Feature extraction: sublinear TF-IDF vectorization (unigrams + bigrams, 2,500 features).
-   * Classification: Multiclass balanced Logistic Regression to map unstructured customer messages into 9 operational issue themes.
-2. **Deterministic Text Pattern Signal**:
-   * Regular expression pattern matcher targeting physical hardware failure phrases in customer messages and agent notes.
-3. **Prompt Engineering Specifications (Future Migration)**:
-   * Authored `prompts/text_classifier_v1.md` and `prompts/text_classifier_v2.md` as structured system prompt templates for eventual cloud deployment.
-4. **Engineering Assistance**:
-   * Used agentic coding tools during development for rapid scaffolding, automated test generation, and documentation drafting.
-5. **What Was Discarded / Proved Unreliable**:
-   * Discarded earlier in-sample alignment claims (98.89%) in favor of honest 5-fold cross-validation (55.56%).
-   * Discarded initial heuristic prompt comparisons (82% vs 92%) from empirical claims because no external API calls were executed.
+We used AI across two distinct dimensions: embedded statistical NLP within the product, and AI coding assistants during engineering development.
+
+1. **Embedded Product NLP (100% Local Scikit-Learn)**:
+   * **Feature Extraction & Modeling**: Sublinear TF-IDF vectorization (unigrams + bigrams, 2,500 features) paired with a balanced multiclass Logistic Regression model to classify unstructured customer messages into 9 operational issue themes.
+   * **Deterministic Signal Rules**: High-precision regular expression pattern matching targeting overt hardware failure terminology (charging pins, dead case contacts).
+   * **Theme Recovery**: Decomposed 87.99% of ambiguous intake "Other" tickets into actionable routing themes at ₹0 paid API cost.
+
+2. **AI Development Tools (Agentic Coding & LLM Assistance)**:
+   * **Where AI Helped Most**:
+     - *Rapid Boilerplate & Test Generation*: Generating parameter-rich pytest test fixtures for timestamp edge cases (+05:30 IST offset) and primary/foreign key integrity checks.
+     - *CSS Design System Architecture*: Scaffolding a clean, accessible, Linear/Stripe-inspired monochrome design system with native CSS variables and SVG line-chart mathematics without third-party chart libraries.
+     - *Cross-Validation Pipeline*: Structuring strict fold-independent feature vectorization in `src/text_classifier.py` to prevent data leakage.
+   * **Where AI Wasted Time & Generated Unreliable Output**:
+     - *Hallucinated In-Sample Metrics*: Early AI scaffolding evaluated models on their own training folds, mistakenly declaring "98.89% accuracy" which collapsed to 55.56% under rigorous held-out cross-validation.
+     - *Circular Ground Truth Validation*: AI scripts generated pseudo-labels using deterministic regex rules and then evaluated those same regex rules against them, claiming "100% precision / 47% recall" as an independent benchmark rather than recognizing it as an internal self-consistency check.
+     - *Denominator Inconsistencies*: AI drafts computed handle time across attendance-only tickets but initially multiplied excess hours across all tickets including uncompleted tickets, requiring manual mathematical audit and correction.
+   * **Discarded Prompt & Model Experiments**:
+     - *Heuristic Prompt Comparison Claims*: Authored structured prompt specifications (`prompts/text_classifier_v1.md`, `v2.md`), but discarded early 82.22% vs 92.78% comparative claims because zero external LLM API calls were executed.
+     - *Per-Ticket Cloud LLM Architecture*: Discarded external cloud LLM inference entirely to honor the ₹0 API spend constraint, eliminate PII privacy risks, and reduce processing time from ~98 minutes (hypothetical sequential API latency) to 3.8 seconds locally.
 
 ---
 

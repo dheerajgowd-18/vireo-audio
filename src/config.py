@@ -8,23 +8,34 @@ from datetime import timedelta
 # Project Root Directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# File Discovery Patterns (supports direct names and UUID-prefixed names)
+# File Discovery Patterns (prioritizes data/ directory, then base_dir, supporting direct names and UUID-prefixed names)
 def resolve_data_file(filename_pattern: str, base_dir: Path = BASE_DIR) -> Path:
-    """Find a data file by exact name or glob pattern (e.g. *tickets.csv)."""
-    # Check exact match first
+    """Find a data file by exact name or glob pattern (e.g. *tickets.csv), checking data/ first."""
+    data_dir = base_dir / "data"
+    
+    # 1. Check data/ directory first (standard local repository setup)
+    if data_dir.exists():
+        exact_in_data = data_dir / filename_pattern
+        if exact_in_data.exists():
+            return exact_in_data
+        matches_in_data = glob.glob(str(data_dir / f"*{filename_pattern}"))
+        if matches_in_data:
+            matches_in_data.sort()
+            return Path(matches_in_data[0])
+            
+    # 2. Check base_dir exact match
     exact_path = base_dir / filename_pattern
     if exact_path.exists():
         return exact_path
     
-    # Check glob pattern
+    # 3. Check base_dir glob pattern
     glob_pattern = str(base_dir / f"*{filename_pattern}")
     matches = glob.glob(glob_pattern)
     if matches:
-        # Sort to ensure deterministic selection if multiple
         matches.sort()
         return Path(matches[0])
     
-    raise FileNotFoundError(f"Could not locate data file matching pattern '{filename_pattern}' in {base_dir}")
+    raise FileNotFoundError(f"Could not locate data file matching pattern '{filename_pattern}' in {data_dir} or {base_dir}")
 
 # Policy Constants: SLAs (minutes)
 SLA_TARGET_MINUTES = {

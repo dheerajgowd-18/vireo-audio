@@ -76,7 +76,10 @@ When correctly calculated on the benchmark confusion matrix:
 * **Recall:** $\frac{TP}{TP + FN} = \frac{8}{8 + 9} =$ **47.06%**
 * **F1-Score:** **64.00%**
 
-This reveals the true operational profile of our detector: it was engineered with an intentionally **conservative bias**. It never triggers a false alarm ($FP = 0$), which protects Vireo Audio from issuing unauthorized ₹1,800+ hardware replacements. However, because it relies on strict failure phrases, it misses 52.94% of informal complaints, safely deferring them to standard Tier 2 triage.
+**Critical Technical Disclosure:**
+Because the pseudo-label `gt_hardware_defect_signal` was generated using the same heuristic regex logic (`detect_hardware_defect_signal`), this 100% precision score represents an **internal self-consistency check** of deterministic rule execution, rather than an independent gold-standard validation against human annotations.
+
+Operationally, the detector was engineered with a **conservative regex pattern**: it captures severe overt defect phrases with zero heuristic false alarms ($FP = 0$), preventing unwarranted ₹1,800+ replacement authorizations, while safely routing the remaining 52.94% of informal complaints to human Tier 2 triage. True production precision and recall will be lower once tested against nuanced, human-labeled colloquial text.
 
 ---
 

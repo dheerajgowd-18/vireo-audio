@@ -408,7 +408,7 @@ def build_all_web_data():
             "fp": 0,
             "tn": 163,
             "fn": 9,
-            "explanation": "High precision, limited recall. It identifies explicit defect language but can miss colloquial descriptions. This is a text signal, not a proven physical defect diagnosis."
+            "explanation": "High precision on benchmark pseudo-labels represents an internal self-consistency check of deterministic rules rather than independent human gold-standard validation. It reliably captures explicit defect phrases with zero heuristic false alarms, but misses colloquial descriptions (47.06% recall). This is an operational text signal, not a proven physical defect diagnosis."
         }
     }
     with open(output_dir / "ai_signals.json", "w", encoding="utf-8") as f:
@@ -447,7 +447,7 @@ def build_all_web_data():
             "model_type": "TF-IDF (1-2 n-grams) + Balanced Logistic Regression + Rule Overrides",
             "external_api_calls": 0,
             "paid_cost_inr": 0.0,
-            "cost_avoidance_savings_inr": 58750.0,
+            "hypothetical_external_api_benchmark_inr": 58750.0,
             "benchmark_provenance": "Rule-assisted pseudo-labels (label_source='rule_assisted_pseudo_label')",
             "evaluation_method": "5-fold stratified cross-validation with fold vectorizer independence"
         },

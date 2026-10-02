@@ -22,8 +22,10 @@ Key empirical findings:
    * *Hybrid Pipeline (Rules + ML Fallback)*: 65.56% accuracy (Macro F1: 0.6443).
 3. **Hardware Defect Signal Reality**:
    * Evaluated on the benchmark sample: **Precision = 100.00%**, **Recall = 47.06%**, **F1-Score = 64.00%** ($TP=8, FP=0, TN=163, FN=9$).
-   * The previously cited "94.87%" was an inadvertent inversion of negative class precision ($163 / 172$). The regex detector operates as a zero-false-positive, high-precision filter that captures severe hardware complaints while missing colloquial or non-standard descriptions.
-4. **Label Provenance**: All benchmark labels were programmatically derived via deterministic policy rules and keyword heuristics. They are explicitly documented as **rule-assisted pseudo-labels**, not double-blind independent human annotations.
+   * *Critical Provenance Disclosure*: The benchmark pseudo-label for hardware defect signal (`gt_hardware_defect_signal`) was synthesized using the exact same deterministic regex rules as the detector. Consequently, 100% precision is an internal self-consistency check on the pseudo-label synthesis, NOT an independent gold-standard test on unseen human-labeled text. In production, unmodeled colloquial descriptions will yield lower empirical precision and recall.
+4. **Label Provenance & Rare-Class CV Limitations**:
+   * All benchmark labels were programmatically derived via deterministic policy rules and keyword heuristics. They are explicitly documented as **rule-assisted pseudo-labels**, not double-blind independent human annotations.
+   * *Rare-Class Split Caveat*: With $N=180$ tickets across 9 classes, 5-fold StratifiedKFold cannot guarantee balanced representation for classes where $N < 5$ (`cancellation` $N=3$, `product_enquiry_setup` $N=4$), leading to folds with 0 validation examples for those classes.
 
 ---
 
@@ -120,5 +122,7 @@ Actual Positive:                9                           8
 * **Recall**: **47.06%** ($8 / 17$)
 * **F1-Score**: **64.00%**
 
-### Engineering Defense:
-The hardware defect detector was intentionally designed with a **conservative bias**. In customer support operations, misflagging a routine connection reset as a physical hardware defect risks unnecessary ₹1,800+ replacement authorizations. By prioritizing **100% precision**, we eliminate false RMA authorizations while capturing ~47% of overt hardware failures. The remaining 53% are safely routed to Tier 2 technical triage.
+### Engineering Defense & Critical Caveat:
+The hardware defect detector was intentionally designed with a **conservative regex pattern**. In customer support operations, misflagging a routine connection reset as a physical hardware defect risks unnecessary ₹1,800+ replacement authorizations. 
+
+However, **this benchmark metric must be interpreted with technical honesty**: because `gt_hardware_defect_signal` in `reports/text_pseudo_labels.csv` was generated using the same heuristic regex logic (`detect_hardware_defect_signal`), the 100% precision score is an **internal self-consistency check** of deterministic rule execution, rather than an independent gold-standard validation against human medical/audio annotations. While capturing ~47% of overt hardware failures with zero heuristic false positives, the remaining 53% of colloquial complaints are safely routed to Tier 2 technical triage. True real-world precision and recall must be validated against human-annotated transcripts before deploying autonomous actions.

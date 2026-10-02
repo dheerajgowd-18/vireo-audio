@@ -4,7 +4,7 @@ An evaluation-ready support analytics and ticket-intelligence tool built for **V
 
 * **Evaluation Scope**: 11,750 customer support tickets, 44 agents, 18 operating months (**January 2025 – June 2026**).
 * **Primary Business Goal**: Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h (weighted peer medians: Chat 5.61h -> 3.81h, Email 8.49h -> 7.07h), eliminating 624.9 excess agent-hours per quarter, representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity under Policy §4.
-* **Core Deliverables**: Audited Analytical Engine (`src/`), 7-View Offline-First SaaS Dashboard (`web/`), Executive Memorandum (`reports/VIREO_EXECUTIVE_MEMO.md`), and Client Technical Audit Form (`reports/SUBMISSION_FINAL.md`).
+* **Core Deliverables**: Audited Analytical Engine (`src/`), 7-View Offline-First Support Intelligence Dashboard (`web/`), Executive Memorandum (`reports/VIREO_EXECUTIVE_MEMO.md`), and Client Technical Audit Form (`reports/SUBMISSION_FINAL.md`).
 
 ### Quick Start
 ```bash
@@ -38,7 +38,9 @@ Vireo Audio processes over 11,000 customer support tickets across chat, voice, e
 
 ## Data Provenance & Synthetic Evaluation Notice
 
-The supplied support evaluation data pack (`tickets.csv`, `agents.csv`, `orders.csv`, `customers.csv`, `products.csv`, `support-policy.pdf`, `email-thread.txt`) is a synthetic, anonymized benchmarking pack covering the 18-month evaluation window from 1 Jan 2025 to 30 Jun 2026. All customer identifiers, phone numbers, and addresses are mock records created specifically for this technical evaluation.
+The supplied support evaluation data pack (`tickets.csv`, `agents.csv`, `orders.csv`, `customers.csv`, `products.csv`, `support-policy.pdf`, `email-thread.txt`) is a synthetic, anonymized benchmarking pack covering the 18-month evaluation window from 1 Jan 2025 to 30 Jun 2026. All customer identifiers, phone numbers, and addresses are mock records created specifically for this technical evaluation. 
+
+The evaluation data files are kept locally in the `data/` directory (`data/tickets.csv`, `data/agents.csv`, etc.) and are intentionally excluded from the public git repository via `.gitignore` for data hygiene and distribution best practices. Analytical summaries and evaluation reports are generated into `reports/`.
 
 ---
 
@@ -137,7 +139,7 @@ Execute the automated test suite covering data quality, financial arithmetic, me
 python -m pytest tests/ -v
 ```
 
-All 29 unit tests pass in under 2 seconds.
+All 37 unit tests pass in under 2 seconds.
 
 ---
 
@@ -145,7 +147,7 @@ All 29 unit tests pass in under 2 seconds.
  
 * **Actual External Cloud API Calls**: 0
 * **Actual Paid Model Cost**: ₹0.00 (100% local CPU execution)
-* **Hypothetical Avoided External-Call Expense (@ ₹5/ticket)**: ₹58,750.00 (under the client's hypothetical comparison)
+* **Hypothetical Avoided External-Call Expense (@ ₹5/ticket)**: ₹58,750.00 (hypothetical comparison benchmark at ₹5/ticket)
 * Preserves the client's entire ₹4,00,000 Q3 training budget for human agent development.
 
 ---
@@ -154,14 +156,14 @@ All 29 unit tests pass in under 2 seconds.
 
 * **Feature Extraction**: Sub-linear TF-IDF vectorizer (unigrams + bigrams, 2,500 max features, English stop words).
 * **Classifier**: Balanced multiclass Logistic Regression with $L_2$ regularization and deterministic rule overrides for high-risk actions (e.g. order cancellations).
-* **Hardware Defect Signal**: High-precision regex pattern matcher targeting physical earbud failures (pins damaged, dead in case, not charging).
+* **Hardware Defect Signal**: Conservative regex pattern matcher targeting physical earbud failures (pins damaged, dead in case, not charging).
 * **Empirical Validation**: Evaluated via strictly held-out **5-fold stratified cross-validation** with fold vectorizer independence (zero data leakage).
   * Majority Baseline: 26.67%
   * Keyword Rules: 46.11%
   * Pure ML (5-Fold CV): 55.56% (Macro F1: 0.5388)
   * Hybrid Pipeline: 65.56% (Macro F1: 0.6443)
-  * Hardware Defect Signal: Precision = 100.0%, Recall = 47.06%, F1 = 64.00% (conservative text signal)
-* **Benchmark Provenance**: Explicitly documented as rule-assisted pseudo-labels (`label_source = "rule_assisted_pseudo_label"`).
+  * Hardware Defect Signal: Precision = 100.0%, Recall = 47.06%, F1 = 64.00% (internal self-consistency check against deterministic pseudo-labels; captures overt defect language with zero heuristic false alarms)
+* **Benchmark Provenance & Limitations**: Explicitly documented as rule-assisted pseudo-labels (`label_source = "rule_assisted_pseudo_label"`). Rare classes (`cancellation` $N=3$, `product_enquiry_setup` $N=4$ in sample) cannot guarantee balanced fold representation in 5-fold CV and rely on rule overrides.
 
 ---
 

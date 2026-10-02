@@ -76,7 +76,7 @@ All metrics reflect strictly out-of-fold generalization performance across 5 cro
 * **True Positives ($TP$)**: 8 | **False Positives ($FP$)**: 0
 * **True Negatives ($TN$)**: 163 | **False Negatives ($FN$)**: 9
 * **Precision**: **100.00%** | **Recall**: **47.06%** | **F1-Score**: **64.00%**
-* *Operational Profile:* Conservative zero-false-positive filter. It guarantees that any ticket flagged as a hardware defect is legitimate, preventing erroneous RMA cost inflation.
+* *Operational Profile & Provenance Caveat:* The 100% precision score reflects an **internal self-consistency check** against the deterministic regex heuristics used to construct the pseudo-label benchmark, rather than an independent human gold-standard test. The detector functions as a conservative filter designed to avoid false RMA triggers, capturing overt hardware phrases while safely routing 52.94% of uncaptured cases to human Tier 2 technical triage.
 
 ---
 

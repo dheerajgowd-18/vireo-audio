@@ -34,7 +34,7 @@
 
 | Financial Category | Verified Amount (INR) | Accounting Context & Policy Authority |
 | :--- | :--- | :--- |
-| **Channel Contact Costs** | ₹32,53,060 | Policy §4: Chat ₹210, Voice ₹520, Email ₹260, Social ₹240 / contact (or labor) |
+| **Channel Contact Costs** | ₹32,53,060 | Policy §4: Chat ₹210, Voice ₹520, Email ₹260, Social ₹240 / contact (distinct from ₹165/hr staffing rate) |
 | **Internal Transfer Overhead** | ₹3,70,575 | Policy §4: 1,215 transfers penalized at ₹305/transfer |
 | **First-Response SLA Credits** | ₹3,72,400 | Policy §3: 1,064 automatic store credits @ ₹350 per ticket |
 | **Warranty Replacements** | ₹34,15,990 | Policy §5: 1,896 units @ Actual Product BOM Cost + ₹340 Logistics |

@@ -382,7 +382,7 @@
           </div>
 
           <div class="spec-body" style="font-size: 12px; color: var(--text-muted);">
-            <strong>Engineering Note:</strong> High precision, limited recall. It identifies explicit defect language but can miss colloquial descriptions. This is a text signal, not a proven physical defect diagnosis.
+            <strong>Engineering Note:</strong> High precision on benchmark pseudo-labels represents an internal self-consistency check of deterministic rules rather than independent human gold-standard validation. It reliably captures explicit defect phrases with zero heuristic false alarms, but misses colloquial descriptions (47.06% recall). This is an operational text signal, not a proven physical defect diagnosis.
           </div>
         </div>
       </section>
@@ -405,7 +405,7 @@
           <div class="kpi-card">
             <div class="kpi-label">Policy-Defined Replacement Spend</div>
             <div class="kpi-value num">₹34.16L</div>
-            <div class="kpi-subtext">Actual product unit cost + ₹340 logistics (Policy §4)</div>
+            <div class="kpi-subtext">Actual product unit cost + ₹340 logistics (Policy §5)</div>
           </div>
         </div>
 
@@ -558,7 +558,7 @@
                 <tr>
                   <td><strong>Internal Transfer Overhead</strong></td>
                   <td class="table-cell-num num">₹3,70,575</td>
-                  <td>1,215 inter-tier transfers penalized at ₹305/transfer (Policy §6)</td>
+                  <td>1,215 inter-tier transfers penalized at ₹305/transfer (Policy §4)</td>
                 </tr>
                 <tr>
                   <td><strong>First-Response SLA Credits</strong></td>
@@ -568,7 +568,7 @@
                 <tr>
                   <td><strong>Policy Replacement Inventory</strong></td>
                   <td class="table-cell-num num">₹34,15,990</td>
-                  <td>1,896 product replacements @ actual unit cost + ₹340 logistics (Policy §4)</td>
+                  <td>1,896 product replacements @ actual unit cost + ₹340 logistics (Policy §5)</td>
                 </tr>
                 <tr>
                   <td><strong>Customer Refunds Processed</strong></td>
@@ -635,7 +635,7 @@
             <div class="spec-content">
               <div class="spec-heading">AI & Machine Learning Governance</div>
               <div class="spec-body">
-                Implemented a 100% local TF-IDF + Logistic Regression architecture with deterministic rule overrides. Zero external cloud API calls executed (₹0 paid model cost; ₹58,750 cost avoidance). Generalization verified via held-out 5-fold stratified cross-validation (55.56% ML accuracy, 65.56% hybrid accuracy) against rule-assisted pseudo-labels.
+                Implemented a 100% local TF-IDF + Logistic Regression architecture with deterministic rule overrides. Zero external cloud API calls executed (₹0 paid model cost; ₹58,750 hypothetical external API benchmark at ₹5/ticket). Generalization verified via held-out 5-fold stratified cross-validation (55.56% ML accuracy, 65.56% hybrid accuracy) against rule-assisted pseudo-labels.
               </div>
             </div>
           </div>
@@ -646,8 +646,9 @@
               <div class="spec-heading">Documented System Limitations</div>
               <div class="spec-body">
                 1. Benchmark annotations are rule-assisted pseudo-labels; human double-blind labels should be gathered for production deployment.<br>
-                2. The hardware defect detector operates with 100% precision and 47.06% recall; colloquial customer complaints require human technical triage.<br>
-                3. Operational correlation between defect signals and low CSAT does not establish legal or physical manufacturing causality without hardware teardown testing.
+                2. The hardware defect detector's 100% benchmark precision is an internal self-consistency check against deterministic regex pseudo-labels, capturing overt defect phrases with zero heuristic false alarms but 47.06% recall; colloquial phrasing requires human technical triage.<br>
+                3. Operational correlation between defect signals and low CSAT does not establish legal or physical manufacturing causality without hardware teardown testing.<br>
+                4. Rare classes (cancellation N=3, product_enquiry_setup N=4 in sample) exhibit high variance across cross-validation folds and rely on rule overrides.
               </div>
             </div>
           </div>

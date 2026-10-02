@@ -29,7 +29,7 @@
     "model_type": "TF-IDF (1-2 n-grams) + Balanced Logistic Regression + Rule Overrides",
     "external_api_calls": 0,
     "paid_cost_inr": 0.0,
-    "cost_avoidance_savings_inr": 58750.0,
+    "hypothetical_external_api_benchmark_inr": 58750.0,
     "benchmark_provenance": "Rule-assisted pseudo-labels (label_source='rule_assisted_pseudo_label')",
     "evaluation_method": "5-fold stratified cross-validation with fold vectorizer independence"
   },

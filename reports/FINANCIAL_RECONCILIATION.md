@@ -25,7 +25,7 @@ Every rupee of the **₹1,27,62,896** tracked exposure maps directly to explicit
 
 | Allocation Category | Policy Authority | Unit Count / Basis | Exact Amount (INR) | % of Total Exposure | Operational Nature |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Channel Contact Costs** | Policy §4 (Cost Standards) | 11,750 ticket handling hours | **₹32,53,060** | 25.49% | Direct Operating Labor |
+| **Channel Contact Costs** | Policy §4 (Cost Standards) | 11,750 channel contacts (Chat, Voice, Email, Social) | **₹32,53,060** | 25.49% | Channel Operating Handling |
 | **Internal Transfer Overhead** | Policy §4 (Transfer Fee) | 1,215 transfers @ ₹305 | **₹3,70,575** | 2.90% | Operational Friction Cost |
 | **First-Response SLA Credits** | Policy §3 (Breach Penalties) | 1,064 breaches @ ₹350 | **₹3,72,400** | 2.92% | Service Quality Penalty |
 | **Warranty Replacements** | Policy §5 (BOM + ₹340 Logistics) | 1,896 units replaced | **₹34,15,990** | 26.76% | Direct Inventory Expense |
@@ -37,12 +37,13 @@ Every rupee of the **₹1,27,62,896** tracked exposure maps directly to explicit
 ## 3. Detailed Component Breakdown
 
 ### 3.1 Channel Contact Costs (₹32,53,060)
-Calculated strictly pursuant to Policy §4 based on agent handle times recorded across channels:
-- **Chat Support** (₹165/hour staffing basis): ₹10,23,660 (6,204 hours across 4,937 tickets)
-- **Voice Support** (₹240/hour callback basis): ₹10,64,160 (4,434 hours across 3,562 tickets)
-- **Email Support** (₹195/hour staffing basis): ₹11,04,420 (5,664 hours across 2,825 tickets)
-- **Social Media Support** (₹150/hour staffing basis): ₹60,820 (405 hours across 426 tickets)
-- *Total Handling Outlay*: **₹32,53,060** across 16,707 total logged agent handle hours.
+Calculated strictly pursuant to Policy §4 based on channel per-contact pricing across all 11,750 customer interactions:
+- **Chat Support**: 5,102 tickets @ ₹210 / contact = **₹10,71,420**
+- **Voice Support**: 1,833 tickets @ ₹520 / contact = **₹9,53,160**
+- **Email Support**: 3,644 tickets @ ₹260 / contact = **₹9,47,440**
+- **Social Media Support**: 1,171 tickets @ ₹240 / contact = **₹2,81,040**
+- *Total Channel Contact Allocation*: **₹32,53,060** across all 11,750 contacts.
+*(Note: These per-contact operational channel costs are distinct from the separate fully loaded frontline staffing rate of ₹165/hour under Policy §4 used to evaluate modeled labor capacity value).*
 
 ### 3.2 Internal Transfer Overhead (₹3,70,575)
 - **Policy Provision**: Under Policy §4, tickets requiring routing between teams incur an administrative and re-handling overhead penalty of **₹305 per transfer**.
