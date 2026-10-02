@@ -1,16 +1,18 @@
 # Vireo Audio Support Intelligence & Performance Evaluation
+
 ## Client Final Submission Form & Technical Audit Responses
 
-**Candidate / Engineer:** Lead Data & AI Engineer  
-**Evaluation Scope:** 11,750 Tickets, 44 Support Agents, 18 Months (January 2025 – June 2026)  
-**Date of Submission:** October 1, 2026  
-**Status:** Complete, Audited & Defensible  
+**Candidate / Engineer:** Lead Data & AI Engineer
+**Evaluation Scope:** 11,750 Tickets, 44 Support Agents, 18 Months (January 2025 – June 2026)
+**Date of Submission:** October 1, 2026
+**Status:** Complete, Audited & Defensible
 
 ---
 
 ### What did you build, and what business outcome does it move?
 
 We built a complete, offline-capable Support Intelligence system comprising:
+
 1. **Deterministic Analytics Engine (`src/`)**: Ingests, normalizes, and reconciles 11,750 support tickets, 44 agents, 15,500 orders, and 14 product SKUs strictly under operating policy (`support-policy.pdf` v3.2).
 2. **Peer-Stratified Performance Benchmarking**: Resolves display-name collisions (`A3006` vs `A3029` Kavya Pandey), separates Tier 1 frontline queues from Tier 2 escalations and hardware triage, and evaluates handle times against team peer medians.
 3. **Local AI Ticket Intelligence**: A local TF-IDF + Logistic Regression NLP classifier running in 3.8 seconds at ₹0 paid API cost that decomposes 87.99% of ambiguous "Other" tickets into operational themes.
@@ -18,6 +20,7 @@ We built a complete, offline-capable Support Intelligence system comprising:
 5. **Interactive Support Intelligence Dashboard (`web/`)**: A fast, offline-first Support Intelligence Dashboard built with native HTML5, CSS3, and Vanilla JavaScript with custom SVG charts and zero external dependencies.
 
 **Primary Business Outcome Moved:**
+
 > **"Reduce Tier 1 frontline (Chat and Email) above-median handle time from 6.54h to 4.86h, eliminating approximately 624.9 excess agent-hours per quarter and representing approximately ₹1,03,102 per quarter in modeled recoverable staffing capacity."**
 
 Across four quarters, this unlocks **approximately ₹4.12 lakh annualized modeled capacity value** under Policy §4 (at the fully loaded agent labor rate of ₹165/hour) to absorb volume growth without adding headcount, while monitoring CSAT alongside efficiency gains to avoid deterioration in our historical baseline (3.33 overall mean).
@@ -27,12 +30,14 @@ Across four quarters, this unlocks **approximately ₹4.12 lakh annualized model
 ### What does one run cost, and what would a month cost at Vireo's volume (roughly 650 tickets a week)?
 
 **One Run Cost:**
+
 * **External API Calls:** 0
 * **Actual Paid Model Cost:** **₹0.00**
 * Production inference executes 100% locally on standard CPU hardware via scikit-learn in **3.8 seconds** (~3,000 tickets/sec). The web interface has zero external CDN or cloud hosting dependencies.
 * *Hypothetical Client Benchmark:* Under the client's hypothetical comparison assumption of ₹5/ticket for external cloud LLM calls, classifying the historical dataset of 11,750 tickets would represent a hypothetical external-call expense of **₹58,750.00** ($11,750 \times ₹5.00$). This is a hypothetical benchmark comparison, not an incurred project expense.
 
 **Monthly Cost at Vireo's Volume:**
+
 * **Weekly Volume:** Roughly 650 tickets/week.
 * **Monthly Volume Approximation:** $650 \text{ tickets/week} \times \frac{52 \text{ weeks}}{12 \text{ months}} \approx \mathbf{2,817 \text{ tickets/month}}$.
 * **Expected Paid AI Cost:** **₹0.00 per month**.
@@ -43,6 +48,7 @@ Across four quarters, this unlocks **approximately ₹4.12 lakh annualized model
 ### How do you know it works?
 
 We established multi-layered empirical verification across data, machine learning, and frontend layers:
+
 1. **Automated Test Suite (37/37 Tests Passing)**:
    * Data quality & primary/foreign key uniqueness (`tests/test_data_quality.py`).
    * CSAT blank exclusion, attendance-only handle time, and legacy +05:30 offset (`tests/test_metrics.py`).
@@ -69,9 +75,10 @@ We established multi-layered empirical verification across data, machine learnin
 ### Did you change, narrow, or push back on the client's ask? What, when, and why?
 
 Yes. We made deliberate, evidence-based scoping adjustments during the implementation audit:
+
 1. **Narrowed the "Bottom 10" Training Ask to Comparable Operational Peers**:
    * *Client Ask:* Flag the bottom 10 agents by raw CSAT / handle time for remedial training.
-   * *Adjustment:* We retained the requested raw "Bottom 10" view in the dashboard, but narrowed training interpretation strictly to comparable operational groups. 
+   * *Adjustment:* We retained the requested raw "Bottom 10" view in the dashboard, but narrowed training interpretation strictly to comparable operational groups.
    * *Why:* Six of the bottom ten agents are Tier 2 Escalation specialists handling multi-day, pre-escalated disputes, and four are frontline hardware triage agents ("Kavya's four"). Policy §6 explicitly states that Tier 2 cases are multi-touch by nature and must not be compared with Tier 1 on volume metrics. These agents handle structurally different work populations; using raw cross-tier rankings to drive remedial training would misdirect capital.
 2. **Replaced Finance's Informal ₹2,500 Replacement Cost with Policy §5 Standards**:
    * *Client Context:* Finance Controller Arjun Mehta estimated replacements at a flat ₹2,500/unit.
@@ -91,6 +98,7 @@ Yes. We made deliberate, evidence-based scoping adjustments during the implement
 ### What is wrong with what you are handing us?
 
 To maintain absolute technical and operational honesty:
+
 1. **Handle Time Reflects Operational Aging and Queue Dynamics**: Mean handle time is heavily skewed by a long right tail of multi-day pending tickets awaiting customer or courier replies. It cannot be treated as pure active keyboard/talk time.
 2. **AI Layer is Assistive, Not Autonomous**: The classifier provides retrospective intelligence and triage signals; it is not an autonomous action agent and does not auto-resolve tickets.
 3. **Benchmark Evaluated on Rule-Assisted Pseudo-Labels**: Ground-truth labels in the 180-ticket sample were derived using deterministic heuristics rather than double-blind human annotations with inter-rater reliability scores.
@@ -104,6 +112,7 @@ To maintain absolute technical and operational honesty:
 ### What did you deliberately leave out, and why that rather than something else?
 
 We deliberately excluded several potential components to maximize reliability, budget efficiency, and interpretability under the 5-hour engineering constraint:
+
 1. **Per-Ticket Cloud LLM Inference**: Calling commercial APIs across 11,750 tickets would have cost ₹58,750 (14.7% of the entire Q3 training budget) and introduced external network failure modes.
 2. **Complex Multi-Agent Frameworks**: Auto-GPT/CrewAI architectures add non-deterministic latency, debugging opacity, and high token overhead without improving deterministic SQL/pandas accuracy.
 3. **Predictive Time-Series Forecasting**: Forecasting future ticket volume or stockouts requires external seasonal demand and marketing campaign data not present in the historical CSVs.
@@ -116,6 +125,7 @@ We deliberately excluded several potential components to maximize reliability, b
 ### Anything you built or found that nobody asked for?
 
 Yes. Our forensic audit uncovered several critical operational insights beyond the original prompt:
+
 1. **Pulse 2 Replacement Concentration & High-Replacement Lot Candidate**:
    * Pulse 2 earbuds drive **61.50% of all company replacements (1,166 units; ₹21,22,120)**.
    * Specific manufacturing production lot candidate **`PL2-2510-3`** exhibits an abnormal **40.94% replacement rate** (70 replacements across 171 tickets on direct `order_id` join) with text signatures consistently describing charging cradle pin contact failure.
@@ -137,11 +147,12 @@ Yes. Our forensic audit uncovered several critical operational insights beyond t
 We used AI across two distinct dimensions: embedded statistical NLP within the product, and AI coding assistants during engineering development.
 
 1. **Embedded Product NLP (100% Local Scikit-Learn)**:
+
    * **Feature Extraction & Modeling**: Sublinear TF-IDF vectorization (unigrams + bigrams, 2,500 features) paired with a balanced multiclass Logistic Regression model to classify unstructured customer messages into 9 operational issue themes.
    * **Deterministic Signal Rules**: High-precision regular expression pattern matching targeting overt hardware failure terminology (charging pins, dead case contacts).
    * **Theme Recovery**: Decomposed 87.99% of ambiguous intake "Other" tickets into actionable routing themes at ₹0 paid API cost.
-
 2. **AI Development Tools (Agentic Coding & LLM Assistance)**:
+
    * **Where AI Helped Most**:
      - *Rapid Boilerplate & Test Generation*: Generating parameter-rich pytest test fixtures for timestamp edge cases (+05:30 IST offset) and primary/foreign key integrity checks.
      - *CSS Design System Architecture*: Scaffolding a clean, accessible, Linear/Stripe-inspired monochrome design system with native CSS variables and SVG line-chart mathematics without third-party chart libraries.
@@ -158,13 +169,13 @@ We used AI across two distinct dimensions: embedded statistical NLP within the p
 
 ### Link your three-minute screen recording here.
 
-`[PUBLIC GOOGLE DRIVE VIDEO LINK]`
+[drive.google.com/file/d/1ZHYhDvnyhcHIp-b9DUcc9GyCAxkPJkx2/view?usp=sharing](https://drive.google.com/file/d/1ZHYhDvnyhcHIp-b9DUcc9GyCAxkPJkx2/view?usp=sharing)
 
 ---
 
 ### Public Google Drive Link
 
-`[PUBLIC DRIVE FOLDER LINK]`
+[drive.google.com/file/d/1ZHYhDvnyhcHIp-b9DUcc9GyCAxkPJkx2/view?usp=sharing](https://drive.google.com/file/d/1ZHYhDvnyhcHIp-b9DUcc9GyCAxkPJkx2/view?usp=sharing)
 
 ---
 
